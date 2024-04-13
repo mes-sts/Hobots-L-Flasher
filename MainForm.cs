@@ -18,7 +18,7 @@ namespace Hobots_L_Flasher
         public MainForm()
         {
             InitializeComponent();
-            Text = Text + " - " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            lblCopyrightAndVersionVlalue.Text += Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
     }
 }
