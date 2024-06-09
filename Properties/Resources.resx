@@ -117,8 +117,117 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AVRDUDE_CONF_PATH" xml:space="preserve">
+    <value>utils\avrdude\avrdude.conf</value>
+    <comment>путь к файлу конфигов avrdude.exe</comment>
+  </data>
+  <data name="AVRDUDE_EXE_PATH" xml:space="preserve">
+    <value>utils\avrdude\avrdude.exe</value>
+    <comment>путь к avrdude.exe</comment>
+  </data>
+  <data name="BOOTLOADER_ATMEGA2560_PATH" xml:space="preserve">
+    <value>bootloaders\atmega2560\stk500boot_v2_mega2560.hex</value>
+    <comment>путь к файлу загрузчика arduinio ATmega2560</comment>
+  </data>
+  <data name="BOOTLOADER_ATMEGA328_PATH" xml:space="preserve">
+    <value>bootloaders\atmega328\optiboot_atmega328.hex</value>
+    <comment>путь к файлу загрузчика arduinio ATmega328</comment>
+  </data>
+  <data name="DRIVER_CH340_PATH" xml:space="preserve">
+    <value>drivers\ch340\CH340SER.EXE</value>
+    <comment>путь к установщику драйвера ch340 CH340SER.EXE</comment>
+  </data>
+  <data name="DRIVER_CP2102_x64_PATH" xml:space="preserve">
+    <value>drivers\cp2102\CP210xVCPInstaller_x64.exe</value>
+    <comment>путь к установщику драйвера cp2102 CP210xVCPInstaller_x64.exe</comment>
+  </data>
+  <data name="DRIVER_CP2102_x86_PATH" xml:space="preserve">
+    <value>drivers\cp2102\CP210xVCPInstaller_x86.exe</value>
+    <comment>путь к установщику драйвера cp2102 CP210xVCPInstaller_x86.exe</comment>
+  </data>
+  <data name="DRIVER_FT232_PATH" xml:space="preserve">
+    <value>drivers\ft232\CDM21228_Setup.exe</value>
+    <comment>путь к установщику драйвера ft232 CDM21228_Setup.exe</comment>
+  </data>
+  <data name="DRIVER_STLINK_x64_PATH" xml:space="preserve">
+    <value>drivers\stlink\dpinst_amd64.exe</value>
+    <comment>путь к установщику драйвера stlink x64</comment>
+  </data>
+  <data name="DRIVER_STLINK_x86_PATH" xml:space="preserve">
+    <value>drivers\stlink\dpinst_x86.exe</value>
+    <comment>путь к установщику драйвера stlink x86</comment>
+  </data>
+  <data name="DRIVER_USBASP_PATH" xml:space="preserve">
+    <value>drivers\usbasp\InstallDriver.exe</value>
+    <comment>путь к установщику драйвера usbasp InstallDriver.exe</comment>
+  </data>
+  <data name="ESPTOOL_EXE_PATH" xml:space="preserve">
+    <value>utils\esptool\esptool.exe</value>
+    <comment>путь к esptool.exe</comment>
+  </data>
+  <data name="FIRMWARE_BEEPER_CLASSIC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_BEEPER_HYPER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_BEEPER_MINI" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_BEEPER_STANDART" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_BUTTONS_HYPER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_DEMO_CLASSIC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_DEMO_HYPER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_DEMO_MINI" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_DEMO_STANDART" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_LEDS_HYPER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_MOTORS_CLASSIC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_MOTORS_HYPER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_MOTORS_MINI" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_MOTORS_STANDART" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_RGB_MINI" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_SERVO_CLASSIC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_SERVO_HYPER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_SERVO_MINI" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FIRMWARE_SERVO_STANDART" xml:space="preserve">
+    <value />
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="HL_Flash_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\HL_Flash_Logo.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="STLINK_EXE_PATH" xml:space="preserve">
+    <value>utils\stlink\ST-LINK_CLI.exe</value>
+    <comment>путь к st-link_cli.exe</comment>
   </data>
 </root>

@@ -61,12 +61,300 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на utils\avrdude\avrdude.conf.
+        /// </summary>
+        internal static string AVRDUDE_CONF_PATH {
+            get {
+                return ResourceManager.GetString("AVRDUDE_CONF_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на utils\avrdude\avrdude.exe.
+        /// </summary>
+        internal static string AVRDUDE_EXE_PATH {
+            get {
+                return ResourceManager.GetString("AVRDUDE_EXE_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на bootloaders\atmega2560\stk500boot_v2_mega2560.hex.
+        /// </summary>
+        internal static string BOOTLOADER_ATMEGA2560_PATH {
+            get {
+                return ResourceManager.GetString("BOOTLOADER_ATMEGA2560_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на bootloaders\atmega328\optiboot_atmega328.hex.
+        /// </summary>
+        internal static string BOOTLOADER_ATMEGA328_PATH {
+            get {
+                return ResourceManager.GetString("BOOTLOADER_ATMEGA328_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на drivers\ch340\CH340SER.EXE.
+        /// </summary>
+        internal static string DRIVER_CH340_PATH {
+            get {
+                return ResourceManager.GetString("DRIVER_CH340_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на drivers\cp2102\CP210xVCPInstaller_x64.exe.
+        /// </summary>
+        internal static string DRIVER_CP2102_x64_PATH {
+            get {
+                return ResourceManager.GetString("DRIVER_CP2102_x64_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на drivers\cp2102\CP210xVCPInstaller_x86.exe.
+        /// </summary>
+        internal static string DRIVER_CP2102_x86_PATH {
+            get {
+                return ResourceManager.GetString("DRIVER_CP2102_x86_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на drivers\ft232\CDM21228_Setup.exe.
+        /// </summary>
+        internal static string DRIVER_FT232_PATH {
+            get {
+                return ResourceManager.GetString("DRIVER_FT232_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на drivers\stlink\dpinst_amd64.exe.
+        /// </summary>
+        internal static string DRIVER_STLINK_x64_PATH {
+            get {
+                return ResourceManager.GetString("DRIVER_STLINK_x64_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на drivers\stlink\dpinst_x86.exe.
+        /// </summary>
+        internal static string DRIVER_STLINK_x86_PATH {
+            get {
+                return ResourceManager.GetString("DRIVER_STLINK_x86_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на drivers\usbasp\InstallDriver.exe.
+        /// </summary>
+        internal static string DRIVER_USBASP_PATH {
+            get {
+                return ResourceManager.GetString("DRIVER_USBASP_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на utils\esptool\esptool.exe.
+        /// </summary>
+        internal static string ESPTOOL_EXE_PATH {
+            get {
+                return ResourceManager.GetString("ESPTOOL_EXE_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_BEEPER_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BEEPER_CLASSIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_BEEPER_HYPER {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BEEPER_HYPER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_BEEPER_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BEEPER_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_BEEPER_STANDART {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BEEPER_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_BUTTONS_HYPER {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BUTTONS_HYPER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_DEMO_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_DEMO_CLASSIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_DEMO_HYPER {
+            get {
+                return ResourceManager.GetString("FIRMWARE_DEMO_HYPER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_DEMO_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_DEMO_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_DEMO_STANDART {
+            get {
+                return ResourceManager.GetString("FIRMWARE_DEMO_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_LEDS_HYPER {
+            get {
+                return ResourceManager.GetString("FIRMWARE_LEDS_HYPER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_MOTORS_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_MOTORS_CLASSIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_MOTORS_HYPER {
+            get {
+                return ResourceManager.GetString("FIRMWARE_MOTORS_HYPER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_MOTORS_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_MOTORS_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_MOTORS_STANDART {
+            get {
+                return ResourceManager.GetString("FIRMWARE_MOTORS_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_RGB_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_RGB_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_SERVO_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_SERVO_CLASSIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_SERVO_HYPER {
+            get {
+                return ResourceManager.GetString("FIRMWARE_SERVO_HYPER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_SERVO_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_SERVO_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_SERVO_STANDART {
+            get {
+                return ResourceManager.GetString("FIRMWARE_SERVO_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
         internal static System.Drawing.Icon HL_Flash_Logo {
             get {
                 object obj = ResourceManager.GetObject("HL_Flash_Logo", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на utils\stlink\ST-LINK_CLI.exe.
+        /// </summary>
+        internal static string STLINK_EXE_PATH {
+            get {
+                return ResourceManager.GetString("STLINK_EXE_PATH", resourceCulture);
             }
         }
     }

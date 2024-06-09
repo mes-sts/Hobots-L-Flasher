@@ -28,45 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tpControllers = new MetroFramework.Controls.MetroTabControl();
             this.tabControllers = new MetroFramework.Controls.MetroTabPage();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.btnDownloadBootloaderStandart = new MetroFramework.Controls.MetroButton();
-            this.cbProgrammersStandart = new MetroFramework.Controls.MetroComboBox();
+            this.pBootloader = new MetroFramework.Controls.MetroPanel();
+            this.btnDownloadBootloaderProgrammer = new MetroFramework.Controls.MetroButton();
+            this.cbProgrammers = new MetroFramework.Controls.MetroComboBox();
             this.lblProgrammersDisc = new MetroFramework.Controls.MetroLabel();
-            this.pComPortStandart = new MetroFramework.Controls.MetroPanel();
+            this.pFirmware = new MetroFramework.Controls.MetroPanel();
+            this.lblContollerTypeDisc = new MetroFramework.Controls.MetroLabel();
+            this.cbContollers = new MetroFramework.Controls.MetroComboBox();
             this.lblFirmwarePathDisc = new MetroFramework.Controls.MetroLabel();
-            this.btnDownloadFirmwareStandart = new MetroFramework.Controls.MetroButton();
+            this.btnDownloadFirmwarePort = new MetroFramework.Controls.MetroButton();
             this.lblFirmwareDisc = new MetroFramework.Controls.MetroLabel();
             this.tbFirmwarePath = new MetroFramework.Controls.MetroTextBox();
             this.lblComPortDisc = new MetroFramework.Controls.MetroLabel();
             this.cbFirmware = new MetroFramework.Controls.MetroComboBox();
-            this.cbComPort = new MetroFramework.Controls.MetroComboBox();
+            this.cbComPorts = new MetroFramework.Controls.MetroComboBox();
             this.tabSettings = new MetroFramework.Controls.MetroTabPage();
-            this.tabExtended = new MetroFramework.Controls.MetroTabPage();
+            this.pDriver = new MetroFramework.Controls.MetroPanel();
+            this.lblDriverTypeDisc = new MetroFramework.Controls.MetroLabel();
+            this.btnInstallDriver = new MetroFramework.Controls.MetroButton();
+            this.cbDriverType = new MetroFramework.Controls.MetroComboBox();
+            this.clHelp = new MetroFramework.Controls.MetroLink();
+            this.tabTerminal = new MetroFramework.Controls.MetroTabPage();
+            this.cbComPortBaudrate = new MetroFramework.Controls.MetroComboBox();
+            this.tbTerminal = new MetroFramework.Controls.MetroTextBox();
+            this.btnCleanTerminal = new MetroFramework.Controls.MetroButton();
+            this.btnStartStopTerminal = new MetroFramework.Controls.MetroButton();
+            this.cbComPortsTerminal = new MetroFramework.Controls.MetroComboBox();
             this.lblCopyrightAndVersionVlalue = new MetroFramework.Controls.MetroLabel();
             this.lblDownloadStatusDisc = new MetroFramework.Controls.MetroLabel();
             this.lblDownloadStatus = new MetroFramework.Controls.MetroLabel();
-            this.lblContollerTypeDisc = new MetroFramework.Controls.MetroLabel();
-            this.cbContollerType = new MetroFramework.Controls.MetroComboBox();
-            this.clHelp = new MetroFramework.Controls.MetroLink();
-            this.btnInstallDriver = new MetroFramework.Controls.MetroButton();
-            this.lblDriverTypeDisc = new MetroFramework.Controls.MetroLabel();
-            this.cbDriverType = new MetroFramework.Controls.MetroComboBox();
+            this.serialPort = new System.IO.Ports.SerialPort(this.components);
+            this.timerResetStatus = new System.Windows.Forms.Timer(this.components);
             this.tpControllers.SuspendLayout();
             this.tabControllers.SuspendLayout();
-            this.metroPanel1.SuspendLayout();
-            this.pComPortStandart.SuspendLayout();
+            this.pBootloader.SuspendLayout();
+            this.pFirmware.SuspendLayout();
             this.tabSettings.SuspendLayout();
-            this.tabExtended.SuspendLayout();
+            this.pDriver.SuspendLayout();
+            this.tabTerminal.SuspendLayout();
             this.SuspendLayout();
             // 
             // tpControllers
             // 
             this.tpControllers.Controls.Add(this.tabControllers);
             this.tpControllers.Controls.Add(this.tabSettings);
-            this.tpControllers.Controls.Add(this.tabExtended);
+            this.tpControllers.Controls.Add(this.tabTerminal);
             this.tpControllers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tpControllers.Location = new System.Drawing.Point(20, 60);
             this.tpControllers.Name = "tpControllers";
@@ -77,8 +87,8 @@
             // 
             // tabControllers
             // 
-            this.tabControllers.Controls.Add(this.metroPanel1);
-            this.tabControllers.Controls.Add(this.pComPortStandart);
+            this.tabControllers.Controls.Add(this.pBootloader);
+            this.tabControllers.Controls.Add(this.pFirmware);
             this.tabControllers.HorizontalScrollbarBarColor = true;
             this.tabControllers.HorizontalScrollbarHighlightOnWheel = false;
             this.tabControllers.HorizontalScrollbarSize = 10;
@@ -91,50 +101,55 @@
             this.tabControllers.VerticalScrollbarHighlightOnWheel = false;
             this.tabControllers.VerticalScrollbarSize = 10;
             // 
-            // metroPanel1
+            // pBootloader
             // 
-            this.metroPanel1.Controls.Add(this.btnDownloadBootloaderStandart);
-            this.metroPanel1.Controls.Add(this.cbProgrammersStandart);
-            this.metroPanel1.Controls.Add(this.lblProgrammersDisc);
-            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(0, 193);
-            this.metroPanel1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(338, 80);
-            this.metroPanel1.TabIndex = 66;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.pBootloader.Controls.Add(this.btnDownloadBootloaderProgrammer);
+            this.pBootloader.Controls.Add(this.cbProgrammers);
+            this.pBootloader.Controls.Add(this.lblProgrammersDisc);
+            this.pBootloader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pBootloader.HorizontalScrollbarBarColor = true;
+            this.pBootloader.HorizontalScrollbarHighlightOnWheel = false;
+            this.pBootloader.HorizontalScrollbarSize = 10;
+            this.pBootloader.Location = new System.Drawing.Point(0, 193);
+            this.pBootloader.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.pBootloader.Name = "pBootloader";
+            this.pBootloader.Size = new System.Drawing.Size(338, 80);
+            this.pBootloader.TabIndex = 66;
+            this.pBootloader.VerticalScrollbarBarColor = true;
+            this.pBootloader.VerticalScrollbarHighlightOnWheel = false;
+            this.pBootloader.VerticalScrollbarSize = 10;
             // 
-            // btnDownloadBootloaderStandart
+            // btnDownloadBootloaderProgrammer
             // 
-            this.btnDownloadBootloaderStandart.AutoSize = true;
-            this.btnDownloadBootloaderStandart.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnDownloadBootloaderStandart.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnDownloadBootloaderStandart.Location = new System.Drawing.Point(0, 51);
-            this.btnDownloadBootloaderStandart.Margin = new System.Windows.Forms.Padding(5);
-            this.btnDownloadBootloaderStandart.Name = "btnDownloadBootloaderStandart";
-            this.btnDownloadBootloaderStandart.Size = new System.Drawing.Size(338, 29);
-            this.btnDownloadBootloaderStandart.TabIndex = 68;
-            this.btnDownloadBootloaderStandart.Text = "Записать загрузчик через программатор";
-            this.btnDownloadBootloaderStandart.UseSelectable = true;
+            this.btnDownloadBootloaderProgrammer.AutoSize = true;
+            this.btnDownloadBootloaderProgrammer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnDownloadBootloaderProgrammer.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnDownloadBootloaderProgrammer.Location = new System.Drawing.Point(0, 51);
+            this.btnDownloadBootloaderProgrammer.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDownloadBootloaderProgrammer.Name = "btnDownloadBootloaderProgrammer";
+            this.btnDownloadBootloaderProgrammer.Size = new System.Drawing.Size(338, 29);
+            this.btnDownloadBootloaderProgrammer.TabIndex = 68;
+            this.btnDownloadBootloaderProgrammer.Text = "Записать загрузчик через программатор";
+            this.btnDownloadBootloaderProgrammer.UseSelectable = true;
+            this.btnDownloadBootloaderProgrammer.Click += new System.EventHandler(this.btnDownloadBootloaderProgrammer_Click);
             // 
-            // cbProgrammersStandart
+            // cbProgrammers
             // 
-            this.cbProgrammersStandart.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
-            this.cbProgrammersStandart.FormattingEnabled = true;
-            this.cbProgrammersStandart.ItemHeight = 23;
-            this.cbProgrammersStandart.Location = new System.Drawing.Point(206, 10);
-            this.cbProgrammersStandart.Margin = new System.Windows.Forms.Padding(5);
-            this.cbProgrammersStandart.Name = "cbProgrammersStandart";
-            this.cbProgrammersStandart.PromptText = "Программатор";
-            this.cbProgrammersStandart.Size = new System.Drawing.Size(121, 29);
-            this.cbProgrammersStandart.Style = MetroFramework.MetroColorStyle.Blue;
-            this.cbProgrammersStandart.TabIndex = 67;
-            this.cbProgrammersStandart.UseSelectable = true;
+            this.cbProgrammers.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
+            this.cbProgrammers.FormattingEnabled = true;
+            this.cbProgrammers.ItemHeight = 23;
+            this.cbProgrammers.Items.AddRange(new object[] {
+            "USBASP",
+            "STLINK",
+            "ESPTOOL"});
+            this.cbProgrammers.Location = new System.Drawing.Point(206, 10);
+            this.cbProgrammers.Margin = new System.Windows.Forms.Padding(5);
+            this.cbProgrammers.Name = "cbProgrammers";
+            this.cbProgrammers.PromptText = "Программатор";
+            this.cbProgrammers.Size = new System.Drawing.Size(121, 29);
+            this.cbProgrammers.Style = MetroFramework.MetroColorStyle.Blue;
+            this.cbProgrammers.TabIndex = 67;
+            this.cbProgrammers.UseSelectable = true;
             // 
             // lblProgrammersDisc
             // 
@@ -146,28 +161,58 @@
             this.lblProgrammersDisc.Text = "Тип программатора";
             this.lblProgrammersDisc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pComPortStandart
+            // pFirmware
             // 
-            this.pComPortStandart.Controls.Add(this.lblContollerTypeDisc);
-            this.pComPortStandart.Controls.Add(this.cbContollerType);
-            this.pComPortStandart.Controls.Add(this.lblFirmwarePathDisc);
-            this.pComPortStandart.Controls.Add(this.btnDownloadFirmwareStandart);
-            this.pComPortStandart.Controls.Add(this.lblFirmwareDisc);
-            this.pComPortStandart.Controls.Add(this.tbFirmwarePath);
-            this.pComPortStandart.Controls.Add(this.lblComPortDisc);
-            this.pComPortStandart.Controls.Add(this.cbFirmware);
-            this.pComPortStandart.Controls.Add(this.cbComPort);
-            this.pComPortStandart.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pComPortStandart.HorizontalScrollbarBarColor = true;
-            this.pComPortStandart.HorizontalScrollbarHighlightOnWheel = false;
-            this.pComPortStandart.HorizontalScrollbarSize = 10;
-            this.pComPortStandart.Location = new System.Drawing.Point(0, 0);
-            this.pComPortStandart.Name = "pComPortStandart";
-            this.pComPortStandart.Size = new System.Drawing.Size(338, 193);
-            this.pComPortStandart.TabIndex = 65;
-            this.pComPortStandart.VerticalScrollbarBarColor = true;
-            this.pComPortStandart.VerticalScrollbarHighlightOnWheel = false;
-            this.pComPortStandart.VerticalScrollbarSize = 10;
+            this.pFirmware.Controls.Add(this.lblContollerTypeDisc);
+            this.pFirmware.Controls.Add(this.cbContollers);
+            this.pFirmware.Controls.Add(this.lblFirmwarePathDisc);
+            this.pFirmware.Controls.Add(this.btnDownloadFirmwarePort);
+            this.pFirmware.Controls.Add(this.lblFirmwareDisc);
+            this.pFirmware.Controls.Add(this.tbFirmwarePath);
+            this.pFirmware.Controls.Add(this.lblComPortDisc);
+            this.pFirmware.Controls.Add(this.cbFirmware);
+            this.pFirmware.Controls.Add(this.cbComPorts);
+            this.pFirmware.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pFirmware.HorizontalScrollbarBarColor = true;
+            this.pFirmware.HorizontalScrollbarHighlightOnWheel = false;
+            this.pFirmware.HorizontalScrollbarSize = 10;
+            this.pFirmware.Location = new System.Drawing.Point(0, 0);
+            this.pFirmware.Name = "pFirmware";
+            this.pFirmware.Size = new System.Drawing.Size(338, 193);
+            this.pFirmware.TabIndex = 65;
+            this.pFirmware.VerticalScrollbarBarColor = true;
+            this.pFirmware.VerticalScrollbarHighlightOnWheel = false;
+            this.pFirmware.VerticalScrollbarSize = 10;
+            // 
+            // lblContollerTypeDisc
+            // 
+            this.lblContollerTypeDisc.Location = new System.Drawing.Point(5, 5);
+            this.lblContollerTypeDisc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblContollerTypeDisc.Name = "lblContollerTypeDisc";
+            this.lblContollerTypeDisc.Size = new System.Drawing.Size(191, 29);
+            this.lblContollerTypeDisc.TabIndex = 69;
+            this.lblContollerTypeDisc.Text = "Варинты типов котроллеров";
+            this.lblContollerTypeDisc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cbContollers
+            // 
+            this.cbContollers.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
+            this.cbContollers.FormattingEnabled = true;
+            this.cbContollers.ItemHeight = 23;
+            this.cbContollers.Items.AddRange(new object[] {
+            "Стандартный",
+            "Классический",
+            "Мини",
+            "Гипер"});
+            this.cbContollers.Location = new System.Drawing.Point(206, 5);
+            this.cbContollers.Margin = new System.Windows.Forms.Padding(5);
+            this.cbContollers.Name = "cbContollers";
+            this.cbContollers.PromptText = "Контроллер";
+            this.cbContollers.Size = new System.Drawing.Size(121, 29);
+            this.cbContollers.Style = MetroFramework.MetroColorStyle.Blue;
+            this.cbContollers.TabIndex = 68;
+            this.cbContollers.UseSelectable = true;
+            this.cbContollers.SelectedIndexChanged += new System.EventHandler(this.cbContollers_SelectedIndexChanged);
             // 
             // lblFirmwarePathDisc
             // 
@@ -179,20 +224,21 @@
             this.lblFirmwarePathDisc.Text = "Выбор прошивки из файла";
             this.lblFirmwarePathDisc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnDownloadFirmwareStandart
+            // btnDownloadFirmwarePort
             // 
-            this.btnDownloadFirmwareStandart.AutoSize = true;
-            this.btnDownloadFirmwareStandart.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnDownloadFirmwareStandart.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnDownloadFirmwareStandart.Location = new System.Drawing.Point(0, 164);
-            this.btnDownloadFirmwareStandart.Margin = new System.Windows.Forms.Padding(5);
-            this.btnDownloadFirmwareStandart.Name = "btnDownloadFirmwareStandart";
-            this.btnDownloadFirmwareStandart.Size = new System.Drawing.Size(338, 29);
-            this.btnDownloadFirmwareStandart.Style = MetroFramework.MetroColorStyle.Blue;
-            this.btnDownloadFirmwareStandart.TabIndex = 60;
-            this.btnDownloadFirmwareStandart.Text = "Записать прошивку через порт";
-            this.btnDownloadFirmwareStandart.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.btnDownloadFirmwareStandart.UseSelectable = true;
+            this.btnDownloadFirmwarePort.AutoSize = true;
+            this.btnDownloadFirmwarePort.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnDownloadFirmwarePort.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnDownloadFirmwarePort.Location = new System.Drawing.Point(0, 164);
+            this.btnDownloadFirmwarePort.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDownloadFirmwarePort.Name = "btnDownloadFirmwarePort";
+            this.btnDownloadFirmwarePort.Size = new System.Drawing.Size(338, 29);
+            this.btnDownloadFirmwarePort.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnDownloadFirmwarePort.TabIndex = 60;
+            this.btnDownloadFirmwarePort.Text = "Записать прошивку через последовательный порт";
+            this.btnDownloadFirmwarePort.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.btnDownloadFirmwarePort.UseSelectable = true;
+            this.btnDownloadFirmwarePort.Click += new System.EventHandler(this.btnDownloadFirmwarePort_Click);
             // 
             // lblFirmwareDisc
             // 
@@ -226,20 +272,22 @@
             this.tbFirmwarePath.Name = "tbFirmwarePath";
             this.tbFirmwarePath.PasswordChar = '\0';
             this.tbFirmwarePath.PromptText = "Путь";
-            this.tbFirmwarePath.ReadOnly = true;
             this.tbFirmwarePath.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbFirmwarePath.SelectedText = "";
             this.tbFirmwarePath.SelectionLength = 0;
             this.tbFirmwarePath.SelectionStart = 0;
             this.tbFirmwarePath.ShortcutsEnabled = true;
             this.tbFirmwarePath.ShowButton = true;
+            this.tbFirmwarePath.ShowClearButton = true;
             this.tbFirmwarePath.Size = new System.Drawing.Size(121, 29);
             this.tbFirmwarePath.Style = MetroFramework.MetroColorStyle.Blue;
             this.tbFirmwarePath.TabIndex = 59;
+            this.tbFirmwarePath.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbFirmwarePath.UseSelectable = true;
             this.tbFirmwarePath.WaterMark = "Путь";
             this.tbFirmwarePath.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbFirmwarePath.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tbFirmwarePath.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.tbFirmwarePath_ButtonClick);
             // 
             // lblComPortDisc
             // 
@@ -265,25 +313,24 @@
             this.cbFirmware.TabIndex = 56;
             this.cbFirmware.UseSelectable = true;
             // 
-            // cbComPort
+            // cbComPorts
             // 
-            this.cbComPort.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
-            this.cbComPort.FormattingEnabled = true;
-            this.cbComPort.ItemHeight = 23;
-            this.cbComPort.Location = new System.Drawing.Point(206, 44);
-            this.cbComPort.Margin = new System.Windows.Forms.Padding(5);
-            this.cbComPort.Name = "cbComPort";
-            this.cbComPort.PromptText = "Порт";
-            this.cbComPort.Size = new System.Drawing.Size(121, 29);
-            this.cbComPort.Style = MetroFramework.MetroColorStyle.Blue;
-            this.cbComPort.TabIndex = 54;
-            this.cbComPort.UseSelectable = true;
+            this.cbComPorts.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
+            this.cbComPorts.FormattingEnabled = true;
+            this.cbComPorts.ItemHeight = 23;
+            this.cbComPorts.Location = new System.Drawing.Point(206, 44);
+            this.cbComPorts.Margin = new System.Windows.Forms.Padding(5);
+            this.cbComPorts.Name = "cbComPorts";
+            this.cbComPorts.PromptText = "Порт";
+            this.cbComPorts.Size = new System.Drawing.Size(121, 29);
+            this.cbComPorts.Style = MetroFramework.MetroColorStyle.Blue;
+            this.cbComPorts.TabIndex = 54;
+            this.cbComPorts.UseSelectable = true;
             // 
             // tabSettings
             // 
-            this.tabSettings.Controls.Add(this.lblDriverTypeDisc);
-            this.tabSettings.Controls.Add(this.cbDriverType);
-            this.tabSettings.Controls.Add(this.btnInstallDriver);
+            this.tabSettings.Controls.Add(this.pDriver);
+            this.tabSettings.Controls.Add(this.clHelp);
             this.tabSettings.HorizontalScrollbarBarColor = true;
             this.tabSettings.HorizontalScrollbarHighlightOnWheel = false;
             this.tabSettings.HorizontalScrollbarSize = 10;
@@ -296,20 +343,195 @@
             this.tabSettings.VerticalScrollbarHighlightOnWheel = false;
             this.tabSettings.VerticalScrollbarSize = 10;
             // 
-            // tabExtended
+            // pDriver
             // 
-            this.tabExtended.Controls.Add(this.clHelp);
-            this.tabExtended.HorizontalScrollbarBarColor = true;
-            this.tabExtended.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabExtended.HorizontalScrollbarSize = 10;
-            this.tabExtended.Location = new System.Drawing.Point(4, 38);
-            this.tabExtended.Name = "tabExtended";
-            this.tabExtended.Size = new System.Drawing.Size(338, 276);
-            this.tabExtended.TabIndex = 2;
-            this.tabExtended.Text = "Дополнительно";
-            this.tabExtended.VerticalScrollbarBarColor = true;
-            this.tabExtended.VerticalScrollbarHighlightOnWheel = false;
-            this.tabExtended.VerticalScrollbarSize = 10;
+            this.pDriver.Controls.Add(this.lblDriverTypeDisc);
+            this.pDriver.Controls.Add(this.btnInstallDriver);
+            this.pDriver.Controls.Add(this.cbDriverType);
+            this.pDriver.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pDriver.HorizontalScrollbarBarColor = true;
+            this.pDriver.HorizontalScrollbarHighlightOnWheel = false;
+            this.pDriver.HorizontalScrollbarSize = 10;
+            this.pDriver.Location = new System.Drawing.Point(0, 0);
+            this.pDriver.Name = "pDriver";
+            this.pDriver.Size = new System.Drawing.Size(338, 75);
+            this.pDriver.TabIndex = 73;
+            this.pDriver.VerticalScrollbarBarColor = true;
+            this.pDriver.VerticalScrollbarHighlightOnWheel = false;
+            this.pDriver.VerticalScrollbarSize = 10;
+            // 
+            // lblDriverTypeDisc
+            // 
+            this.lblDriverTypeDisc.Location = new System.Drawing.Point(5, 5);
+            this.lblDriverTypeDisc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblDriverTypeDisc.Name = "lblDriverTypeDisc";
+            this.lblDriverTypeDisc.Size = new System.Drawing.Size(191, 29);
+            this.lblDriverTypeDisc.TabIndex = 71;
+            this.lblDriverTypeDisc.Text = "Варинты типов драйверов";
+            this.lblDriverTypeDisc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnInstallDriver
+            // 
+            this.btnInstallDriver.AutoSize = true;
+            this.btnInstallDriver.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnInstallDriver.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnInstallDriver.Location = new System.Drawing.Point(0, 46);
+            this.btnInstallDriver.Margin = new System.Windows.Forms.Padding(5);
+            this.btnInstallDriver.Name = "btnInstallDriver";
+            this.btnInstallDriver.Size = new System.Drawing.Size(338, 29);
+            this.btnInstallDriver.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnInstallDriver.TabIndex = 61;
+            this.btnInstallDriver.Text = "Установить драйвер";
+            this.btnInstallDriver.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.btnInstallDriver.UseSelectable = true;
+            this.btnInstallDriver.Click += new System.EventHandler(this.btnInstallDriver_Click);
+            // 
+            // cbDriverType
+            // 
+            this.cbDriverType.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
+            this.cbDriverType.FormattingEnabled = true;
+            this.cbDriverType.ItemHeight = 23;
+            this.cbDriverType.Items.AddRange(new object[] {
+            "USBASP",
+            "STLINK",
+            "CH340",
+            "FT232",
+            "CP2102"});
+            this.cbDriverType.Location = new System.Drawing.Point(206, 5);
+            this.cbDriverType.Margin = new System.Windows.Forms.Padding(5);
+            this.cbDriverType.Name = "cbDriverType";
+            this.cbDriverType.PromptText = "Драйвер";
+            this.cbDriverType.Size = new System.Drawing.Size(121, 29);
+            this.cbDriverType.Style = MetroFramework.MetroColorStyle.Blue;
+            this.cbDriverType.TabIndex = 70;
+            this.cbDriverType.UseSelectable = true;
+            // 
+            // clHelp
+            // 
+            this.clHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.clHelp.Location = new System.Drawing.Point(116, 138);
+            this.clHelp.Name = "clHelp";
+            this.clHelp.Size = new System.Drawing.Size(60, 19);
+            this.clHelp.TabIndex = 72;
+            this.clHelp.Text = "Справка";
+            this.clHelp.UseSelectable = true;
+            // 
+            // tabTerminal
+            // 
+            this.tabTerminal.Controls.Add(this.cbComPortBaudrate);
+            this.tabTerminal.Controls.Add(this.tbTerminal);
+            this.tabTerminal.Controls.Add(this.btnCleanTerminal);
+            this.tabTerminal.Controls.Add(this.btnStartStopTerminal);
+            this.tabTerminal.Controls.Add(this.cbComPortsTerminal);
+            this.tabTerminal.HorizontalScrollbarBarColor = true;
+            this.tabTerminal.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabTerminal.HorizontalScrollbarSize = 10;
+            this.tabTerminal.Location = new System.Drawing.Point(4, 38);
+            this.tabTerminal.Name = "tabTerminal";
+            this.tabTerminal.Size = new System.Drawing.Size(338, 276);
+            this.tabTerminal.TabIndex = 3;
+            this.tabTerminal.Text = "Терминал";
+            this.tabTerminal.VerticalScrollbarBarColor = true;
+            this.tabTerminal.VerticalScrollbarHighlightOnWheel = false;
+            this.tabTerminal.VerticalScrollbarSize = 10;
+            // 
+            // cbComPortBaudrate
+            // 
+            this.cbComPortBaudrate.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
+            this.cbComPortBaudrate.FormattingEnabled = true;
+            this.cbComPortBaudrate.ItemHeight = 23;
+            this.cbComPortBaudrate.Items.AddRange(new object[] {
+            "9600",
+            "115200"});
+            this.cbComPortBaudrate.Location = new System.Drawing.Point(100, 246);
+            this.cbComPortBaudrate.Margin = new System.Windows.Forms.Padding(5);
+            this.cbComPortBaudrate.Name = "cbComPortBaudrate";
+            this.cbComPortBaudrate.PromptText = "Скорость";
+            this.cbComPortBaudrate.Size = new System.Drawing.Size(80, 29);
+            this.cbComPortBaudrate.Style = MetroFramework.MetroColorStyle.Blue;
+            this.cbComPortBaudrate.TabIndex = 64;
+            this.cbComPortBaudrate.UseSelectable = true;
+            // 
+            // tbTerminal
+            // 
+            // 
+            // 
+            // 
+            this.tbTerminal.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.tbTerminal.CustomButton.Location = new System.Drawing.Point(104, 2);
+            this.tbTerminal.CustomButton.Name = "";
+            this.tbTerminal.CustomButton.Size = new System.Drawing.Size(231, 231);
+            this.tbTerminal.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbTerminal.CustomButton.TabIndex = 1;
+            this.tbTerminal.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbTerminal.CustomButton.UseSelectable = true;
+            this.tbTerminal.CustomButton.Visible = false;
+            this.tbTerminal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbTerminal.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
+            this.tbTerminal.Lines = new string[0];
+            this.tbTerminal.Location = new System.Drawing.Point(0, 0);
+            this.tbTerminal.Margin = new System.Windows.Forms.Padding(5);
+            this.tbTerminal.MaxLength = 32767;
+            this.tbTerminal.Multiline = true;
+            this.tbTerminal.Name = "tbTerminal";
+            this.tbTerminal.PasswordChar = '\0';
+            this.tbTerminal.ReadOnly = true;
+            this.tbTerminal.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbTerminal.SelectedText = "";
+            this.tbTerminal.SelectionLength = 0;
+            this.tbTerminal.SelectionStart = 0;
+            this.tbTerminal.ShortcutsEnabled = true;
+            this.tbTerminal.Size = new System.Drawing.Size(338, 236);
+            this.tbTerminal.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbTerminal.TabIndex = 63;
+            this.tbTerminal.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbTerminal.UseSelectable = true;
+            this.tbTerminal.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tbTerminal.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // btnCleanTerminal
+            // 
+            this.btnCleanTerminal.AutoSize = true;
+            this.btnCleanTerminal.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnCleanTerminal.Location = new System.Drawing.Point(268, 246);
+            this.btnCleanTerminal.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCleanTerminal.Name = "btnCleanTerminal";
+            this.btnCleanTerminal.Size = new System.Drawing.Size(70, 29);
+            this.btnCleanTerminal.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnCleanTerminal.TabIndex = 62;
+            this.btnCleanTerminal.Text = "Очистить";
+            this.btnCleanTerminal.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.btnCleanTerminal.UseSelectable = true;
+            this.btnCleanTerminal.Click += new System.EventHandler(this.btnCleanTerminal_Click);
+            // 
+            // btnStartStopTerminal
+            // 
+            this.btnStartStopTerminal.AutoSize = true;
+            this.btnStartStopTerminal.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnStartStopTerminal.Location = new System.Drawing.Point(190, 246);
+            this.btnStartStopTerminal.Margin = new System.Windows.Forms.Padding(5);
+            this.btnStartStopTerminal.Name = "btnStartStopTerminal";
+            this.btnStartStopTerminal.Size = new System.Drawing.Size(65, 29);
+            this.btnStartStopTerminal.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnStartStopTerminal.TabIndex = 61;
+            this.btnStartStopTerminal.Text = "Открыть";
+            this.btnStartStopTerminal.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.btnStartStopTerminal.UseSelectable = true;
+            this.btnStartStopTerminal.Click += new System.EventHandler(this.btnStartStopTerminal_Click);
+            // 
+            // cbComPortsTerminal
+            // 
+            this.cbComPortsTerminal.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
+            this.cbComPortsTerminal.FormattingEnabled = true;
+            this.cbComPortsTerminal.ItemHeight = 23;
+            this.cbComPortsTerminal.Location = new System.Drawing.Point(0, 246);
+            this.cbComPortsTerminal.Margin = new System.Windows.Forms.Padding(5);
+            this.cbComPortsTerminal.Name = "cbComPortsTerminal";
+            this.cbComPortsTerminal.PromptText = "Порт";
+            this.cbComPortsTerminal.Size = new System.Drawing.Size(90, 29);
+            this.cbComPortsTerminal.Style = MetroFramework.MetroColorStyle.Blue;
+            this.cbComPortsTerminal.TabIndex = 55;
+            this.cbComPortsTerminal.UseSelectable = true;
             // 
             // lblCopyrightAndVersionVlalue
             // 
@@ -327,107 +549,36 @@
             // 
             this.lblDownloadStatusDisc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblDownloadStatusDisc.AutoSize = true;
-            this.lblDownloadStatusDisc.Location = new System.Drawing.Point(218, 377);
+            this.lblDownloadStatusDisc.Location = new System.Drawing.Point(230, 377);
             this.lblDownloadStatusDisc.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.lblDownloadStatusDisc.Name = "lblDownloadStatusDisc";
-            this.lblDownloadStatusDisc.Size = new System.Drawing.Size(106, 19);
+            this.lblDownloadStatusDisc.Size = new System.Drawing.Size(50, 19);
             this.lblDownloadStatusDisc.TabIndex = 13;
-            this.lblDownloadStatusDisc.Text = "Статус загрузки:";
+            this.lblDownloadStatusDisc.Text = "Статус:";
             this.lblDownloadStatusDisc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDownloadStatus
             // 
             this.lblDownloadStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblDownloadStatus.AutoSize = true;
-            this.lblDownloadStatus.Location = new System.Drawing.Point(324, 377);
+            this.lblDownloadStatus.Location = new System.Drawing.Point(280, 377);
             this.lblDownloadStatus.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.lblDownloadStatus.Name = "lblDownloadStatus";
             this.lblDownloadStatus.Size = new System.Drawing.Size(38, 19);
             this.lblDownloadStatus.TabIndex = 14;
             this.lblDownloadStatus.Text = "--/--";
             this.lblDownloadStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDownloadStatus.UseCustomBackColor = true;
             // 
-            // lblContollerTypeDisc
+            // serialPort
             // 
-            this.lblContollerTypeDisc.Location = new System.Drawing.Point(5, 5);
-            this.lblContollerTypeDisc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblContollerTypeDisc.Name = "lblContollerTypeDisc";
-            this.lblContollerTypeDisc.Size = new System.Drawing.Size(191, 29);
-            this.lblContollerTypeDisc.TabIndex = 69;
-            this.lblContollerTypeDisc.Text = "Варинты типов котроллеров";
-            this.lblContollerTypeDisc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.serialPort.DtrEnable = true;
+            this.serialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort_DataReceived);
             // 
-            // cbContollerType
+            // timerResetStatus
             // 
-            this.cbContollerType.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
-            this.cbContollerType.FormattingEnabled = true;
-            this.cbContollerType.ItemHeight = 23;
-            this.cbContollerType.Items.AddRange(new object[] {
-            "Стандартный",
-            "Классический",
-            "Мини",
-            "Гипер"});
-            this.cbContollerType.Location = new System.Drawing.Point(206, 5);
-            this.cbContollerType.Margin = new System.Windows.Forms.Padding(5);
-            this.cbContollerType.Name = "cbContollerType";
-            this.cbContollerType.PromptText = "Контроллер";
-            this.cbContollerType.Size = new System.Drawing.Size(121, 29);
-            this.cbContollerType.Style = MetroFramework.MetroColorStyle.Blue;
-            this.cbContollerType.TabIndex = 68;
-            this.cbContollerType.UseSelectable = true;
-            // 
-            // clHelp
-            // 
-            this.clHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.clHelp.Location = new System.Drawing.Point(26, 42);
-            this.clHelp.Name = "clHelp";
-            this.clHelp.Size = new System.Drawing.Size(60, 19);
-            this.clHelp.TabIndex = 12;
-            this.clHelp.Text = "Справка";
-            this.clHelp.UseSelectable = true;
-            // 
-            // btnInstallDriver
-            // 
-            this.btnInstallDriver.AutoSize = true;
-            this.btnInstallDriver.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnInstallDriver.Location = new System.Drawing.Point(65, 164);
-            this.btnInstallDriver.Margin = new System.Windows.Forms.Padding(5);
-            this.btnInstallDriver.Name = "btnInstallDriver";
-            this.btnInstallDriver.Size = new System.Drawing.Size(206, 29);
-            this.btnInstallDriver.Style = MetroFramework.MetroColorStyle.Blue;
-            this.btnInstallDriver.TabIndex = 61;
-            this.btnInstallDriver.Text = "Установить драйвер";
-            this.btnInstallDriver.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.btnInstallDriver.UseSelectable = true;
-            // 
-            // lblDriverTypeDisc
-            // 
-            this.lblDriverTypeDisc.Location = new System.Drawing.Point(5, 22);
-            this.lblDriverTypeDisc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblDriverTypeDisc.Name = "lblDriverTypeDisc";
-            this.lblDriverTypeDisc.Size = new System.Drawing.Size(191, 29);
-            this.lblDriverTypeDisc.TabIndex = 71;
-            this.lblDriverTypeDisc.Text = "Варинты типов драйверов";
-            this.lblDriverTypeDisc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cbDriverType
-            // 
-            this.cbDriverType.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
-            this.cbDriverType.FormattingEnabled = true;
-            this.cbDriverType.ItemHeight = 23;
-            this.cbDriverType.Items.AddRange(new object[] {
-            "Стандартный",
-            "Классический",
-            "Мини",
-            "Гипер"});
-            this.cbDriverType.Location = new System.Drawing.Point(206, 22);
-            this.cbDriverType.Margin = new System.Windows.Forms.Padding(5);
-            this.cbDriverType.Name = "cbDriverType";
-            this.cbDriverType.PromptText = "Драйвер";
-            this.cbDriverType.Size = new System.Drawing.Size(121, 29);
-            this.cbDriverType.Style = MetroFramework.MetroColorStyle.Blue;
-            this.cbDriverType.TabIndex = 70;
-            this.cbDriverType.UseSelectable = true;
+            this.timerResetStatus.Interval = 10000;
+            this.timerResetStatus.Tick += new System.EventHandler(this.timerResetStatus_Tick);
             // 
             // MainForm
             // 
@@ -444,15 +595,18 @@
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Text = "Прошивальщик Hobots L";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.tpControllers.ResumeLayout(false);
             this.tabControllers.ResumeLayout(false);
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
-            this.pComPortStandart.ResumeLayout(false);
-            this.pComPortStandart.PerformLayout();
+            this.pBootloader.ResumeLayout(false);
+            this.pBootloader.PerformLayout();
+            this.pFirmware.ResumeLayout(false);
+            this.pFirmware.PerformLayout();
             this.tabSettings.ResumeLayout(false);
-            this.tabSettings.PerformLayout();
-            this.tabExtended.ResumeLayout(false);
+            this.pDriver.ResumeLayout(false);
+            this.pDriver.PerformLayout();
+            this.tabTerminal.ResumeLayout(false);
+            this.tabTerminal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,27 +618,35 @@
         private MetroFramework.Controls.MetroTabPage tabControllers;
         private MetroFramework.Controls.MetroTabPage tabSettings;
         private MetroFramework.Controls.MetroLabel lblCopyrightAndVersionVlalue;
-        private MetroFramework.Controls.MetroTabPage tabExtended;
-        private MetroFramework.Controls.MetroButton btnDownloadFirmwareStandart;
+        private MetroFramework.Controls.MetroButton btnDownloadFirmwarePort;
         private MetroFramework.Controls.MetroTextBox tbFirmwarePath;
         private MetroFramework.Controls.MetroComboBox cbFirmware;
-        private MetroFramework.Controls.MetroComboBox cbComPort;
-        private MetroFramework.Controls.MetroPanel pComPortStandart;
+        private MetroFramework.Controls.MetroComboBox cbComPorts;
+        private MetroFramework.Controls.MetroPanel pFirmware;
         private MetroFramework.Controls.MetroLabel lblFirmwarePathDisc;
         private MetroFramework.Controls.MetroLabel lblFirmwareDisc;
         private MetroFramework.Controls.MetroLabel lblComPortDisc;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroPanel pBootloader;
         private MetroFramework.Controls.MetroLabel lblProgrammersDisc;
-        private MetroFramework.Controls.MetroButton btnDownloadBootloaderStandart;
-        private MetroFramework.Controls.MetroComboBox cbProgrammersStandart;
+        private MetroFramework.Controls.MetroButton btnDownloadBootloaderProgrammer;
+        private MetroFramework.Controls.MetroComboBox cbProgrammers;
         private MetroFramework.Controls.MetroLabel lblDownloadStatusDisc;
         private MetroFramework.Controls.MetroLabel lblDownloadStatus;
         private MetroFramework.Controls.MetroLabel lblContollerTypeDisc;
-        private MetroFramework.Controls.MetroComboBox cbContollerType;
-        private MetroFramework.Controls.MetroLink clHelp;
+        private MetroFramework.Controls.MetroComboBox cbContollers;
         private MetroFramework.Controls.MetroButton btnInstallDriver;
         private MetroFramework.Controls.MetroLabel lblDriverTypeDisc;
         private MetroFramework.Controls.MetroComboBox cbDriverType;
+        private System.IO.Ports.SerialPort serialPort;
+        private System.Windows.Forms.Timer timerResetStatus;
+        private MetroFramework.Controls.MetroTabPage tabTerminal;
+        private MetroFramework.Controls.MetroLink clHelp;
+        private MetroFramework.Controls.MetroPanel pDriver;
+        private MetroFramework.Controls.MetroButton btnStartStopTerminal;
+        private MetroFramework.Controls.MetroComboBox cbComPortsTerminal;
+        private MetroFramework.Controls.MetroButton btnCleanTerminal;
+        private MetroFramework.Controls.MetroTextBox tbTerminal;
+        private MetroFramework.Controls.MetroComboBox cbComPortBaudrate;
     }
 }
 
