@@ -33,6 +33,7 @@
             this.tpControllers = new MetroFramework.Controls.MetroTabControl();
             this.tabControllers = new MetroFramework.Controls.MetroTabPage();
             this.pBootloader = new MetroFramework.Controls.MetroPanel();
+            this.chbUseATmega328pb = new MetroFramework.Controls.MetroCheckBox();
             this.btnDownloadBootloaderProgrammer = new MetroFramework.Controls.MetroButton();
             this.cbProgrammers = new MetroFramework.Controls.MetroComboBox();
             this.lblProgrammersDisc = new MetroFramework.Controls.MetroLabel();
@@ -81,9 +82,10 @@
             this.tpControllers.Location = new System.Drawing.Point(20, 60);
             this.tpControllers.Name = "tpControllers";
             this.tpControllers.SelectedIndex = 0;
-            this.tpControllers.Size = new System.Drawing.Size(346, 318);
+            this.tpControllers.Size = new System.Drawing.Size(346, 348);
             this.tpControllers.TabIndex = 0;
             this.tpControllers.UseSelectable = true;
+            this.tpControllers.SelectedIndexChanged += new System.EventHandler(this.tpControllers_SelectedIndexChanged);
             // 
             // tabControllers
             // 
@@ -94,7 +96,7 @@
             this.tabControllers.HorizontalScrollbarSize = 10;
             this.tabControllers.Location = new System.Drawing.Point(4, 38);
             this.tabControllers.Name = "tabControllers";
-            this.tabControllers.Size = new System.Drawing.Size(338, 276);
+            this.tabControllers.Size = new System.Drawing.Size(338, 306);
             this.tabControllers.TabIndex = 0;
             this.tabControllers.Text = "Котроллеры";
             this.tabControllers.VerticalScrollbarBarColor = true;
@@ -103,6 +105,7 @@
             // 
             // pBootloader
             // 
+            this.pBootloader.Controls.Add(this.chbUseATmega328pb);
             this.pBootloader.Controls.Add(this.btnDownloadBootloaderProgrammer);
             this.pBootloader.Controls.Add(this.cbProgrammers);
             this.pBootloader.Controls.Add(this.lblProgrammersDisc);
@@ -113,18 +116,30 @@
             this.pBootloader.Location = new System.Drawing.Point(0, 193);
             this.pBootloader.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.pBootloader.Name = "pBootloader";
-            this.pBootloader.Size = new System.Drawing.Size(338, 80);
+            this.pBootloader.Size = new System.Drawing.Size(338, 110);
             this.pBootloader.TabIndex = 66;
             this.pBootloader.VerticalScrollbarBarColor = true;
             this.pBootloader.VerticalScrollbarHighlightOnWheel = false;
             this.pBootloader.VerticalScrollbarSize = 10;
+            // 
+            // chbUseATmega328pb
+            // 
+            this.chbUseATmega328pb.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chbUseATmega328pb.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chbUseATmega328pb.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chbUseATmega328pb.Location = new System.Drawing.Point(5, 47);
+            this.chbUseATmega328pb.Name = "chbUseATmega328pb";
+            this.chbUseATmega328pb.Size = new System.Drawing.Size(251, 24);
+            this.chbUseATmega328pb.TabIndex = 69;
+            this.chbUseATmega328pb.Text = "Используется ATmega328PB";
+            this.chbUseATmega328pb.UseSelectable = true;
             // 
             // btnDownloadBootloaderProgrammer
             // 
             this.btnDownloadBootloaderProgrammer.AutoSize = true;
             this.btnDownloadBootloaderProgrammer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnDownloadBootloaderProgrammer.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnDownloadBootloaderProgrammer.Location = new System.Drawing.Point(0, 51);
+            this.btnDownloadBootloaderProgrammer.Location = new System.Drawing.Point(0, 81);
             this.btnDownloadBootloaderProgrammer.Margin = new System.Windows.Forms.Padding(5);
             this.btnDownloadBootloaderProgrammer.Name = "btnDownloadBootloaderProgrammer";
             this.btnDownloadBootloaderProgrammer.Size = new System.Drawing.Size(338, 29);
@@ -336,7 +351,7 @@
             this.tabSettings.HorizontalScrollbarSize = 10;
             this.tabSettings.Location = new System.Drawing.Point(4, 38);
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Size = new System.Drawing.Size(338, 276);
+            this.tabSettings.Size = new System.Drawing.Size(338, 306);
             this.tabSettings.TabIndex = 1;
             this.tabSettings.Text = "Настройки";
             this.tabSettings.VerticalScrollbarBarColor = true;
@@ -409,7 +424,7 @@
             // clHelp
             // 
             this.clHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.clHelp.Location = new System.Drawing.Point(116, 138);
+            this.clHelp.Location = new System.Drawing.Point(116, 168);
             this.clHelp.Name = "clHelp";
             this.clHelp.Size = new System.Drawing.Size(60, 19);
             this.clHelp.TabIndex = 72;
@@ -428,7 +443,7 @@
             this.tabTerminal.HorizontalScrollbarSize = 10;
             this.tabTerminal.Location = new System.Drawing.Point(4, 38);
             this.tabTerminal.Name = "tabTerminal";
-            this.tabTerminal.Size = new System.Drawing.Size(338, 276);
+            this.tabTerminal.Size = new System.Drawing.Size(338, 306);
             this.tabTerminal.TabIndex = 3;
             this.tabTerminal.Text = "Терминал";
             this.tabTerminal.VerticalScrollbarBarColor = true;
@@ -437,13 +452,14 @@
             // 
             // cbComPortBaudrate
             // 
+            this.cbComPortBaudrate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbComPortBaudrate.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
             this.cbComPortBaudrate.FormattingEnabled = true;
             this.cbComPortBaudrate.ItemHeight = 23;
             this.cbComPortBaudrate.Items.AddRange(new object[] {
             "9600",
             "115200"});
-            this.cbComPortBaudrate.Location = new System.Drawing.Point(100, 246);
+            this.cbComPortBaudrate.Location = new System.Drawing.Point(100, 276);
             this.cbComPortBaudrate.Margin = new System.Windows.Forms.Padding(5);
             this.cbComPortBaudrate.Name = "cbComPortBaudrate";
             this.cbComPortBaudrate.PromptText = "Скорость";
@@ -451,6 +467,7 @@
             this.cbComPortBaudrate.Style = MetroFramework.MetroColorStyle.Blue;
             this.cbComPortBaudrate.TabIndex = 64;
             this.cbComPortBaudrate.UseSelectable = true;
+            this.cbComPortBaudrate.SelectedIndexChanged += new System.EventHandler(this.cbComPortBaudrate_SelectedIndexChanged);
             // 
             // tbTerminal
             // 
@@ -458,9 +475,9 @@
             // 
             // 
             this.tbTerminal.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.tbTerminal.CustomButton.Location = new System.Drawing.Point(104, 2);
+            this.tbTerminal.CustomButton.Location = new System.Drawing.Point(74, 2);
             this.tbTerminal.CustomButton.Name = "";
-            this.tbTerminal.CustomButton.Size = new System.Drawing.Size(231, 231);
+            this.tbTerminal.CustomButton.Size = new System.Drawing.Size(261, 261);
             this.tbTerminal.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tbTerminal.CustomButton.TabIndex = 1;
             this.tbTerminal.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -481,7 +498,7 @@
             this.tbTerminal.SelectionLength = 0;
             this.tbTerminal.SelectionStart = 0;
             this.tbTerminal.ShortcutsEnabled = true;
-            this.tbTerminal.Size = new System.Drawing.Size(338, 236);
+            this.tbTerminal.Size = new System.Drawing.Size(338, 266);
             this.tbTerminal.Style = MetroFramework.MetroColorStyle.Blue;
             this.tbTerminal.TabIndex = 63;
             this.tbTerminal.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -491,9 +508,10 @@
             // 
             // btnCleanTerminal
             // 
+            this.btnCleanTerminal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCleanTerminal.AutoSize = true;
             this.btnCleanTerminal.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnCleanTerminal.Location = new System.Drawing.Point(268, 246);
+            this.btnCleanTerminal.Location = new System.Drawing.Point(268, 276);
             this.btnCleanTerminal.Margin = new System.Windows.Forms.Padding(5);
             this.btnCleanTerminal.Name = "btnCleanTerminal";
             this.btnCleanTerminal.Size = new System.Drawing.Size(70, 29);
@@ -506,9 +524,10 @@
             // 
             // btnStartStopTerminal
             // 
+            this.btnStartStopTerminal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnStartStopTerminal.AutoSize = true;
             this.btnStartStopTerminal.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnStartStopTerminal.Location = new System.Drawing.Point(190, 246);
+            this.btnStartStopTerminal.Location = new System.Drawing.Point(190, 276);
             this.btnStartStopTerminal.Margin = new System.Windows.Forms.Padding(5);
             this.btnStartStopTerminal.Name = "btnStartStopTerminal";
             this.btnStartStopTerminal.Size = new System.Drawing.Size(65, 29);
@@ -521,10 +540,11 @@
             // 
             // cbComPortsTerminal
             // 
+            this.cbComPortsTerminal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbComPortsTerminal.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
             this.cbComPortsTerminal.FormattingEnabled = true;
             this.cbComPortsTerminal.ItemHeight = 23;
-            this.cbComPortsTerminal.Location = new System.Drawing.Point(0, 246);
+            this.cbComPortsTerminal.Location = new System.Drawing.Point(0, 276);
             this.cbComPortsTerminal.Margin = new System.Windows.Forms.Padding(5);
             this.cbComPortsTerminal.Name = "cbComPortsTerminal";
             this.cbComPortsTerminal.PromptText = "Порт";
@@ -537,7 +557,7 @@
             // 
             this.lblCopyrightAndVersionVlalue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCopyrightAndVersionVlalue.AutoSize = true;
-            this.lblCopyrightAndVersionVlalue.Location = new System.Drawing.Point(3, 377);
+            this.lblCopyrightAndVersionVlalue.Location = new System.Drawing.Point(3, 407);
             this.lblCopyrightAndVersionVlalue.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.lblCopyrightAndVersionVlalue.Name = "lblCopyrightAndVersionVlalue";
             this.lblCopyrightAndVersionVlalue.Size = new System.Drawing.Size(162, 19);
@@ -549,7 +569,7 @@
             // 
             this.lblDownloadStatusDisc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblDownloadStatusDisc.AutoSize = true;
-            this.lblDownloadStatusDisc.Location = new System.Drawing.Point(230, 377);
+            this.lblDownloadStatusDisc.Location = new System.Drawing.Point(230, 407);
             this.lblDownloadStatusDisc.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.lblDownloadStatusDisc.Name = "lblDownloadStatusDisc";
             this.lblDownloadStatusDisc.Size = new System.Drawing.Size(50, 19);
@@ -561,7 +581,7 @@
             // 
             this.lblDownloadStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblDownloadStatus.AutoSize = true;
-            this.lblDownloadStatus.Location = new System.Drawing.Point(280, 377);
+            this.lblDownloadStatus.Location = new System.Drawing.Point(280, 407);
             this.lblDownloadStatus.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.lblDownloadStatus.Name = "lblDownloadStatus";
             this.lblDownloadStatus.Size = new System.Drawing.Size(38, 19);
@@ -577,14 +597,14 @@
             // 
             // timerResetStatus
             // 
-            this.timerResetStatus.Interval = 10000;
+            this.timerResetStatus.Interval = 6000;
             this.timerResetStatus.Tick += new System.EventHandler(this.timerResetStatus_Tick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 398);
+            this.ClientSize = new System.Drawing.Size(386, 428);
             this.Controls.Add(this.lblDownloadStatus);
             this.Controls.Add(this.lblDownloadStatusDisc);
             this.Controls.Add(this.lblCopyrightAndVersionVlalue);
@@ -647,6 +667,7 @@
         private MetroFramework.Controls.MetroButton btnCleanTerminal;
         private MetroFramework.Controls.MetroTextBox tbTerminal;
         private MetroFramework.Controls.MetroComboBox cbComPortBaudrate;
+        private MetroFramework.Controls.MetroCheckBox chbUseATmega328pb;
     }
 }
 

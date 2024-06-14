@@ -178,7 +178,7 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на firmwares\hyper\hl_hyper_beeper_check.hex.
         /// </summary>
         internal static string FIRMWARE_BEEPER_HYPER {
             get {
@@ -187,7 +187,7 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_beeper_check.hex.
         /// </summary>
         internal static string FIRMWARE_BEEPER_MINI {
             get {
@@ -196,7 +196,7 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на firmwares\standart\hl_standart_beeper_check.hex.
         /// </summary>
         internal static string FIRMWARE_BEEPER_STANDART {
             get {
@@ -205,11 +205,47 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на firmwares\standart\hl_standart_bluetooth_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_BLUETOOTH_STANDART {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BLUETOOTH_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_button_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_BUTTON_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BUTTON_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\standart\hl_standart_button_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_BUTTON_STANDART {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BUTTON_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\hyper\hl_hyper_buttons_check.hex.
         /// </summary>
         internal static string FIRMWARE_BUTTONS_HYPER {
             get {
                 return ResourceManager.GetString("FIRMWARE_BUTTONS_HYPER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\standart\hl_standart_color_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_COLOR_STANDART {
+            get {
+                return ResourceManager.GetString("FIRMWARE_COLOR_STANDART", resourceCulture);
             }
         }
         
@@ -241,7 +277,7 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на firmwares\standart\hl_standart_demo_check.hex.
         /// </summary>
         internal static string FIRMWARE_DEMO_STANDART {
             get {
@@ -250,11 +286,47 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_ir_receiver_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_IR_RECEIVER_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_IR_RECEIVER_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\standart\hl_standart_ir_receiver_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_IR_RECEIVER_STANDART {
+            get {
+                return ResourceManager.GetString("FIRMWARE_IR_RECEIVER_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\hyper\hl_hyper_leds_check.hex.
         /// </summary>
         internal static string FIRMWARE_LEDS_HYPER {
             get {
                 return ResourceManager.GetString("FIRMWARE_LEDS_HYPER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_light_check.ino.hex.
+        /// </summary>
+        internal static string FIRMWARE_LIGHT_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_LIGHT_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\standart\hl_standart_double_line_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_LINE_STANDART {
+            get {
+                return ResourceManager.GetString("FIRMWARE_LINE_STANDART", resourceCulture);
             }
         }
         
@@ -268,7 +340,7 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на firmwares\hyper\hl_hyper_motors_check.hex.
         /// </summary>
         internal static string FIRMWARE_MOTORS_HYPER {
             get {
@@ -277,7 +349,7 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_motors_check.hex.
         /// </summary>
         internal static string FIRMWARE_MOTORS_MINI {
             get {
@@ -286,7 +358,7 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на firmwares\standart\hl_standart_motors_check.hex.
         /// </summary>
         internal static string FIRMWARE_MOTORS_STANDART {
             get {
@@ -295,7 +367,7 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_rgb_check.hex.
         /// </summary>
         internal static string FIRMWARE_RGB_MINI {
             get {
@@ -313,7 +385,7 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на firmwares\hyper\hl_hyper_servo_check.hex.
         /// </summary>
         internal static string FIRMWARE_SERVO_HYPER {
             get {
@@ -322,7 +394,7 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_servo_check.ino.hex.
         /// </summary>
         internal static string FIRMWARE_SERVO_MINI {
             get {
@@ -331,11 +403,20 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на firmwares\standart\hl_standart_servo_check.hex.
         /// </summary>
         internal static string FIRMWARE_SERVO_STANDART {
             get {
                 return ResourceManager.GetString("FIRMWARE_SERVO_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\standart\hl_standart_sonar_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_SONAR_STANDART {
+            get {
+                return ResourceManager.GetString("FIRMWARE_SONAR_STANDART", resourceCulture);
             }
         }
         

@@ -169,16 +169,28 @@
     <value />
   </data>
   <data name="FIRMWARE_BEEPER_HYPER" xml:space="preserve">
-    <value />
+    <value>firmwares\hyper\hl_hyper_beeper_check.hex</value>
   </data>
   <data name="FIRMWARE_BEEPER_MINI" xml:space="preserve">
-    <value />
+    <value>firmwares\mini\hl_mini_beeper_check.hex</value>
   </data>
   <data name="FIRMWARE_BEEPER_STANDART" xml:space="preserve">
-    <value />
+    <value>firmwares\standart\hl_standart_beeper_check.hex</value>
+  </data>
+  <data name="FIRMWARE_BLUETOOTH_STANDART" xml:space="preserve">
+    <value>firmwares\standart\hl_standart_bluetooth_check.hex</value>
   </data>
   <data name="FIRMWARE_BUTTONS_HYPER" xml:space="preserve">
-    <value />
+    <value>firmwares\hyper\hl_hyper_buttons_check.hex</value>
+  </data>
+  <data name="FIRMWARE_BUTTON_MINI" xml:space="preserve">
+    <value>firmwares\mini\hl_mini_button_check.hex</value>
+  </data>
+  <data name="FIRMWARE_BUTTON_STANDART" xml:space="preserve">
+    <value>firmwares\standart\hl_standart_button_check.hex</value>
+  </data>
+  <data name="FIRMWARE_COLOR_STANDART" xml:space="preserve">
+    <value>firmwares\standart\hl_standart_color_check.hex</value>
   </data>
   <data name="FIRMWARE_DEMO_CLASSIC" xml:space="preserve">
     <value />
@@ -190,37 +202,52 @@
     <value />
   </data>
   <data name="FIRMWARE_DEMO_STANDART" xml:space="preserve">
-    <value />
+    <value>firmwares\standart\hl_standart_demo_check.hex</value>
+  </data>
+  <data name="FIRMWARE_IR_RECEIVER_MINI" xml:space="preserve">
+    <value>firmwares\mini\hl_mini_ir_receiver_check.hex</value>
+  </data>
+  <data name="FIRMWARE_IR_RECEIVER_STANDART" xml:space="preserve">
+    <value>firmwares\standart\hl_standart_ir_receiver_check.hex</value>
   </data>
   <data name="FIRMWARE_LEDS_HYPER" xml:space="preserve">
-    <value />
+    <value>firmwares\hyper\hl_hyper_leds_check.hex</value>
+  </data>
+  <data name="FIRMWARE_LIGHT_MINI" xml:space="preserve">
+    <value>firmwares\mini\hl_mini_light_check.ino.hex</value>
+  </data>
+  <data name="FIRMWARE_LINE_STANDART" xml:space="preserve">
+    <value>firmwares\standart\hl_standart_double_line_check.hex</value>
   </data>
   <data name="FIRMWARE_MOTORS_CLASSIC" xml:space="preserve">
     <value />
   </data>
   <data name="FIRMWARE_MOTORS_HYPER" xml:space="preserve">
-    <value />
+    <value>firmwares\hyper\hl_hyper_motors_check.hex</value>
   </data>
   <data name="FIRMWARE_MOTORS_MINI" xml:space="preserve">
-    <value />
+    <value>firmwares\mini\hl_mini_motors_check.hex</value>
   </data>
   <data name="FIRMWARE_MOTORS_STANDART" xml:space="preserve">
-    <value />
+    <value>firmwares\standart\hl_standart_motors_check.hex</value>
   </data>
   <data name="FIRMWARE_RGB_MINI" xml:space="preserve">
-    <value />
+    <value>firmwares\mini\hl_mini_rgb_check.hex</value>
   </data>
   <data name="FIRMWARE_SERVO_CLASSIC" xml:space="preserve">
     <value />
   </data>
   <data name="FIRMWARE_SERVO_HYPER" xml:space="preserve">
-    <value />
+    <value>firmwares\hyper\hl_hyper_servo_check.hex</value>
   </data>
   <data name="FIRMWARE_SERVO_MINI" xml:space="preserve">
-    <value />
+    <value>firmwares\mini\hl_mini_servo_check.ino.hex</value>
   </data>
   <data name="FIRMWARE_SERVO_STANDART" xml:space="preserve">
-    <value />
+    <value>firmwares\standart\hl_standart_servo_check.hex</value>
+  </data>
+  <data name="FIRMWARE_SONAR_STANDART" xml:space="preserve">
+    <value>firmwares\standart\hl_standart_sonar_check.hex</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="HL_Flash_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
