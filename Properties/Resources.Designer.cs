@@ -268,7 +268,7 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_demo_check.hex.
         /// </summary>
         internal static string FIRMWARE_DEMO_MINI {
             get {
@@ -282,6 +282,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_DEMO_STANDART {
             get {
                 return ResourceManager.GetString("FIRMWARE_DEMO_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_gyro_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_GYRO_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_GYRO_MINI", resourceCulture);
             }
         }
         
@@ -304,6 +313,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_ir_transmitter_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_IR_TRANSMITTER_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_IR_TRANSMITTER_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\hyper\hl_hyper_leds_check.hex.
         /// </summary>
         internal static string FIRMWARE_LEDS_HYPER {
@@ -318,6 +336,24 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_LIGHT_MINI {
             get {
                 return ResourceManager.GetString("FIRMWARE_LIGHT_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_lim_button_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_LIM_BUTTON_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_LIM_BUTTON_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_line_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_LINE_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_LINE_MINI", resourceCulture);
             }
         }
         
@@ -367,6 +403,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_rgb_led_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_RGB_LED_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_RGB_LED_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_rgb_check.hex.
         /// </summary>
         internal static string FIRMWARE_RGB_MINI {
@@ -408,6 +453,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_SERVO_STANDART {
             get {
                 return ResourceManager.GetString("FIRMWARE_SERVO_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_sonar_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_SONAR_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_SONAR_MINI", resourceCulture);
             }
         }
         

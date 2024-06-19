@@ -300,6 +300,30 @@ namespace Hobots_L_Flasher
                         {
                             cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_IR_RECEIVER_MINI + ":i -D";
                         }
+                        else if (cbFirmware.SelectedIndex == 8) // ИК передатчик
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_IR_TRANSMITTER_MINI + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 9) // Сонар
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_SONAR_MINI + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 10) // Датчик линии
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_LINE_MINI + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 11) // Концевой прерыватель
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_LIM_BUTTON_MINI + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 12) // Концевой прерыватель
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_RGB_LED_MINI + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 13) // Гироскоп
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_GYRO_MINI + ":i -D";
+                        }
                     }
                 }
 
@@ -317,7 +341,10 @@ namespace Hobots_L_Flasher
                     lblDownloadStatus.BackColor = Color.Tomato;
                 }
 
-                //MessageBox.Show(cli_response);
+                if (chbDebugInfoOn.Checked)
+                {
+                    MessageBox.Show(cli_response);
+                }
             }
             /* AVR ATmega2560 .hex */
             else if (cbContollers.SelectedIndex == 3) // Гипер
@@ -375,7 +402,10 @@ namespace Hobots_L_Flasher
                     lblDownloadStatus.BackColor = Color.Tomato;
                 }
 
-                //MessageBox.Show(cli_response);
+                if (chbDebugInfoOn.Checked)
+                {
+                    MessageBox.Show(cli_response);
+                }
             }
             /* STM32, ESP32 .bin */
             // ST-LINK_CLI -c SWD -ME -P firm.bin 0x8000000 -Rst -Run -NoPrompt -Q
@@ -441,7 +471,10 @@ namespace Hobots_L_Flasher
                     lblDownloadStatus.BackColor = Color.Tomato;
                 }
 
-                //MessageBox.Show(cli_response);
+                if (chbDebugInfoOn.Checked)
+                {
+                    MessageBox.Show(cli_response);
+                }
             }
             else if (cbProgrammers.SelectedIndex == 1) // STLINK
             {
@@ -461,6 +494,8 @@ namespace Hobots_L_Flasher
 
             timerResetStatus.Enabled = true;
             timerResetStatus.Start();
+
+            
         }
 
         private void btnInstallDriver_Click(object sender, EventArgs e)
@@ -564,7 +599,7 @@ namespace Hobots_L_Flasher
         {
             string[] firmware_standart = { "Демо", "Звук", "Моторы", "Сервопривод", "Сонар", "Кнопка", "ИК приёмник", "Датчик линии", "Датчик цвета", "Bluetooth" };
             string[] firmware_classic = { "Демо", "Звук", "Моторы", "Сервопривод" };
-            string[] firmware_mini = { "Демо", "Звук", "Моторы", "Сервопривод", "RGB", "Кнопка", "Освещение", "ИК приёмник" };
+            string[] firmware_mini = { "Демо", "Звук", "Моторы", "Сервопривод", "RGB", "Кнопка", "Освещение", "ИК приёмник", "ИК передатчик", "Сонар", "Датчик линии", "Концевой прерыватель", "RGB модуль", "Гироскоп" };
             string[] firmware_hyper = { "Демо", "Звук", "Моторы", "Сервопривод", "Мигалка", "Кнопки" };
 
             cbFirmware.Items.Clear();

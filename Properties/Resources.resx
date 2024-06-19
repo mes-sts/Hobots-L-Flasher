@@ -199,10 +199,13 @@
     <value />
   </data>
   <data name="FIRMWARE_DEMO_MINI" xml:space="preserve">
-    <value />
+    <value>firmwares\mini\hl_mini_demo_check.hex</value>
   </data>
   <data name="FIRMWARE_DEMO_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_demo_check.hex</value>
+  </data>
+  <data name="FIRMWARE_GYRO_MINI" xml:space="preserve">
+    <value>firmwares\mini\hl_mini_gyro_check.hex</value>
   </data>
   <data name="FIRMWARE_IR_RECEIVER_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_ir_receiver_check.hex</value>
@@ -210,11 +213,20 @@
   <data name="FIRMWARE_IR_RECEIVER_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_ir_receiver_check.hex</value>
   </data>
+  <data name="FIRMWARE_IR_TRANSMITTER_MINI" xml:space="preserve">
+    <value>firmwares\mini\hl_mini_ir_transmitter_check.hex</value>
+  </data>
   <data name="FIRMWARE_LEDS_HYPER" xml:space="preserve">
     <value>firmwares\hyper\hl_hyper_leds_check.hex</value>
   </data>
   <data name="FIRMWARE_LIGHT_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_light_check.ino.hex</value>
+  </data>
+  <data name="FIRMWARE_LIM_BUTTON_MINI" xml:space="preserve">
+    <value>firmwares\mini\hl_mini_lim_button_check.hex</value>
+  </data>
+  <data name="FIRMWARE_LINE_MINI" xml:space="preserve">
+    <value>firmwares\mini\hl_mini_line_check.hex</value>
   </data>
   <data name="FIRMWARE_LINE_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_double_line_check.hex</value>
@@ -231,6 +243,9 @@
   <data name="FIRMWARE_MOTORS_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_motors_check.hex</value>
   </data>
+  <data name="FIRMWARE_RGB_LED_MINI" xml:space="preserve">
+    <value>firmwares\mini\hl_mini_rgb_led_check.hex</value>
+  </data>
   <data name="FIRMWARE_RGB_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_rgb_check.hex</value>
   </data>
@@ -245,6 +260,9 @@
   </data>
   <data name="FIRMWARE_SERVO_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_servo_check.hex</value>
+  </data>
+  <data name="FIRMWARE_SONAR_MINI" xml:space="preserve">
+    <value>firmwares\mini\hl_mini_sonar_check.hex</value>
   </data>
   <data name="FIRMWARE_SONAR_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_sonar_check.hex</value>
