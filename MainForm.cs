@@ -188,6 +188,7 @@ namespace Hobots_L_Flasher
         }
         #endregion
 
+        // ЗАгрузка прощивко через порт
         private void btnDownloadFirmwarePort_Click(object sender, EventArgs e)
         {
             string cli_arguments = null;
@@ -312,7 +313,7 @@ namespace Hobots_L_Flasher
                         {
                             cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_LINE_MINI + ":i -D";
                         }
-                        else if (cbFirmware.SelectedIndex == 11) // Концевой прерыватель
+                        else if (cbFirmware.SelectedIndex == 11) // Концевик
                         {
                             cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_LIM_BUTTON_MINI + ":i -D";
                         }
@@ -498,6 +499,7 @@ namespace Hobots_L_Flasher
             
         }
 
+        // Установка драйверов
         private void btnInstallDriver_Click(object sender, EventArgs e)
         {
             if (cbDriverType.SelectedIndex == 0) // USBASP
@@ -512,7 +514,10 @@ namespace Hobots_L_Flasher
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    if (chbDebugInfoOn.Checked)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
             else if (cbDriverType.SelectedIndex == 1) // STLINK
@@ -536,7 +541,10 @@ namespace Hobots_L_Flasher
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    if (chbDebugInfoOn.Checked)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
             else if (cbDriverType.SelectedIndex == 2) // CH340
@@ -551,7 +559,10 @@ namespace Hobots_L_Flasher
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    if (chbDebugInfoOn.Checked)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
             else if (cbDriverType.SelectedIndex == 3) // FT232
@@ -566,7 +577,10 @@ namespace Hobots_L_Flasher
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    if (chbDebugInfoOn.Checked)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
             else if (cbDriverType.SelectedIndex == 4) // CP2102
@@ -590,16 +604,20 @@ namespace Hobots_L_Flasher
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    if (chbDebugInfoOn.Checked)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
         }
 
+        // Замена списка прошивок при изменении типа контроллера
         private void cbContollers_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] firmware_standart = { "Демо", "Звук", "Моторы", "Сервопривод", "Сонар", "Кнопка", "ИК приёмник", "Датчик линии", "Датчик цвета", "Bluetooth" };
-            string[] firmware_classic = { "Демо", "Звук", "Моторы", "Сервопривод" };
-            string[] firmware_mini = { "Демо", "Звук", "Моторы", "Сервопривод", "RGB", "Кнопка", "Освещение", "ИК приёмник", "ИК передатчик", "Сонар", "Датчик линии", "Концевой прерыватель", "RGB модуль", "Гироскоп" };
+            string[] firmware_classic = { "Демо", "Звук", "Моторы", "Сервопривод" }; //  todo
+            string[] firmware_mini = { "Демо", "Звук", "Моторы", "Сервопривод", "RGB", "Кнопка", "Освещение", "ИК приёмник", "ИК передатчик", "Сонар", "Датчик линии", "Концевик", "RGB модуль", "Гироскоп" };
             string[] firmware_hyper = { "Демо", "Звук", "Моторы", "Сервопривод", "Мигалка", "Кнопки" };
 
             cbFirmware.Items.Clear();
@@ -622,12 +640,13 @@ namespace Hobots_L_Flasher
             else if (cbContollers.SelectedIndex == 3) // Гипер
             {
                 cbFirmware.Items.AddRange(firmware_hyper);
-                cbComPortBaudrate.SelectedIndex = 1; //115200
+                cbComPortBaudrate.SelectedIndex = 1; // 115200
             }
 
             cbFirmware.SelectedIndex = 0;
         }
 
+        // Запуск / закрытие порта кнопкой терминала
         private void btnStartStopTerminal_Click(object sender, EventArgs e)
         {
             if (serialPort.IsOpen)
@@ -688,6 +707,18 @@ namespace Hobots_L_Flasher
         private void cbComPortBaudrate_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnStartStopTerminal.PerformClick();
+        }
+
+        private void cbProgrammers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbProgrammers.SelectedIndex != 0)
+            {
+                chbUseATmega328pb.Enabled = false;
+            }
+            else
+            {
+                chbUseATmega328pb.Enabled = true;
+            }
         }
     }
 }

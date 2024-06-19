@@ -65,6 +65,7 @@
             this.lblDownloadStatus = new MetroFramework.Controls.MetroLabel();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.timerResetStatus = new System.Windows.Forms.Timer(this.components);
+            this.pOther = new MetroFramework.Controls.MetroPanel();
             this.tpControllers.SuspendLayout();
             this.tabControllers.SuspendLayout();
             this.pBootloader.SuspendLayout();
@@ -72,6 +73,7 @@
             this.tabSettings.SuspendLayout();
             this.pDriver.SuspendLayout();
             this.tabTerminal.SuspendLayout();
+            this.pOther.SuspendLayout();
             this.SuspendLayout();
             // 
             // tpControllers
@@ -166,6 +168,7 @@
             this.cbProgrammers.Style = MetroFramework.MetroColorStyle.Blue;
             this.cbProgrammers.TabIndex = 67;
             this.cbProgrammers.UseSelectable = true;
+            this.cbProgrammers.SelectedIndexChanged += new System.EventHandler(this.cbProgrammers_SelectedIndexChanged);
             // 
             // lblProgrammersDisc
             // 
@@ -318,9 +321,11 @@
             // 
             // cbFirmware
             // 
-            this.cbFirmware.DropDownWidth = 155;
+            this.cbFirmware.DropDownHeight = 150;
+            this.cbFirmware.DropDownWidth = 121;
             this.cbFirmware.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
             this.cbFirmware.FormattingEnabled = true;
+            this.cbFirmware.IntegralHeight = false;
             this.cbFirmware.ItemHeight = 23;
             this.cbFirmware.Location = new System.Drawing.Point(206, 83);
             this.cbFirmware.Margin = new System.Windows.Forms.Padding(5);
@@ -347,9 +352,8 @@
             // 
             // tabSettings
             // 
-            this.tabSettings.Controls.Add(this.chbDebugInfoOn);
+            this.tabSettings.Controls.Add(this.pOther);
             this.tabSettings.Controls.Add(this.pDriver);
-            this.tabSettings.Controls.Add(this.clHelp);
             this.tabSettings.HorizontalScrollbarBarColor = true;
             this.tabSettings.HorizontalScrollbarHighlightOnWheel = false;
             this.tabSettings.HorizontalScrollbarSize = 10;
@@ -365,11 +369,12 @@
             // chbDebugInfoOn
             // 
             this.chbDebugInfoOn.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chbDebugInfoOn.Dock = System.Windows.Forms.DockStyle.Top;
             this.chbDebugInfoOn.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chbDebugInfoOn.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
-            this.chbDebugInfoOn.Location = new System.Drawing.Point(0, 93);
+            this.chbDebugInfoOn.Location = new System.Drawing.Point(3, 3);
             this.chbDebugInfoOn.Name = "chbDebugInfoOn";
-            this.chbDebugInfoOn.Size = new System.Drawing.Size(338, 24);
+            this.chbDebugInfoOn.Size = new System.Drawing.Size(332, 24);
             this.chbDebugInfoOn.TabIndex = 74;
             this.chbDebugInfoOn.Text = "Включить вывод информации об отладке";
             this.chbDebugInfoOn.UseSelectable = true;
@@ -393,7 +398,7 @@
             // 
             // lblDriverTypeDisc
             // 
-            this.lblDriverTypeDisc.Location = new System.Drawing.Point(5, 5);
+            this.lblDriverTypeDisc.Location = new System.Drawing.Point(3, 5);
             this.lblDriverTypeDisc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblDriverTypeDisc.Name = "lblDriverTypeDisc";
             this.lblDriverTypeDisc.Size = new System.Drawing.Size(191, 29);
@@ -439,12 +444,12 @@
             // 
             // clHelp
             // 
-            this.clHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.clHelp.Location = new System.Drawing.Point(116, 168);
+            this.clHelp.Location = new System.Drawing.Point(3, 32);
             this.clHelp.Name = "clHelp";
             this.clHelp.Size = new System.Drawing.Size(60, 19);
             this.clHelp.TabIndex = 72;
             this.clHelp.Text = "Справка";
+            this.clHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clHelp.UseSelectable = true;
             // 
             // tabTerminal
@@ -613,8 +618,25 @@
             // 
             // timerResetStatus
             // 
-            this.timerResetStatus.Interval = 6000;
+            this.timerResetStatus.Interval = 2000;
             this.timerResetStatus.Tick += new System.EventHandler(this.timerResetStatus_Tick);
+            // 
+            // pOther
+            // 
+            this.pOther.Controls.Add(this.chbDebugInfoOn);
+            this.pOther.Controls.Add(this.clHelp);
+            this.pOther.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pOther.HorizontalScrollbarBarColor = true;
+            this.pOther.HorizontalScrollbarHighlightOnWheel = false;
+            this.pOther.HorizontalScrollbarSize = 10;
+            this.pOther.Location = new System.Drawing.Point(0, 75);
+            this.pOther.Name = "pOther";
+            this.pOther.Padding = new System.Windows.Forms.Padding(3);
+            this.pOther.Size = new System.Drawing.Size(338, 57);
+            this.pOther.TabIndex = 75;
+            this.pOther.VerticalScrollbarBarColor = true;
+            this.pOther.VerticalScrollbarHighlightOnWheel = false;
+            this.pOther.VerticalScrollbarSize = 10;
             // 
             // MainForm
             // 
@@ -643,6 +665,7 @@
             this.pDriver.PerformLayout();
             this.tabTerminal.ResumeLayout(false);
             this.tabTerminal.PerformLayout();
+            this.pOther.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -685,6 +708,7 @@
         private MetroFramework.Controls.MetroComboBox cbComPortBaudrate;
         private MetroFramework.Controls.MetroCheckBox chbUseATmega328pb;
         private MetroFramework.Controls.MetroCheckBox chbDebugInfoOn;
+        private MetroFramework.Controls.MetroPanel pOther;
     }
 }
 
