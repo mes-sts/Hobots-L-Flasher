@@ -331,6 +331,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_joystick_ps2_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_JOYSTICK_PS2_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_JOYSTICK_PS2_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\hyper\hl_hyper_leds_check.hex.
         /// </summary>
         internal static string FIRMWARE_LEDS_HYPER {

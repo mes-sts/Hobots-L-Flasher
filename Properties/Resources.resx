@@ -219,6 +219,9 @@
   <data name="FIRMWARE_IR_TRANSMITTER_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_ir_transmitter_check.hex</value>
   </data>
+  <data name="FIRMWARE_JOYSTICK_PS2_MINI" xml:space="preserve">
+    <value>firmwares\mini\hl_mini_joystick_ps2_check.hex</value>
+  </data>
   <data name="FIRMWARE_LEDS_HYPER" xml:space="preserve">
     <value>firmwares\hyper\hl_hyper_leds_check.hex</value>
   </data>
