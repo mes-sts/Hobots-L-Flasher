@@ -204,6 +204,9 @@
   <data name="FIRMWARE_DEMO_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_demo_check.hex</value>
   </data>
+  <data name="FIRMWARE_EXTERNAL_LIGHT_MINI" xml:space="preserve">
+    <value>firmwares\mini\hl_mini_external_light_check.hex</value>
+  </data>
   <data name="FIRMWARE_GYRO_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_gyro_check.hex</value>
   </data>
@@ -230,6 +233,9 @@
   </data>
   <data name="FIRMWARE_LINE_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_double_line_check.hex</value>
+  </data>
+  <data name="FIRMWARE_MICROPHONE_MINI" xml:space="preserve">
+    <value>firmwares\mini\hl_mini_microphone_check.hex</value>
   </data>
   <data name="FIRMWARE_MOTORS_CLASSIC" xml:space="preserve">
     <value />

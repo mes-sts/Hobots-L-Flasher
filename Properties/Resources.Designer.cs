@@ -286,6 +286,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_external_light_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_EXTERNAL_LIGHT_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_EXTERNAL_LIGHT_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_gyro_check.hex.
         /// </summary>
         internal static string FIRMWARE_GYRO_MINI {
@@ -363,6 +372,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_LINE_STANDART {
             get {
                 return ResourceManager.GetString("FIRMWARE_LINE_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_microphone_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_MICROPHONE_MINI {
+            get {
+                return ResourceManager.GetString("FIRMWARE_MICROPHONE_MINI", resourceCulture);
             }
         }
         

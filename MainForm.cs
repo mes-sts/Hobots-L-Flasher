@@ -325,6 +325,14 @@ namespace Hobots_L_Flasher
                         {
                             cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_GYRO_MINI + ":i -D";
                         }
+                        else if (cbFirmware.SelectedIndex == 14) // Датчик света
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_EXTERNAL_LIGHT_MINI + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 15) // Микрофон
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_MICROPHONE_MINI + ":i -D";
+                        }
                     }
                 }
 
@@ -617,7 +625,7 @@ namespace Hobots_L_Flasher
         {
             string[] firmware_standart = { "Демо", "Звук", "Моторы", "Сервопривод", "Сонар", "Кнопка", "ИК приёмник", "Датчик линии", "Датчик цвета", "Bluetooth" };
             string[] firmware_classic = { "Демо", "Звук", "Моторы", "Сервопривод" }; //  todo
-            string[] firmware_mini = { "Демо", "Звук", "Моторы", "Сервопривод", "RGB", "Кнопка", "Освещение", "ИК приёмник", "ИК передатчик", "Сонар", "Датчик линии", "Концевик", "RGB модуль", "Гироскоп" };
+            string[] firmware_mini = { "Демо", "Звук", "Моторы", "Сервопривод", "RGB", "Кнопка", "Освещение", "ИК приёмник", "ИК передатчик", "Сонар", "Датчик линии", "Концевик", "RGB модуль", "Гироскоп", "Датчик света", "Микрофон" };
             string[] firmware_hyper = { "Демо", "Звук", "Моторы", "Сервопривод", "Мигалка", "Кнопки" };
 
             cbFirmware.Items.Clear();
