@@ -48,12 +48,13 @@
             this.cbFirmware = new MetroFramework.Controls.MetroComboBox();
             this.cbComPorts = new MetroFramework.Controls.MetroComboBox();
             this.tabSettings = new MetroFramework.Controls.MetroTabPage();
+            this.pOther = new MetroFramework.Controls.MetroPanel();
             this.chbDebugInfoOn = new MetroFramework.Controls.MetroCheckBox();
+            this.clHelp = new MetroFramework.Controls.MetroLink();
             this.pDriver = new MetroFramework.Controls.MetroPanel();
             this.lblDriverTypeDisc = new MetroFramework.Controls.MetroLabel();
             this.btnInstallDriver = new MetroFramework.Controls.MetroButton();
             this.cbDriverType = new MetroFramework.Controls.MetroComboBox();
-            this.clHelp = new MetroFramework.Controls.MetroLink();
             this.tabTerminal = new MetroFramework.Controls.MetroTabPage();
             this.cbComPortBaudrate = new MetroFramework.Controls.MetroComboBox();
             this.tbTerminal = new MetroFramework.Controls.MetroTextBox();
@@ -65,22 +66,21 @@
             this.lblDownloadStatus = new MetroFramework.Controls.MetroLabel();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.timerResetStatus = new System.Windows.Forms.Timer(this.components);
-            this.pOther = new MetroFramework.Controls.MetroPanel();
             this.tpControllers.SuspendLayout();
             this.tabControllers.SuspendLayout();
             this.pBootloader.SuspendLayout();
             this.pFirmware.SuspendLayout();
             this.tabSettings.SuspendLayout();
+            this.pOther.SuspendLayout();
             this.pDriver.SuspendLayout();
             this.tabTerminal.SuspendLayout();
-            this.pOther.SuspendLayout();
             this.SuspendLayout();
             // 
             // tpControllers
             // 
             this.tpControllers.Controls.Add(this.tabControllers);
-            this.tpControllers.Controls.Add(this.tabSettings);
             this.tpControllers.Controls.Add(this.tabTerminal);
+            this.tpControllers.Controls.Add(this.tabSettings);
             this.tpControllers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tpControllers.Location = new System.Drawing.Point(20, 60);
             this.tpControllers.Name = "tpControllers";
@@ -366,6 +366,23 @@
             this.tabSettings.VerticalScrollbarHighlightOnWheel = false;
             this.tabSettings.VerticalScrollbarSize = 10;
             // 
+            // pOther
+            // 
+            this.pOther.Controls.Add(this.chbDebugInfoOn);
+            this.pOther.Controls.Add(this.clHelp);
+            this.pOther.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pOther.HorizontalScrollbarBarColor = true;
+            this.pOther.HorizontalScrollbarHighlightOnWheel = false;
+            this.pOther.HorizontalScrollbarSize = 10;
+            this.pOther.Location = new System.Drawing.Point(0, 75);
+            this.pOther.Name = "pOther";
+            this.pOther.Padding = new System.Windows.Forms.Padding(3);
+            this.pOther.Size = new System.Drawing.Size(338, 57);
+            this.pOther.TabIndex = 75;
+            this.pOther.VerticalScrollbarBarColor = true;
+            this.pOther.VerticalScrollbarHighlightOnWheel = false;
+            this.pOther.VerticalScrollbarSize = 10;
+            // 
             // chbDebugInfoOn
             // 
             this.chbDebugInfoOn.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -376,8 +393,18 @@
             this.chbDebugInfoOn.Name = "chbDebugInfoOn";
             this.chbDebugInfoOn.Size = new System.Drawing.Size(332, 24);
             this.chbDebugInfoOn.TabIndex = 74;
-            this.chbDebugInfoOn.Text = "Включить вывод информации об отладке";
+            this.chbDebugInfoOn.Text = "Включить вывод отладочной информации";
             this.chbDebugInfoOn.UseSelectable = true;
+            // 
+            // clHelp
+            // 
+            this.clHelp.Location = new System.Drawing.Point(3, 32);
+            this.clHelp.Name = "clHelp";
+            this.clHelp.Size = new System.Drawing.Size(60, 19);
+            this.clHelp.TabIndex = 72;
+            this.clHelp.Text = "Справка";
+            this.clHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.clHelp.UseSelectable = true;
             // 
             // pDriver
             // 
@@ -441,16 +468,6 @@
             this.cbDriverType.Style = MetroFramework.MetroColorStyle.Blue;
             this.cbDriverType.TabIndex = 70;
             this.cbDriverType.UseSelectable = true;
-            // 
-            // clHelp
-            // 
-            this.clHelp.Location = new System.Drawing.Point(3, 32);
-            this.clHelp.Name = "clHelp";
-            this.clHelp.Size = new System.Drawing.Size(60, 19);
-            this.clHelp.TabIndex = 72;
-            this.clHelp.Text = "Справка";
-            this.clHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.clHelp.UseSelectable = true;
             // 
             // tabTerminal
             // 
@@ -621,23 +638,6 @@
             this.timerResetStatus.Interval = 2000;
             this.timerResetStatus.Tick += new System.EventHandler(this.timerResetStatus_Tick);
             // 
-            // pOther
-            // 
-            this.pOther.Controls.Add(this.chbDebugInfoOn);
-            this.pOther.Controls.Add(this.clHelp);
-            this.pOther.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pOther.HorizontalScrollbarBarColor = true;
-            this.pOther.HorizontalScrollbarHighlightOnWheel = false;
-            this.pOther.HorizontalScrollbarSize = 10;
-            this.pOther.Location = new System.Drawing.Point(0, 75);
-            this.pOther.Name = "pOther";
-            this.pOther.Padding = new System.Windows.Forms.Padding(3);
-            this.pOther.Size = new System.Drawing.Size(338, 57);
-            this.pOther.TabIndex = 75;
-            this.pOther.VerticalScrollbarBarColor = true;
-            this.pOther.VerticalScrollbarHighlightOnWheel = false;
-            this.pOther.VerticalScrollbarSize = 10;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -661,11 +661,11 @@
             this.pFirmware.ResumeLayout(false);
             this.pFirmware.PerformLayout();
             this.tabSettings.ResumeLayout(false);
+            this.pOther.ResumeLayout(false);
             this.pDriver.ResumeLayout(false);
             this.pDriver.PerformLayout();
             this.tabTerminal.ResumeLayout(false);
             this.tabTerminal.PerformLayout();
-            this.pOther.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

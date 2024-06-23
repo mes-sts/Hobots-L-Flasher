@@ -176,7 +176,10 @@ namespace Hobots_L_Flasher
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                if (chbDebugInfoOn.Checked)
+                {
+                   //MessageBox.Show(ex.Message); 
+                }
             }
 
         }
