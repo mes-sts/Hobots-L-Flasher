@@ -34,10 +34,7 @@ namespace Hobots_L_Flasher
             InitializeComponent();
             PortsPreparation();
             lblCopyrightAndVersionVlalue.Text += Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            cbContollers.SelectedIndex = 0;
-            cbProgrammers.SelectedIndex = 0;
-            cbDriverType.SelectedIndex = 0;
-            cbComPortBaudrate.SelectedIndex = 0;
+            GetUserSettings();
         }
 
         #region ВСПОМОГАТЕЛЬНЫЕ ДЛЯ ОБРАБОТКИ ВНУТРЯНКИ
@@ -143,6 +140,31 @@ namespace Hobots_L_Flasher
             }
         }
 
+        // Чтение состояния элементов из файла конфигураций
+        private void GetUserSettings()
+        {
+            cbContollers.SelectedIndex = Settings.Default.Controllers;
+            cbFirmware.SelectedIndex = Settings.Default.Firmware;
+            cbProgrammers.SelectedIndex = Settings.Default.Programmers;
+            chbUseATmega328pb.Checked = Settings.Default.UseATmega328pb;
+            cbComPortBaudrate.SelectedIndex = Settings.Default.ComPortBaudrate;
+            cbDriverType.SelectedIndex = Settings.Default.DriverType;
+            chbDebugInfoOn.Checked = Settings.Default.DebugInfoOn;
+        }
+
+        // Сохранение состояния элементов в файл конфигураций
+        private void SaveUserSettings()
+        {
+            Settings.Default.Controllers = cbContollers.SelectedIndex;
+            Settings.Default.Firmware = cbFirmware.SelectedIndex;
+            Settings.Default.Programmers = cbProgrammers.SelectedIndex;
+            Settings.Default.UseATmega328pb = chbUseATmega328pb.Checked;
+            Settings.Default.ComPortBaudrate = cbComPortBaudrate.SelectedIndex;
+            Settings.Default.DriverType = cbDriverType.SelectedIndex;
+            Settings.Default.DebugInfoOn = chbDebugInfoOn.Checked;
+            Settings.Default.Save();
+        }
+
         // Таймер сброса поля статус в значение по умолчанию
         private void timerResetStatus_Tick(object sender, EventArgs e)
         {
@@ -165,6 +187,8 @@ namespace Hobots_L_Flasher
             {
                 serialPort.Close();
             }
+
+            SaveUserSettings();
         }
 
         // Событие приема данных из порта
@@ -191,7 +215,7 @@ namespace Hobots_L_Flasher
         }
         #endregion
 
-        // ЗАгрузка прощивко через порт
+        // Загрузка прошивки через порт
         private void btnDownloadFirmwarePort_Click(object sender, EventArgs e)
         {
             string cli_arguments = null;
@@ -719,20 +743,39 @@ namespace Hobots_L_Flasher
             }
         }
 
+        // Закрыть соединение терминала при смене скорости
         private void cbComPortBaudrate_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnStartStopTerminal.PerformClick();
         }
 
+        // Выбор контроллера ATmega328pb или ATmega328p только для подходящего программатора
         private void cbProgrammers_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbProgrammers.SelectedIndex != 0)
             {
                 chbUseATmega328pb.Enabled = false;
+                chbUseATmega328pb.Checked = false;
             }
             else
             {
                 chbUseATmega328pb.Enabled = true;
+            }
+        }
+
+        // Открытие файла справки приложением по умолчанию
+        private void clHelp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(Resources.HOBOTS_L_FLASHER_HELP_PATH);
+            }
+            catch (Exception ex)
+            {
+                if (chbDebugInfoOn.Checked)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

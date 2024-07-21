@@ -280,6 +280,9 @@
   <data name="HL_Flash_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\HL_Flash_Logo.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HOBOTS_L_FLASHER_HELP_PATH" xml:space="preserve">
+    <value>help\hobots-l-flasher-help.pdf</value>
+  </data>
   <data name="STLINK_EXE_PATH" xml:space="preserve">
     <value>utils\stlink\ST-LINK_CLI.exe</value>
     <comment>путь к st-link_cli.exe</comment>

@@ -512,6 +512,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на help\hobots-l-flasher-help.pdf.
+        /// </summary>
+        internal static string HOBOTS_L_FLASHER_HELP_PATH {
+            get {
+                return ResourceManager.GetString("HOBOTS_L_FLASHER_HELP_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на utils\stlink\ST-LINK_CLI.exe.
         /// </summary>
         internal static string STLINK_EXE_PATH {

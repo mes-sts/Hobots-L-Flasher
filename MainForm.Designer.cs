@@ -47,6 +47,12 @@
             this.lblComPortDisc = new MetroFramework.Controls.MetroLabel();
             this.cbFirmware = new MetroFramework.Controls.MetroComboBox();
             this.cbComPorts = new MetroFramework.Controls.MetroComboBox();
+            this.tabTerminal = new MetroFramework.Controls.MetroTabPage();
+            this.cbComPortBaudrate = new MetroFramework.Controls.MetroComboBox();
+            this.tbTerminal = new MetroFramework.Controls.MetroTextBox();
+            this.btnCleanTerminal = new MetroFramework.Controls.MetroButton();
+            this.btnStartStopTerminal = new MetroFramework.Controls.MetroButton();
+            this.cbComPortsTerminal = new MetroFramework.Controls.MetroComboBox();
             this.tabSettings = new MetroFramework.Controls.MetroTabPage();
             this.pOther = new MetroFramework.Controls.MetroPanel();
             this.chbDebugInfoOn = new MetroFramework.Controls.MetroCheckBox();
@@ -55,12 +61,6 @@
             this.lblDriverTypeDisc = new MetroFramework.Controls.MetroLabel();
             this.btnInstallDriver = new MetroFramework.Controls.MetroButton();
             this.cbDriverType = new MetroFramework.Controls.MetroComboBox();
-            this.tabTerminal = new MetroFramework.Controls.MetroTabPage();
-            this.cbComPortBaudrate = new MetroFramework.Controls.MetroComboBox();
-            this.tbTerminal = new MetroFramework.Controls.MetroTextBox();
-            this.btnCleanTerminal = new MetroFramework.Controls.MetroButton();
-            this.btnStartStopTerminal = new MetroFramework.Controls.MetroButton();
-            this.cbComPortsTerminal = new MetroFramework.Controls.MetroComboBox();
             this.lblCopyrightAndVersionVlalue = new MetroFramework.Controls.MetroLabel();
             this.lblDownloadStatusDisc = new MetroFramework.Controls.MetroLabel();
             this.lblDownloadStatus = new MetroFramework.Controls.MetroLabel();
@@ -70,10 +70,10 @@
             this.tabControllers.SuspendLayout();
             this.pBootloader.SuspendLayout();
             this.pFirmware.SuspendLayout();
+            this.tabTerminal.SuspendLayout();
             this.tabSettings.SuspendLayout();
             this.pOther.SuspendLayout();
             this.pDriver.SuspendLayout();
-            this.tabTerminal.SuspendLayout();
             this.SuspendLayout();
             // 
             // tpControllers
@@ -350,125 +350,6 @@
             this.cbComPorts.TabIndex = 54;
             this.cbComPorts.UseSelectable = true;
             // 
-            // tabSettings
-            // 
-            this.tabSettings.Controls.Add(this.pOther);
-            this.tabSettings.Controls.Add(this.pDriver);
-            this.tabSettings.HorizontalScrollbarBarColor = true;
-            this.tabSettings.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabSettings.HorizontalScrollbarSize = 10;
-            this.tabSettings.Location = new System.Drawing.Point(4, 38);
-            this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Size = new System.Drawing.Size(338, 306);
-            this.tabSettings.TabIndex = 1;
-            this.tabSettings.Text = "Настройки";
-            this.tabSettings.VerticalScrollbarBarColor = true;
-            this.tabSettings.VerticalScrollbarHighlightOnWheel = false;
-            this.tabSettings.VerticalScrollbarSize = 10;
-            // 
-            // pOther
-            // 
-            this.pOther.Controls.Add(this.chbDebugInfoOn);
-            this.pOther.Controls.Add(this.clHelp);
-            this.pOther.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pOther.HorizontalScrollbarBarColor = true;
-            this.pOther.HorizontalScrollbarHighlightOnWheel = false;
-            this.pOther.HorizontalScrollbarSize = 10;
-            this.pOther.Location = new System.Drawing.Point(0, 75);
-            this.pOther.Name = "pOther";
-            this.pOther.Padding = new System.Windows.Forms.Padding(3);
-            this.pOther.Size = new System.Drawing.Size(338, 57);
-            this.pOther.TabIndex = 75;
-            this.pOther.VerticalScrollbarBarColor = true;
-            this.pOther.VerticalScrollbarHighlightOnWheel = false;
-            this.pOther.VerticalScrollbarSize = 10;
-            // 
-            // chbDebugInfoOn
-            // 
-            this.chbDebugInfoOn.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chbDebugInfoOn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chbDebugInfoOn.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chbDebugInfoOn.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
-            this.chbDebugInfoOn.Location = new System.Drawing.Point(3, 3);
-            this.chbDebugInfoOn.Name = "chbDebugInfoOn";
-            this.chbDebugInfoOn.Size = new System.Drawing.Size(332, 24);
-            this.chbDebugInfoOn.TabIndex = 74;
-            this.chbDebugInfoOn.Text = "Включить вывод отладочной информации";
-            this.chbDebugInfoOn.UseSelectable = true;
-            // 
-            // clHelp
-            // 
-            this.clHelp.Location = new System.Drawing.Point(3, 32);
-            this.clHelp.Name = "clHelp";
-            this.clHelp.Size = new System.Drawing.Size(60, 19);
-            this.clHelp.TabIndex = 72;
-            this.clHelp.Text = "Справка";
-            this.clHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.clHelp.UseSelectable = true;
-            // 
-            // pDriver
-            // 
-            this.pDriver.Controls.Add(this.lblDriverTypeDisc);
-            this.pDriver.Controls.Add(this.btnInstallDriver);
-            this.pDriver.Controls.Add(this.cbDriverType);
-            this.pDriver.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pDriver.HorizontalScrollbarBarColor = true;
-            this.pDriver.HorizontalScrollbarHighlightOnWheel = false;
-            this.pDriver.HorizontalScrollbarSize = 10;
-            this.pDriver.Location = new System.Drawing.Point(0, 0);
-            this.pDriver.Name = "pDriver";
-            this.pDriver.Size = new System.Drawing.Size(338, 75);
-            this.pDriver.TabIndex = 73;
-            this.pDriver.VerticalScrollbarBarColor = true;
-            this.pDriver.VerticalScrollbarHighlightOnWheel = false;
-            this.pDriver.VerticalScrollbarSize = 10;
-            // 
-            // lblDriverTypeDisc
-            // 
-            this.lblDriverTypeDisc.Location = new System.Drawing.Point(3, 5);
-            this.lblDriverTypeDisc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblDriverTypeDisc.Name = "lblDriverTypeDisc";
-            this.lblDriverTypeDisc.Size = new System.Drawing.Size(191, 29);
-            this.lblDriverTypeDisc.TabIndex = 71;
-            this.lblDriverTypeDisc.Text = "Варинты типов драйверов";
-            this.lblDriverTypeDisc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnInstallDriver
-            // 
-            this.btnInstallDriver.AutoSize = true;
-            this.btnInstallDriver.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnInstallDriver.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnInstallDriver.Location = new System.Drawing.Point(0, 46);
-            this.btnInstallDriver.Margin = new System.Windows.Forms.Padding(5);
-            this.btnInstallDriver.Name = "btnInstallDriver";
-            this.btnInstallDriver.Size = new System.Drawing.Size(338, 29);
-            this.btnInstallDriver.Style = MetroFramework.MetroColorStyle.Blue;
-            this.btnInstallDriver.TabIndex = 61;
-            this.btnInstallDriver.Text = "Установить драйвер";
-            this.btnInstallDriver.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.btnInstallDriver.UseSelectable = true;
-            this.btnInstallDriver.Click += new System.EventHandler(this.btnInstallDriver_Click);
-            // 
-            // cbDriverType
-            // 
-            this.cbDriverType.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
-            this.cbDriverType.FormattingEnabled = true;
-            this.cbDriverType.ItemHeight = 23;
-            this.cbDriverType.Items.AddRange(new object[] {
-            "USBASP",
-            "STLINK",
-            "CH340",
-            "FT232",
-            "CP2102"});
-            this.cbDriverType.Location = new System.Drawing.Point(206, 5);
-            this.cbDriverType.Margin = new System.Windows.Forms.Padding(5);
-            this.cbDriverType.Name = "cbDriverType";
-            this.cbDriverType.PromptText = "Драйвер";
-            this.cbDriverType.Size = new System.Drawing.Size(121, 29);
-            this.cbDriverType.Style = MetroFramework.MetroColorStyle.Blue;
-            this.cbDriverType.TabIndex = 70;
-            this.cbDriverType.UseSelectable = true;
-            // 
             // tabTerminal
             // 
             this.tabTerminal.Controls.Add(this.cbComPortBaudrate);
@@ -591,6 +472,126 @@
             this.cbComPortsTerminal.TabIndex = 55;
             this.cbComPortsTerminal.UseSelectable = true;
             // 
+            // tabSettings
+            // 
+            this.tabSettings.Controls.Add(this.pOther);
+            this.tabSettings.Controls.Add(this.pDriver);
+            this.tabSettings.HorizontalScrollbarBarColor = true;
+            this.tabSettings.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabSettings.HorizontalScrollbarSize = 10;
+            this.tabSettings.Location = new System.Drawing.Point(4, 38);
+            this.tabSettings.Name = "tabSettings";
+            this.tabSettings.Size = new System.Drawing.Size(338, 306);
+            this.tabSettings.TabIndex = 1;
+            this.tabSettings.Text = "Настройки";
+            this.tabSettings.VerticalScrollbarBarColor = true;
+            this.tabSettings.VerticalScrollbarHighlightOnWheel = false;
+            this.tabSettings.VerticalScrollbarSize = 10;
+            // 
+            // pOther
+            // 
+            this.pOther.Controls.Add(this.chbDebugInfoOn);
+            this.pOther.Controls.Add(this.clHelp);
+            this.pOther.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pOther.HorizontalScrollbarBarColor = true;
+            this.pOther.HorizontalScrollbarHighlightOnWheel = false;
+            this.pOther.HorizontalScrollbarSize = 10;
+            this.pOther.Location = new System.Drawing.Point(0, 75);
+            this.pOther.Name = "pOther";
+            this.pOther.Padding = new System.Windows.Forms.Padding(3);
+            this.pOther.Size = new System.Drawing.Size(338, 57);
+            this.pOther.TabIndex = 75;
+            this.pOther.VerticalScrollbarBarColor = true;
+            this.pOther.VerticalScrollbarHighlightOnWheel = false;
+            this.pOther.VerticalScrollbarSize = 10;
+            // 
+            // chbDebugInfoOn
+            // 
+            this.chbDebugInfoOn.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chbDebugInfoOn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chbDebugInfoOn.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chbDebugInfoOn.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chbDebugInfoOn.Location = new System.Drawing.Point(3, 3);
+            this.chbDebugInfoOn.Name = "chbDebugInfoOn";
+            this.chbDebugInfoOn.Size = new System.Drawing.Size(332, 24);
+            this.chbDebugInfoOn.TabIndex = 74;
+            this.chbDebugInfoOn.Text = "Включить вывод отладочной информации";
+            this.chbDebugInfoOn.UseSelectable = true;
+            // 
+            // clHelp
+            // 
+            this.clHelp.Location = new System.Drawing.Point(3, 32);
+            this.clHelp.Name = "clHelp";
+            this.clHelp.Size = new System.Drawing.Size(60, 19);
+            this.clHelp.TabIndex = 72;
+            this.clHelp.Text = "Справка";
+            this.clHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.clHelp.UseSelectable = true;
+            this.clHelp.Click += new System.EventHandler(this.clHelp_Click);
+            // 
+            // pDriver
+            // 
+            this.pDriver.Controls.Add(this.lblDriverTypeDisc);
+            this.pDriver.Controls.Add(this.btnInstallDriver);
+            this.pDriver.Controls.Add(this.cbDriverType);
+            this.pDriver.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pDriver.HorizontalScrollbarBarColor = true;
+            this.pDriver.HorizontalScrollbarHighlightOnWheel = false;
+            this.pDriver.HorizontalScrollbarSize = 10;
+            this.pDriver.Location = new System.Drawing.Point(0, 0);
+            this.pDriver.Name = "pDriver";
+            this.pDriver.Size = new System.Drawing.Size(338, 75);
+            this.pDriver.TabIndex = 73;
+            this.pDriver.VerticalScrollbarBarColor = true;
+            this.pDriver.VerticalScrollbarHighlightOnWheel = false;
+            this.pDriver.VerticalScrollbarSize = 10;
+            // 
+            // lblDriverTypeDisc
+            // 
+            this.lblDriverTypeDisc.Location = new System.Drawing.Point(3, 5);
+            this.lblDriverTypeDisc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblDriverTypeDisc.Name = "lblDriverTypeDisc";
+            this.lblDriverTypeDisc.Size = new System.Drawing.Size(191, 29);
+            this.lblDriverTypeDisc.TabIndex = 71;
+            this.lblDriverTypeDisc.Text = "Варинты типов драйверов";
+            this.lblDriverTypeDisc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnInstallDriver
+            // 
+            this.btnInstallDriver.AutoSize = true;
+            this.btnInstallDriver.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnInstallDriver.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnInstallDriver.Location = new System.Drawing.Point(0, 46);
+            this.btnInstallDriver.Margin = new System.Windows.Forms.Padding(5);
+            this.btnInstallDriver.Name = "btnInstallDriver";
+            this.btnInstallDriver.Size = new System.Drawing.Size(338, 29);
+            this.btnInstallDriver.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnInstallDriver.TabIndex = 61;
+            this.btnInstallDriver.Text = "Установить драйвер";
+            this.btnInstallDriver.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.btnInstallDriver.UseSelectable = true;
+            this.btnInstallDriver.Click += new System.EventHandler(this.btnInstallDriver_Click);
+            // 
+            // cbDriverType
+            // 
+            this.cbDriverType.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
+            this.cbDriverType.FormattingEnabled = true;
+            this.cbDriverType.ItemHeight = 23;
+            this.cbDriverType.Items.AddRange(new object[] {
+            "USBASP",
+            "STLINK",
+            "CH340",
+            "FT232",
+            "CP2102"});
+            this.cbDriverType.Location = new System.Drawing.Point(206, 5);
+            this.cbDriverType.Margin = new System.Windows.Forms.Padding(5);
+            this.cbDriverType.Name = "cbDriverType";
+            this.cbDriverType.PromptText = "Драйвер";
+            this.cbDriverType.Size = new System.Drawing.Size(121, 29);
+            this.cbDriverType.Style = MetroFramework.MetroColorStyle.Blue;
+            this.cbDriverType.TabIndex = 70;
+            this.cbDriverType.UseSelectable = true;
+            // 
             // lblCopyrightAndVersionVlalue
             // 
             this.lblCopyrightAndVersionVlalue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -660,12 +661,12 @@
             this.pBootloader.PerformLayout();
             this.pFirmware.ResumeLayout(false);
             this.pFirmware.PerformLayout();
+            this.tabTerminal.ResumeLayout(false);
+            this.tabTerminal.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.pOther.ResumeLayout(false);
             this.pDriver.ResumeLayout(false);
             this.pDriver.PerformLayout();
-            this.tabTerminal.ResumeLayout(false);
-            this.tabTerminal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
