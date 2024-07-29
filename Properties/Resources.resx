@@ -195,6 +195,9 @@
   <data name="FIRMWARE_DEMO_CLASSIC" xml:space="preserve">
     <value />
   </data>
+  <data name="FIRMWARE_DEMO_DREAM" xml:space="preserve">
+    <value />
+  </data>
   <data name="FIRMWARE_DEMO_HYPER" xml:space="preserve">
     <value />
   </data>
@@ -203,6 +206,9 @@
   </data>
   <data name="FIRMWARE_DEMO_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_demo_check.hex</value>
+  </data>
+  <data name="FIRMWARE_DEMO_ULTRA" xml:space="preserve">
+    <value />
   </data>
   <data name="FIRMWARE_EXTERNAL_LIGHT_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_external_light_check.hex</value>

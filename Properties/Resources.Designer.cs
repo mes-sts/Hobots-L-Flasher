@@ -261,6 +261,15 @@ namespace Hobots_L_Flasher.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на .
         /// </summary>
+        internal static string FIRMWARE_DEMO_DREAM {
+            get {
+                return ResourceManager.GetString("FIRMWARE_DEMO_DREAM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
         internal static string FIRMWARE_DEMO_HYPER {
             get {
                 return ResourceManager.GetString("FIRMWARE_DEMO_HYPER", resourceCulture);
@@ -282,6 +291,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_DEMO_STANDART {
             get {
                 return ResourceManager.GetString("FIRMWARE_DEMO_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string FIRMWARE_DEMO_ULTRA {
+            get {
+                return ResourceManager.GetString("FIRMWARE_DEMO_ULTRA", resourceCulture);
             }
         }
         

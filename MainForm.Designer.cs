@@ -156,10 +156,6 @@
             this.cbProgrammers.FontWeight = MetroFramework.MetroComboBoxWeight.Light;
             this.cbProgrammers.FormattingEnabled = true;
             this.cbProgrammers.ItemHeight = 23;
-            this.cbProgrammers.Items.AddRange(new object[] {
-            "USBASP",
-            "STLINK",
-            "ESPTOOL"});
             this.cbProgrammers.Location = new System.Drawing.Point(206, 10);
             this.cbProgrammers.Margin = new System.Windows.Forms.Padding(5);
             this.cbProgrammers.Name = "cbProgrammers";
@@ -168,7 +164,6 @@
             this.cbProgrammers.Style = MetroFramework.MetroColorStyle.Blue;
             this.cbProgrammers.TabIndex = 67;
             this.cbProgrammers.UseSelectable = true;
-            this.cbProgrammers.SelectedIndexChanged += new System.EventHandler(this.cbProgrammers_SelectedIndexChanged);
             // 
             // lblProgrammersDisc
             // 
@@ -222,7 +217,9 @@
             "Стандартный",
             "Классический",
             "Мини",
-            "Гипер"});
+            "Гипер",
+            "Ультра",
+            "Мечта"});
             this.cbContollers.Location = new System.Drawing.Point(206, 5);
             this.cbContollers.Margin = new System.Windows.Forms.Padding(5);
             this.cbContollers.Name = "cbContollers";
