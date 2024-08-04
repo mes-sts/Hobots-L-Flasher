@@ -97,6 +97,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на bootloaders\stm32f103\hid_bootloader_hobots_l_main_board_ultra.bin.
+        /// </summary>
+        internal static string BOOTLOADER_STM32F103_PATH {
+            get {
+                return ResourceManager.GetString("BOOTLOADER_STM32F103_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на drivers\ch340\CH340SER.EXE.
         /// </summary>
         internal static string DRIVER_CH340_PATH {

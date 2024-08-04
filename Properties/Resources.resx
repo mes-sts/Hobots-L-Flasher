@@ -133,6 +133,9 @@
     <value>bootloaders\atmega328\optiboot_atmega328.hex</value>
     <comment>путь к файлу загрузчика arduinio ATmega328</comment>
   </data>
+  <data name="BOOTLOADER_STM32F103_PATH" xml:space="preserve">
+    <value>bootloaders\stm32f103\hid_bootloader_hobots_l_main_board_ultra.bin</value>
+  </data>
   <data name="DRIVER_CH340_PATH" xml:space="preserve">
     <value>drivers\ch340\CH340SER.EXE</value>
     <comment>путь к установщику драйвера ch340 CH340SER.EXE</comment>
