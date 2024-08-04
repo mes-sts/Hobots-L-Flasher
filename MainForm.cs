@@ -478,35 +478,23 @@ namespace Hobots_L_Flasher
 
         private void btnDownloadBootloaderProgrammer_Click(object sender, EventArgs e)
         {
-            string cli_arguments = null;
+            string cli_arguments;
+            string cli_response = null;
 
-            if (cbProgrammers.SelectedIndex == 0) // USBASP
+            if (cbContollers.SelectedIndex == 0 ||
+                cbContollers.SelectedIndex == 1 ||
+                cbContollers.SelectedIndex == 2) // atmega328
             {
-                if (cbContollers.SelectedIndex == 0 ||
-                    cbContollers.SelectedIndex == 1 ||
-                    cbContollers.SelectedIndex == 2) // atmega328
+                if (chbUseATmega328pb.Checked)
                 {
-                    if (chbUseATmega328pb.Checked)
-                    {
-                        cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -c usbasp -p m328pb -b 14400 -U flash:w:" + Resources.BOOTLOADER_ATMEGA328_PATH + ":a " + "-U hfuse:w:0xDE:m -U lfuse:w:0xFF:m -U lock:w:0x3F:m -U efuse:w:0xFD:m -q";
-                    }
-                    else
-                    {
-                        cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -c usbasp -p m328p -b 14400 -U flash:w:" + Resources.BOOTLOADER_ATMEGA328_PATH + ":a " + "-U hfuse:w:0xDE:m -U lfuse:w:0xFF:m -U lock:w:0x3F:m -U efuse:w:0xFD:m -q";
-                    }
+                    cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -c usbasp -p m328pb -b 14400 -U flash:w:" + Resources.BOOTLOADER_ATMEGA328_PATH + ":a " + "-U hfuse:w:0xDE:m -U lfuse:w:0xFF:m -U lock:w:0x3F:m -U efuse:w:0xFD:m -q";
                 }
-                else if (cbContollers.SelectedIndex == 3 ||
-                         cbContollers.SelectedIndex == 5) // atmega2560
+                else
                 {
-                    cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -c usbasp -p m2560 -b 14400 -U flash:w:" + Resources.BOOTLOADER_ATMEGA2560_PATH + ":a " + "-U hfuse:w:0xD8:m -U lfuse:w:0xFF:m -U lock:w:0x3F:m -U efuse:w:0xFD:m -q";
-                }
-                else // exception
-                {
-                    lblDownloadStatus.Text = "Ошибка!";
-                    lblDownloadStatus.BackColor = Color.Tomato;
+                    cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -c usbasp -p m328p -b 14400 -U flash:w:" + Resources.BOOTLOADER_ATMEGA328_PATH + ":a " + "-U hfuse:w:0xDE:m -U lfuse:w:0xFF:m -U lock:w:0x3F:m -U efuse:w:0xFD:m -q";
                 }
 
-                string cli_response = StartProcessAndGetOutput(Resources.AVRDUDE_EXE_PATH, cli_arguments);
+                cli_response = StartProcessAndGetOutput(Resources.AVRDUDE_EXE_PATH, cli_arguments);
 
                 if (cli_response.Contains("of flash verified") &&
                     cli_response.Contains("Fuses OK")) // OK
@@ -519,25 +507,14 @@ namespace Hobots_L_Flasher
                     lblDownloadStatus.Text = "Ошибка!";
                     lblDownloadStatus.BackColor = Color.Tomato;
                 }
-
-                if (chbDebugInfoOn.Checked)
-                {
-                    MessageBox.Show(cli_response);
-                }
             }
-            else if (cbProgrammers.SelectedIndex == 1) // STLINK
-            {
-                if (cbContollers.SelectedIndex == 4) // stm32f103
-                {
-                    //cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -c usbasp -p m2560 -b 14400 -U flash:w:" + Resources.BOOTLOADER_ATMEGA2560_PATH + ":a " + "-U hfuse:w:0xD8:m -U lfuse:w:0xFF:m -U lock:w:0x3F:m -U efuse:w:0xFD:m -q";
-                }
-                else // exception
-                {
-                    lblDownloadStatus.Text = "Ошибка!";
-                    lblDownloadStatus.BackColor = Color.Tomato;
-                }
 
-                string cli_response = StartProcessAndGetOutput(Resources.STLINK_EXE_PATH, cli_arguments);
+            else if (cbContollers.SelectedIndex == 3 ||
+                     cbContollers.SelectedIndex == 5) // atmega2560
+            {
+                cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -c usbasp -p m2560 -b 14400 -U flash:w:" + Resources.BOOTLOADER_ATMEGA2560_PATH + ":a " + "-U hfuse:w:0xD8:m -U lfuse:w:0xFF:m -U lock:w:0x3F:m -U efuse:w:0xFD:m -q";
+
+                cli_response = StartProcessAndGetOutput(Resources.AVRDUDE_EXE_PATH, cli_arguments);
 
                 if (cli_response.Contains("of flash verified") &&
                     cli_response.Contains("Fuses OK")) // OK
@@ -550,16 +527,26 @@ namespace Hobots_L_Flasher
                     lblDownloadStatus.Text = "Ошибка!";
                     lblDownloadStatus.BackColor = Color.Tomato;
                 }
-
-                if (chbDebugInfoOn.Checked)
-                {
-                    MessageBox.Show(cli_response);
-                }
             }
-            else if (cbProgrammers.SelectedIndex == 2) // ESPTOOL
+
+            else if (cbContollers.SelectedIndex == 4) // stm32f103
             {
-                lblDownloadStatus.Text = "Ошибка!";
-                lblDownloadStatus.BackColor = Color.Tomato;
+                cli_arguments = " -c SWD -ME -P " + Resources.BOOTLOADER_STM32F103_PATH + " 0x8000000 -Rst -Run -NoPrompt -Q";
+
+                cli_response = StartProcessAndGetOutput(Resources.STLINK_EXE_PATH, cli_arguments);
+
+                if (cli_response.Contains("Flash memory erased") &&
+                    cli_response.Contains("Programming Complete") &&
+                    cli_response.Contains("Application started")) // OK
+                {
+                    lblDownloadStatus.Text = "Готово!";
+                    lblDownloadStatus.BackColor = Color.MediumAquamarine;
+                }
+                else // exception
+                {
+                    lblDownloadStatus.Text = "Ошибка!";
+                    lblDownloadStatus.BackColor = Color.Tomato;
+                }                
             }
             else // exception
             {
@@ -567,10 +554,14 @@ namespace Hobots_L_Flasher
                 lblDownloadStatus.BackColor = Color.Tomato;
             }
 
+            // Сброс поля Статус
             timerResetStatus.Enabled = true;
             timerResetStatus.Start();
 
-            
+            if (chbDebugInfoOn.Checked)
+            {
+                MessageBox.Show(cli_response);
+            }
         }
 
         // Установка драйверов
