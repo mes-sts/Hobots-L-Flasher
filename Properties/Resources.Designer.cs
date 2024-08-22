@@ -214,6 +214,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\ultra\hl_ultra_beeper_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_BEEPER_ULTRA {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BEEPER_ULTRA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\standart\hl_standart_bluetooth_check.hex.
         /// </summary>
         internal static string FIRMWARE_BLUETOOTH_STANDART {
@@ -246,6 +255,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_BUTTONS_HYPER {
             get {
                 return ResourceManager.GetString("FIRMWARE_BUTTONS_HYPER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\ultra\hl_ultra_buttons_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_BUTTONS_ULTRA {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BUTTONS_ULTRA", resourceCulture);
             }
         }
         
@@ -331,6 +349,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\ultra\hl_ultra_gyro_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_GYRO_ULTRA {
+            get {
+                return ResourceManager.GetString("FIRMWARE_GYRO_ULTRA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_ir_receiver_check.hex.
         /// </summary>
         internal static string FIRMWARE_IR_RECEIVER_MINI {
@@ -372,6 +399,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_LEDS_HYPER {
             get {
                 return ResourceManager.GetString("FIRMWARE_LEDS_HYPER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\ultra\hl_ultra_leds_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_LEDS_ULTRA {
+            get {
+                return ResourceManager.GetString("FIRMWARE_LEDS_ULTRA", resourceCulture);
             }
         }
         
@@ -457,6 +493,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\ultra\hl_ultra_motors_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_MOTORS_ULTRA {
+            get {
+                return ResourceManager.GetString("FIRMWARE_MOTORS_ULTRA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_rgb_led_check.hex.
         /// </summary>
         internal static string FIRMWARE_RGB_LED_MINI {
@@ -471,6 +516,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_RGB_MINI {
             get {
                 return ResourceManager.GetString("FIRMWARE_RGB_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\ultra\hl_ultra_serial_bus_servo_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_SERIAL_BUS_SERVO_ULTRA {
+            get {
+                return ResourceManager.GetString("FIRMWARE_SERIAL_BUS_SERVO_ULTRA", resourceCulture);
             }
         }
         
@@ -525,6 +579,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_SONAR_STANDART {
             get {
                 return ResourceManager.GetString("FIRMWARE_SONAR_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на utils\hid-flash\hid-flash.exe.
+        /// </summary>
+        internal static string HID_FLASH_EXE_PATH {
+            get {
+                return ResourceManager.GetString("HID_FLASH_EXE_PATH", resourceCulture);
             }
         }
         

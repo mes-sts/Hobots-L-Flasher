@@ -456,20 +456,63 @@ namespace Hobots_L_Flasher
                 }
             }
             /* STM32 .bin */
-            // ST-LINK_CLI -c SWD -ME -P firm.bin 0x8000000 -Rst -Run -NoPrompt -Q
+            // hid-flash <bin_firmware_file> <comport> <delay (optional)>
             else if (cbContollers.SelectedIndex == 4) // Ультра
             {
-                /*if (tbFirmwarePath.Text != string.Empty)
+                if (tbFirmwarePath.Text != string.Empty)
                 {
-                    //textbox
+                    cli_arguments = tbFirmwarePath.Text + " " + cbComPorts.Text;
                 }
                 else
                 {
-                    //list
-                }*/
+                    if (cbFirmware.SelectedIndex == 0) // Демо
+                    {
+                        cli_arguments = Resources.FIRMWARE_DEMO_ULTRA + " " + cbComPorts.Text;
+                    }
+                    else if (cbFirmware.SelectedIndex == 1) // Звук
+                    {
+                        cli_arguments = Resources.FIRMWARE_BEEPER_ULTRA + " " + cbComPorts.Text;
+                    }
+                    else if (cbFirmware.SelectedIndex == 2) // Моторы
+                    {
+                        cli_arguments = Resources.FIRMWARE_MOTORS_ULTRA + " " + cbComPorts.Text;
+                    }
+                    else if (cbFirmware.SelectedIndex == 3) // Мигалка
+                    {
+                        cli_arguments = Resources.FIRMWARE_LEDS_ULTRA + " " + cbComPorts.Text;
+                    }
+                    else if (cbFirmware.SelectedIndex == 4) // Кнопки
+                    {
+                        cli_arguments = Resources.FIRMWARE_BUTTONS_ULTRA + " " + cbComPorts.Text;
+                    }
+                    else if (cbFirmware.SelectedIndex == 5) // Гироскоп
+                    {
+                        cli_arguments = Resources.FIRMWARE_GYRO_ULTRA + " " + cbComPorts.Text;
+                    }
+                    else if (cbFirmware.SelectedIndex == 6) // Цифр. серва
+                    {
+                        cli_arguments = Resources.FIRMWARE_SERIAL_BUS_SERVO_ULTRA + " " + cbComPorts.Text;
+                    }
+                }
 
-                lblDownloadStatus.Text = "Ошибка!";
-                lblDownloadStatus.BackColor = Color.Tomato;
+                string cli_response = StartProcessAndGetOutput(Resources.HID_FLASH_EXE_PATH, cli_arguments);
+
+                if (cli_response.Contains("Done!") &&
+                    cli_response.Contains("Finish")) // OK
+                {
+                    lblDownloadStatus.Text = "Готово!";
+                    lblDownloadStatus.BackColor = Color.MediumAquamarine;
+                }
+                else // exception
+                {
+                    lblDownloadStatus.Text = "Ошибка!";
+                    lblDownloadStatus.BackColor = Color.Tomato;
+                }
+
+                if (chbDebugInfoOn.Checked)
+                {
+                    MessageBox.Show(cli_response);
+                };
             }
 
             timerResetStatus.Enabled = true;
@@ -684,7 +727,7 @@ namespace Hobots_L_Flasher
             string[] firmware_classic = { "Демо", "Звук", "Моторы", "Сервопривод" }; //  todo
             string[] firmware_mini = { "Демо", "Звук", "Моторы", "Сервопривод", "RGB", "Кнопка", "Освещение", "ИК приёмник", "ИК передатчик", "Сонар", "Датчик линии", "Концевик", "RGB модуль", "Гироскоп", "Датчик света", "Микрофон", "Джойстик PS2" };
             string[] firmware_hyper = { "Демо", "Звук", "Моторы", "Сервопривод", "Мигалка", "Кнопки" };
-            string[] firmware_ultra = { "Демо"};
+            string[] firmware_ultra = { "Демо", "Звук", "Моторы", "Мигалка", "Кнопки", "Гироскоп", "Цифр. серва" };
             string[] firmware_dream = { "Демо"};
 
             string[] programmer_type = { "USBASP", "STLINK", "ESPTOOL" };

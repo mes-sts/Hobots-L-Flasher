@@ -180,11 +180,17 @@
   <data name="FIRMWARE_BEEPER_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_beeper_check.hex</value>
   </data>
+  <data name="FIRMWARE_BEEPER_ULTRA" xml:space="preserve">
+    <value>firmwares\ultra\hl_ultra_beeper_check.bin</value>
+  </data>
   <data name="FIRMWARE_BLUETOOTH_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_bluetooth_check.hex</value>
   </data>
   <data name="FIRMWARE_BUTTONS_HYPER" xml:space="preserve">
     <value>firmwares\hyper\hl_hyper_buttons_check.hex</value>
+  </data>
+  <data name="FIRMWARE_BUTTONS_ULTRA" xml:space="preserve">
+    <value>firmwares\ultra\hl_ultra_buttons_check.bin</value>
   </data>
   <data name="FIRMWARE_BUTTON_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_button_check.hex</value>
@@ -219,6 +225,9 @@
   <data name="FIRMWARE_GYRO_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_gyro_check.hex</value>
   </data>
+  <data name="FIRMWARE_GYRO_ULTRA" xml:space="preserve">
+    <value>firmwares\ultra\hl_ultra_gyro_check.bin</value>
+  </data>
   <data name="FIRMWARE_IR_RECEIVER_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_ir_receiver_check.hex</value>
   </data>
@@ -233,6 +242,9 @@
   </data>
   <data name="FIRMWARE_LEDS_HYPER" xml:space="preserve">
     <value>firmwares\hyper\hl_hyper_leds_check.hex</value>
+  </data>
+  <data name="FIRMWARE_LEDS_ULTRA" xml:space="preserve">
+    <value>firmwares\ultra\hl_ultra_leds_check.bin</value>
   </data>
   <data name="FIRMWARE_LIGHT_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_light_check.ino.hex</value>
@@ -261,11 +273,17 @@
   <data name="FIRMWARE_MOTORS_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_motors_check.hex</value>
   </data>
+  <data name="FIRMWARE_MOTORS_ULTRA" xml:space="preserve">
+    <value>firmwares\ultra\hl_ultra_motors_check.bin</value>
+  </data>
   <data name="FIRMWARE_RGB_LED_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_rgb_led_check.hex</value>
   </data>
   <data name="FIRMWARE_RGB_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_rgb_check.hex</value>
+  </data>
+  <data name="FIRMWARE_SERIAL_BUS_SERVO_ULTRA" xml:space="preserve">
+    <value>firmwares\ultra\hl_ultra_serial_bus_servo_check.bin</value>
   </data>
   <data name="FIRMWARE_SERVO_CLASSIC" xml:space="preserve">
     <value />
@@ -284,6 +302,10 @@
   </data>
   <data name="FIRMWARE_SONAR_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_sonar_check.hex</value>
+  </data>
+  <data name="HID_FLASH_EXE_PATH" xml:space="preserve">
+    <value>utils\hid-flash\hid-flash.exe</value>
+    <comment>путь к hid-flash.exe</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="HL_Flash_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
