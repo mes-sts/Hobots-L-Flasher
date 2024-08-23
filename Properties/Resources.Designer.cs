@@ -358,6 +358,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\ultra\hl_ultra_massive_sensor_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_IR_MASSIVE_ULTRA {
+            get {
+                return ResourceManager.GetString("FIRMWARE_IR_MASSIVE_ULTRA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_ir_receiver_check.hex.
         /// </summary>
         internal static string FIRMWARE_IR_RECEIVER_MINI {

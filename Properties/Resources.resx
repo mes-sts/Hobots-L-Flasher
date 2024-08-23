@@ -228,6 +228,9 @@
   <data name="FIRMWARE_GYRO_ULTRA" xml:space="preserve">
     <value>firmwares\ultra\hl_ultra_gyro_check.bin</value>
   </data>
+  <data name="FIRMWARE_IR_MASSIVE_ULTRA" xml:space="preserve">
+    <value>firmwares\ultra\hl_ultra_massive_sensor_check.bin</value>
+  </data>
   <data name="FIRMWARE_IR_RECEIVER_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_ir_receiver_check.hex</value>
   </data>

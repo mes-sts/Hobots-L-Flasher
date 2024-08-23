@@ -493,6 +493,10 @@ namespace Hobots_L_Flasher
                     {
                         cli_arguments = Resources.FIRMWARE_SERIAL_BUS_SERVO_ULTRA + " " + cbComPorts.Text;
                     }
+                    else if (cbFirmware.SelectedIndex == 7) // ИК массив
+                    {
+                        cli_arguments = Resources.FIRMWARE_IR_MASSIVE_ULTRA + " " + cbComPorts.Text;
+                    }
                 }
 
                 string cli_response = StartProcessAndGetOutput(Resources.HID_FLASH_EXE_PATH, cli_arguments);
@@ -727,7 +731,7 @@ namespace Hobots_L_Flasher
             string[] firmware_classic = { "Демо", "Звук", "Моторы", "Сервопривод" }; //  todo
             string[] firmware_mini = { "Демо", "Звук", "Моторы", "Сервопривод", "RGB", "Кнопка", "Освещение", "ИК приёмник", "ИК передатчик", "Сонар", "Датчик линии", "Концевик", "RGB модуль", "Гироскоп", "Датчик света", "Микрофон", "Джойстик PS2" };
             string[] firmware_hyper = { "Демо", "Звук", "Моторы", "Сервопривод", "Мигалка", "Кнопки" };
-            string[] firmware_ultra = { "Демо", "Звук", "Моторы", "Мигалка", "Кнопки", "Гироскоп", "Цифр. серва" };
+            string[] firmware_ultra = { "Демо", "Звук", "Моторы", "Мигалка", "Кнопки", "Гироскоп", "Цифр. серва", "ИК массив" };
             string[] firmware_dream = { "Демо"};
 
             string[] programmer_type = { "USBASP", "STLINK", "ESPTOOL" };
