@@ -127,12 +127,14 @@ namespace Hobots_L_Flasher
                 cbContollers.SelectedIndex == 1 || // Классический
                 cbContollers.SelectedIndex == 2 || // Мини
                 cbContollers.SelectedIndex == 3 || // Гипер
-                cbContollers.SelectedIndex == 5) // Мечта
+                cbContollers.SelectedIndex == 5 || // Мечта
+                cbContollers.SelectedIndex == 6) // Начальный [ATM2560]
             {
                 ofd.Filter = "Файлы Intel HEX|*.hex";
             }
             /* STM32, ESP32 .bin */
-            else if (cbContollers.SelectedIndex == 4) // Ультра
+            else if (cbContollers.SelectedIndex == 4 || // Ультра
+                     cbContollers.SelectedIndex == 7) // Начальный [ESP32]
             {
                 ofd.Filter = "Файлы BIN|*.bin";
             }
@@ -153,6 +155,7 @@ namespace Hobots_L_Flasher
             cbComPortBaudrate.SelectedIndex = Settings.Default.ComPortBaudrate;
             cbDriverType.SelectedIndex = Settings.Default.DriverType;
             chbDebugInfoOn.Checked = Settings.Default.DebugInfoOn;
+            tpControllers.SelectedIndex = Settings.Default.ActiveTab;
         }
 
         // Сохранение состояния элементов в файл конфигураций
@@ -165,6 +168,7 @@ namespace Hobots_L_Flasher
             Settings.Default.ComPortBaudrate = cbComPortBaudrate.SelectedIndex;
             Settings.Default.DriverType = cbDriverType.SelectedIndex;
             Settings.Default.DebugInfoOn = chbDebugInfoOn.Checked;
+            Settings.Default.ActiveTab = tpControllers.SelectedIndex;
             Settings.Default.Save();
         }
 
@@ -370,6 +374,9 @@ namespace Hobots_L_Flasher
                     }
                 }
 
+                lblDownloadStatus.Text = "Загрузка...";
+                lblDownloadStatus.BackColor = Color.LightBlue;
+
                 string cli_response = StartProcessAndGetOutput(Resources.AVRDUDE_EXE_PATH, cli_arguments);
 
                 if (cli_response.Contains("of flash verified") &&
@@ -391,7 +398,8 @@ namespace Hobots_L_Flasher
             }
             /* AVR ATmega2560 .hex */
             else if (cbContollers.SelectedIndex == 3 || // Гипер
-                     cbContollers.SelectedIndex == 5) // Мечта
+                     cbContollers.SelectedIndex == 5 || // Мечта
+                     cbContollers.SelectedIndex == 6) // Начальный [ATM2560]
             {
                 if (tbFirmwarePath.Text != string.Empty)
                 {
@@ -428,13 +436,67 @@ namespace Hobots_L_Flasher
                     }
                     else if (cbContollers.SelectedIndex == 5) // Мечта
                     {
-
+                        // TODO
+                    }
+                    else if (cbContollers.SelectedIndex == 6) // Начальный [ATM2560]
+                    {
+                        if (cbFirmware.SelectedIndex == 0) // Демо
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m2560 -P " + cbComPorts.Text + " -c wiring  -b 115200 -U flash:w:" + Resources.FIRMWARE_DEMO_BEGINER_ATMEGA2560 + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 1) // Звук
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m2560 -P " + cbComPorts.Text + " -c wiring  -b 115200 -U flash:w:" + Resources.FIRMWARE_BEEPER_BEGINER_ATMEGA2560 + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 2) // Моторы
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m2560 -P " + cbComPorts.Text + " -c wiring  -b 115200 -U flash:w:" + Resources.FIRMWARE_MOTORS_BEGINER_ATMEGA2560 + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 3) // Сервопривод
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m2560 -P " + cbComPorts.Text + " -c wiring  -b 115200 -U flash:w:" + Resources.FIRMWARE_SERVO_BEGINER_ATMEGA2560 + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 4) // Мигалка
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m2560 -P " + cbComPorts.Text + " -c wiring  -b 115200 -U flash:w:" + Resources.FIRMWARE_LEDS_BEGINER_ATMEGA2560 + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 5) // Кнопки
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m2560 -P " + cbComPorts.Text + " -c wiring  -b 115200 -U flash:w:" + Resources.FIRMWARE_BUTTONS_BEGINER_ATMEGA2560 + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 6) // Сонар
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m2560 -P " + cbComPorts.Text + " -c wiring  -b 115200 -U flash:w:" + Resources.FIRMWARE_SONAR_BEGINER_ATMEGA2560 + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 7) // Карта памяти
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m2560 -P " + cbComPorts.Text + " -c wiring  -b 115200 -U flash:w:" + Resources.FIRMWARE_MICRO_SD_CARD_BEGINER_ATMEGA2560 + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 8) // Гироскоп
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m2560 -P " + cbComPorts.Text + " -c wiring  -b 115200 -U flash:w:" + Resources.FIRMWARE_GYRO_BEGINER_ATMEGA2560 + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 9) // Последовательная серва
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m2560 -P " + cbComPorts.Text + " -c wiring  -b 115200 -U flash:w:" + Resources.FIRMWARE_SERIAL_BUS_SERVO_BEGINER_ATMEGA2560 + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 10) // Дисплей с кнопками
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m2560 -P " + cbComPorts.Text + " -c wiring  -b 115200 -U flash:w:" + Resources.FIRMWARE_BOARD_DISPLAY_BUTTONS_BEGINER_ATMEGA2560 + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 11) // Модуль WiFi
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m2560 -P " + cbComPorts.Text + " -c wiring  -b 115200 -U flash:w:" + Resources.FIRMWARE_WIFI_MODULE_BEGINER_ATMEGA2560 + ":i -D";
+                        }
                     }
                     /*else if () // todo
                     {
 
                     }*/
                 }
+
+                lblDownloadStatus.Text = "Загрузка...";
+                lblDownloadStatus.BackColor = Color.LightBlue;
 
                 string cli_response = StartProcessAndGetOutput(Resources.AVRDUDE_EXE_PATH, cli_arguments);
 
@@ -465,39 +527,50 @@ namespace Hobots_L_Flasher
                 }
                 else
                 {
-                    if (cbFirmware.SelectedIndex == 0) // Демо
+                    if (cbContollers.SelectedIndex == 4) // Ультра
                     {
-                        cli_arguments = Resources.FIRMWARE_DEMO_ULTRA + " " + cbComPorts.Text;
+                        if (cbFirmware.SelectedIndex == 0) // Демо
+                        {
+                            cli_arguments = Resources.FIRMWARE_DEMO_ULTRA + " " + cbComPorts.Text;
+                        }
+                        else if (cbFirmware.SelectedIndex == 1) // Звук
+                        {
+                            cli_arguments = Resources.FIRMWARE_BEEPER_ULTRA + " " + cbComPorts.Text;
+                        }
+                        else if (cbFirmware.SelectedIndex == 2) // Моторы
+                        {
+                            cli_arguments = Resources.FIRMWARE_MOTORS_ULTRA + " " + cbComPorts.Text;
+                        }
+                        else if (cbFirmware.SelectedIndex == 3) // Мигалка
+                        {
+                            cli_arguments = Resources.FIRMWARE_LEDS_ULTRA + " " + cbComPorts.Text;
+                        }
+                        else if (cbFirmware.SelectedIndex == 4) // Кнопки
+                        {
+                            cli_arguments = Resources.FIRMWARE_BUTTONS_ULTRA + " " + cbComPorts.Text;
+                        }
+                        else if (cbFirmware.SelectedIndex == 5) // Гироскоп
+                        {
+                            cli_arguments = Resources.FIRMWARE_GYRO_ULTRA + " " + cbComPorts.Text;
+                        }
+                        else if (cbFirmware.SelectedIndex == 6) // Последовательная серва
+                        {
+                            cli_arguments = Resources.FIRMWARE_SERIAL_BUS_SERVO_ULTRA + " " + cbComPorts.Text;
+                        }
+                        else if (cbFirmware.SelectedIndex == 7) // Массив ИК датчиков
+                        {
+                            cli_arguments = Resources.FIRMWARE_IR_MASSIVE_ULTRA + " " + cbComPorts.Text;
+                        }
                     }
-                    else if (cbFirmware.SelectedIndex == 1) // Звук
+                    /*else if () // todo
                     {
-                        cli_arguments = Resources.FIRMWARE_BEEPER_ULTRA + " " + cbComPorts.Text;
-                    }
-                    else if (cbFirmware.SelectedIndex == 2) // Моторы
-                    {
-                        cli_arguments = Resources.FIRMWARE_MOTORS_ULTRA + " " + cbComPorts.Text;
-                    }
-                    else if (cbFirmware.SelectedIndex == 3) // Мигалка
-                    {
-                        cli_arguments = Resources.FIRMWARE_LEDS_ULTRA + " " + cbComPorts.Text;
-                    }
-                    else if (cbFirmware.SelectedIndex == 4) // Кнопки
-                    {
-                        cli_arguments = Resources.FIRMWARE_BUTTONS_ULTRA + " " + cbComPorts.Text;
-                    }
-                    else if (cbFirmware.SelectedIndex == 5) // Гироскоп
-                    {
-                        cli_arguments = Resources.FIRMWARE_GYRO_ULTRA + " " + cbComPorts.Text;
-                    }
-                    else if (cbFirmware.SelectedIndex == 6) // Цифр. серва
-                    {
-                        cli_arguments = Resources.FIRMWARE_SERIAL_BUS_SERVO_ULTRA + " " + cbComPorts.Text;
-                    }
-                    else if (cbFirmware.SelectedIndex == 7) // ИК массив
-                    {
-                        cli_arguments = Resources.FIRMWARE_IR_MASSIVE_ULTRA + " " + cbComPorts.Text;
-                    }
+
+                    }*/
+
                 }
+
+                lblDownloadStatus.Text = "Загрузка...";
+                lblDownloadStatus.BackColor = Color.LightBlue;
 
                 string cli_response = StartProcessAndGetOutput(Resources.HID_FLASH_EXE_PATH, cli_arguments);
 
@@ -518,9 +591,50 @@ namespace Hobots_L_Flasher
                     MessageBox.Show(cli_response);
                 };
             }
+            /* ESP32 .bin */
+            else if (cbContollers.SelectedIndex == 7) // Начальный [ESP32]
+            {
+                if (tbFirmwarePath.Text != string.Empty)
+                {
+                    cli_arguments = " --chip esp32 --port \"" + cbComPorts.Text + "\" --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 80m --flash_size 4MB 0x1000 \"" + Resources.BOOTLOADER_BEGINER_ESP32_PATH + "\" 0x8000 \"" + Resources.BOOTLOADER_PARTITIONS_ESP32_PATH + "\" 0xe000 \"" + Resources.BOOTLOADER_BOOT_APP0_ESP32_PATH + "\" 0x10000 \"" + tbFirmwarePath.Text + "\"";
+                }
+                else
+                {
+                    if (cbContollers.SelectedIndex == 7) // Начальный [ESP32]
+                    {
+                        cli_arguments = " --chip esp32 --port \"" + cbComPorts.Text + "\" --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 80m --flash_size 4MB 0x1000 \"" + Resources.BOOTLOADER_BEGINER_ESP32_PATH + "\" 0x8000 \"" + Resources.BOOTLOADER_PARTITIONS_ESP32_PATH + "\" 0xe000 \"" + Resources.BOOTLOADER_BOOT_APP0_ESP32_PATH + "\" 0x10000 \"" + Resources.FIRMWARE_WIFI_MODULE_BEGINER_ESP32 + "\"";
+                    }
+                    /*else if () // todo
+                    {
 
-            timerResetStatus.Enabled = true;
-            timerResetStatus.Start();
+                    }*/
+
+                    lblDownloadStatus.Text = "Загрузка...";
+                    lblDownloadStatus.BackColor = Color.LightBlue;
+
+                    string cli_response = StartProcessAndGetOutput(Resources.ESPTOOL_EXE_PATH, cli_arguments);
+
+                    if (cli_response.Contains("Hash of data verified") &&
+                        cli_response.Contains("Hard resetting via RTS pin...")) // OK
+                    {
+                        lblDownloadStatus.Text = "Готово!";
+                        lblDownloadStatus.BackColor = Color.MediumAquamarine;
+                    }
+                    else // exception
+                    {
+                        lblDownloadStatus.Text = "Ошибка!";
+                        lblDownloadStatus.BackColor = Color.Tomato;
+                    }
+
+                    if (chbDebugInfoOn.Checked)
+                    {
+                        MessageBox.Show(cli_response);
+                    };
+                }
+
+                timerResetStatus.Enabled = true;
+                timerResetStatus.Start();
+            }
         }
 
         private void btnDownloadBootloaderProgrammer_Click(object sender, EventArgs e)
@@ -557,7 +671,8 @@ namespace Hobots_L_Flasher
             }
 
             else if (cbContollers.SelectedIndex == 3 ||
-                     cbContollers.SelectedIndex == 5) // atmega2560
+                     cbContollers.SelectedIndex == 5 ||
+                     cbContollers.SelectedIndex == 6) // atmega2560
             {
                 cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -c usbasp -p m2560 -b 14400 -U flash:w:" + Resources.BOOTLOADER_ATMEGA2560_PATH + ":a " + "-U hfuse:w:0xD8:m -U lfuse:w:0xFF:m -U lock:w:0x3F:m -U efuse:w:0xFD:m -q";
 
@@ -731,10 +846,12 @@ namespace Hobots_L_Flasher
             string[] firmware_classic = { "Демо", "Звук", "Моторы", "Сервопривод" }; //  todo
             string[] firmware_mini = { "Демо", "Звук", "Моторы", "Сервопривод", "RGB", "Кнопка", "Освещение", "ИК приёмник", "ИК передатчик", "Сонар", "Датчик линии", "Концевик", "RGB модуль", "Гироскоп", "Датчик света", "Микрофон", "Джойстик PS2" };
             string[] firmware_hyper = { "Демо", "Звук", "Моторы", "Сервопривод", "Мигалка", "Кнопки" };
-            string[] firmware_ultra = { "Демо", "Звук", "Моторы", "Мигалка", "Кнопки", "Гироскоп", "Цифр. серва", "ИК массив" };
-            string[] firmware_dream = { "Демо"};
+            string[] firmware_ultra = { "Демо", "Звук", "Моторы", "Мигалка", "Кнопки", "Гироскоп", "Последовательная серва", "Массив ИК датчиков" };
+            string[] firmware_dream = { "Демо" }; //  todo
+            string[] firmware_beginer_m2560 = { "Демо", "Звук", "Моторы", "Сервопривод", "Мигалка", "Кнопки", "Сонар", "Карта памяти", "Гироскоп", "Последовательная серва", "Дисплей с кнопками", "Модуль WiFi" };
+            string[] firmware_beginer_esp32 = { "Модуль WiFi" }; //  todo
 
-            string[] programmer_type = { "USBASP", "STLINK", "ESPTOOL" };
+            string[] programmer_type = { "-", "ESPTOOL", "USBASP", "Arduino as ISP", "STLINK", "Serial", "DFU" };
 
             cbFirmware.Items.Clear();
 
@@ -747,7 +864,10 @@ namespace Hobots_L_Flasher
                 chbUseATmega328pb.Enabled = true; // Выбор контроллера ATmega328pb или ATmega328p только для подходящего программатора
 
                 cbProgrammers.Items.Clear();
-                cbProgrammers.Items.Add(programmer_type[0]); // USBASP
+                cbProgrammers.Items.Add(programmer_type[2]); // USBASP
+                cbProgrammers.Enabled = true;
+
+                btnDownloadBootloaderProgrammer.Enabled = true;
             }
             else if (cbContollers.SelectedIndex == 1) // Классический
             {
@@ -758,7 +878,10 @@ namespace Hobots_L_Flasher
                 chbUseATmega328pb.Enabled = true; // Выбор контроллера ATmega328pb или ATmega328p только для подходящего программатора
 
                 cbProgrammers.Items.Clear();
-                cbProgrammers.Items.Add(programmer_type[0]); // USBASP
+                cbProgrammers.Items.Add(programmer_type[2]); // USBASP
+                cbProgrammers.Enabled = true;
+
+                btnDownloadBootloaderProgrammer.Enabled = true;
             }
             else if (cbContollers.SelectedIndex == 2) // Мини
             {
@@ -769,7 +892,10 @@ namespace Hobots_L_Flasher
                 chbUseATmega328pb.Enabled = true; // Выбор контроллера ATmega328pb или ATmega328p только для подходящего программатора
 
                 cbProgrammers.Items.Clear();
-                cbProgrammers.Items.Add(programmer_type[0]); // USBASP
+                cbProgrammers.Items.Add(programmer_type[2]); // USBASP
+                cbProgrammers.Enabled = true;
+
+                btnDownloadBootloaderProgrammer.Enabled = true;
             }
             else if (cbContollers.SelectedIndex == 3) // Гипер
             {
@@ -781,7 +907,10 @@ namespace Hobots_L_Flasher
                 chbUseATmega328pb.Checked = false;
 
                 cbProgrammers.Items.Clear();
-                cbProgrammers.Items.Add(programmer_type[0]); // USBASP
+                cbProgrammers.Items.Add(programmer_type[2]); // USBASP
+                cbProgrammers.Enabled = true;
+
+                btnDownloadBootloaderProgrammer.Enabled = true;
             }
             else if (cbContollers.SelectedIndex == 4) // Ультра
             {
@@ -793,7 +922,10 @@ namespace Hobots_L_Flasher
                 chbUseATmega328pb.Checked = false;
 
                 cbProgrammers.Items.Clear();
-                cbProgrammers.Items.Add(programmer_type[1]); // STLINK
+                cbProgrammers.Items.Add(programmer_type[4]); // STLINK
+                cbProgrammers.Enabled = true;
+
+                btnDownloadBootloaderProgrammer.Enabled = true;
             }
             else if (cbContollers.SelectedIndex == 5) // Мечта
             {
@@ -805,8 +937,42 @@ namespace Hobots_L_Flasher
                 chbUseATmega328pb.Checked = false;
 
                 cbProgrammers.Items.Clear();
-                cbProgrammers.Items.Add(programmer_type[0]); // USBASP
+                cbProgrammers.Items.Add(programmer_type[2]); // USBASP
+                cbProgrammers.Enabled = true;
+
+                btnDownloadBootloaderProgrammer.Enabled = true;
             }
+            else if (cbContollers.SelectedIndex == 6) // Начальный [ATM2560]
+            {
+                cbFirmware.Items.Clear();
+                cbFirmware.Items.AddRange(firmware_beginer_m2560);
+                cbComPortBaudrate.SelectedIndex = 1; // 115200
+
+                chbUseATmega328pb.Enabled = false;
+                chbUseATmega328pb.Checked = false;
+
+                cbProgrammers.Items.Clear();
+                cbProgrammers.Items.Add(programmer_type[2]); // USBASP
+                cbProgrammers.Enabled = true;
+
+                btnDownloadBootloaderProgrammer.Enabled = true;
+            }
+            else if (cbContollers.SelectedIndex == 7) // Начальный [ESP32]
+            {
+                cbFirmware.Items.Clear();
+                cbFirmware.Items.AddRange(firmware_beginer_esp32);
+                cbComPortBaudrate.SelectedIndex = 1; // 115200
+
+                chbUseATmega328pb.Enabled = false;
+                chbUseATmega328pb.Checked = false;
+
+                cbProgrammers.Items.Clear();
+                cbProgrammers.Items.Add(programmer_type[0]); // NONE
+                cbProgrammers.Enabled = false;
+
+                btnDownloadBootloaderProgrammer.Enabled = false;
+            }
+
             
             cbFirmware.SelectedIndex = 0;
             cbProgrammers.SelectedIndex = 0;
