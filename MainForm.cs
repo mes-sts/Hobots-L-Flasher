@@ -1057,5 +1057,38 @@ namespace Hobots_L_Flasher
                 }
             }
         }
+
+        // Обработка сочетаний горячих клавиш
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && e.Control && btnDownloadFirmwarePort.Enabled == true && !serialPort.IsOpen)
+            {
+                btnDownloadFirmwarePort.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Enter && e.Shift)
+            {
+                btnDownloadBootloaderProgrammer.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D1)
+            {
+                tpControllers.SelectedIndex = 0;
+            }
+            else if (e.KeyCode == Keys.D2)
+            {
+                tpControllers.SelectedIndex = 1;
+            }
+            else if (e.KeyCode == Keys.D3)
+            {
+                tpControllers.SelectedIndex = 2;
+            }
+            else if (e.KeyCode == Keys.Enter && tpControllers.SelectedIndex == 1)
+            {
+                btnStartStopTerminal.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Delete && tpControllers.SelectedIndex == 1)
+            {
+                btnCleanTerminal.PerformClick();
+            }
+        }
     }
 }

@@ -663,12 +663,14 @@
             this.Controls.Add(this.lblCopyrightAndVersionVlalue);
             this.Controls.Add(this.tpControllers);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Text = "Прошивальщик Hobots L";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.tpControllers.ResumeLayout(false);
             this.tabControllers.ResumeLayout(false);
             this.pBootloader.ResumeLayout(false);
