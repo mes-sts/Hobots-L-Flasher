@@ -58,7 +58,6 @@
             this.pOther = new MetroFramework.Controls.MetroPanel();
             this.clGitHubRepoApplicationExamples = new MetroFramework.Controls.MetroLink();
             this.clGitHubRepoFirmwareExamples = new MetroFramework.Controls.MetroLink();
-            this.chbDebugInfoOn = new MetroFramework.Controls.MetroCheckBox();
             this.clHelp = new MetroFramework.Controls.MetroLink();
             this.pDriver = new MetroFramework.Controls.MetroPanel();
             this.lblDriverTypeDisc = new MetroFramework.Controls.MetroLabel();
@@ -69,6 +68,8 @@
             this.lblDownloadStatus = new MetroFramework.Controls.MetroLabel();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.timerResetStatus = new System.Windows.Forms.Timer(this.components);
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.chbDebugInfoOn = new MetroFramework.Controls.MetroCheckBox();
             this.tpControllers.SuspendLayout();
             this.tabControllers.SuspendLayout();
             this.pBootloader.SuspendLayout();
@@ -77,6 +78,7 @@
             this.tabSettings.SuspendLayout();
             this.pOther.SuspendLayout();
             this.pDriver.SuspendLayout();
+            this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tpControllers
@@ -490,6 +492,7 @@
             // 
             // tabSettings
             // 
+            this.tabSettings.Controls.Add(this.metroPanel1);
             this.tabSettings.Controls.Add(this.pOther);
             this.tabSettings.Controls.Add(this.pDriver);
             this.tabSettings.HorizontalScrollbarBarColor = true;
@@ -508,7 +511,6 @@
             // 
             this.pOther.Controls.Add(this.clGitHubRepoApplicationExamples);
             this.pOther.Controls.Add(this.clGitHubRepoFirmwareExamples);
-            this.pOther.Controls.Add(this.chbDebugInfoOn);
             this.pOther.Controls.Add(this.clHelp);
             this.pOther.Dock = System.Windows.Forms.DockStyle.Top;
             this.pOther.HorizontalScrollbarBarColor = true;
@@ -517,7 +519,7 @@
             this.pOther.Location = new System.Drawing.Point(0, 75);
             this.pOther.Name = "pOther";
             this.pOther.Padding = new System.Windows.Forms.Padding(3);
-            this.pOther.Size = new System.Drawing.Size(338, 121);
+            this.pOther.Size = new System.Drawing.Size(338, 75);
             this.pOther.TabIndex = 75;
             this.pOther.VerticalScrollbarBarColor = true;
             this.pOther.VerticalScrollbarHighlightOnWheel = false;
@@ -526,9 +528,10 @@
             // clGitHubRepoApplicationExamples
             // 
             this.clGitHubRepoApplicationExamples.AutoSize = true;
-            this.clGitHubRepoApplicationExamples.Location = new System.Drawing.Point(3, 86);
+            this.clGitHubRepoApplicationExamples.Dock = System.Windows.Forms.DockStyle.Top;
+            this.clGitHubRepoApplicationExamples.Location = new System.Drawing.Point(3, 49);
             this.clGitHubRepoApplicationExamples.Name = "clGitHubRepoApplicationExamples";
-            this.clGitHubRepoApplicationExamples.Size = new System.Drawing.Size(253, 23);
+            this.clGitHubRepoApplicationExamples.Size = new System.Drawing.Size(332, 23);
             this.clGitHubRepoApplicationExamples.TabIndex = 76;
             this.clGitHubRepoApplicationExamples.Text = "GitHub с исходным кодом приложения";
             this.clGitHubRepoApplicationExamples.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -538,34 +541,23 @@
             // clGitHubRepoFirmwareExamples
             // 
             this.clGitHubRepoFirmwareExamples.AutoSize = true;
-            this.clGitHubRepoFirmwareExamples.Location = new System.Drawing.Point(3, 57);
+            this.clGitHubRepoFirmwareExamples.Dock = System.Windows.Forms.DockStyle.Top;
+            this.clGitHubRepoFirmwareExamples.Location = new System.Drawing.Point(3, 26);
             this.clGitHubRepoFirmwareExamples.Name = "clGitHubRepoFirmwareExamples";
-            this.clGitHubRepoFirmwareExamples.Size = new System.Drawing.Size(230, 23);
+            this.clGitHubRepoFirmwareExamples.Size = new System.Drawing.Size(332, 23);
             this.clGitHubRepoFirmwareExamples.TabIndex = 75;
             this.clGitHubRepoFirmwareExamples.Text = "GitHub с исходным кодом прошивок";
             this.clGitHubRepoFirmwareExamples.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clGitHubRepoFirmwareExamples.UseSelectable = true;
             this.clGitHubRepoFirmwareExamples.Click += new System.EventHandler(this.clGitHubRepoFirmwareExamples_Click);
             // 
-            // chbDebugInfoOn
-            // 
-            this.chbDebugInfoOn.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chbDebugInfoOn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chbDebugInfoOn.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.chbDebugInfoOn.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
-            this.chbDebugInfoOn.Location = new System.Drawing.Point(3, 3);
-            this.chbDebugInfoOn.Name = "chbDebugInfoOn";
-            this.chbDebugInfoOn.Size = new System.Drawing.Size(332, 24);
-            this.chbDebugInfoOn.TabIndex = 74;
-            this.chbDebugInfoOn.Text = "Включить вывод отладочной информации";
-            this.chbDebugInfoOn.UseSelectable = true;
-            // 
             // clHelp
             // 
             this.clHelp.AutoSize = true;
-            this.clHelp.Location = new System.Drawing.Point(3, 32);
+            this.clHelp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.clHelp.Location = new System.Drawing.Point(3, 3);
             this.clHelp.Name = "clHelp";
-            this.clHelp.Size = new System.Drawing.Size(147, 23);
+            this.clHelp.Size = new System.Drawing.Size(332, 23);
             this.clHelp.TabIndex = 72;
             this.clHelp.Text = "Открыть файл справки";
             this.clHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -682,6 +674,35 @@
             this.timerResetStatus.Interval = 2000;
             this.timerResetStatus.Tick += new System.EventHandler(this.timerResetStatus_Tick);
             // 
+            // metroPanel1
+            // 
+            this.metroPanel1.Controls.Add(this.chbDebugInfoOn);
+            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(0, 150);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Padding = new System.Windows.Forms.Padding(3);
+            this.metroPanel1.Size = new System.Drawing.Size(338, 121);
+            this.metroPanel1.TabIndex = 76;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // chbDebugInfoOn
+            // 
+            this.chbDebugInfoOn.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chbDebugInfoOn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chbDebugInfoOn.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.chbDebugInfoOn.FontWeight = MetroFramework.MetroCheckBoxWeight.Light;
+            this.chbDebugInfoOn.Location = new System.Drawing.Point(3, 3);
+            this.chbDebugInfoOn.Name = "chbDebugInfoOn";
+            this.chbDebugInfoOn.Size = new System.Drawing.Size(332, 24);
+            this.chbDebugInfoOn.TabIndex = 75;
+            this.chbDebugInfoOn.Text = "Включить вывод отладочной информации";
+            this.chbDebugInfoOn.UseSelectable = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -713,6 +734,7 @@
             this.pOther.PerformLayout();
             this.pDriver.ResumeLayout(false);
             this.pDriver.PerformLayout();
+            this.metroPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -754,11 +776,12 @@
         private MetroFramework.Controls.MetroTextBox tbTerminal;
         private MetroFramework.Controls.MetroComboBox cbComPortBaudrate;
         private MetroFramework.Controls.MetroCheckBox chbUseATmega328pb;
-        private MetroFramework.Controls.MetroCheckBox chbDebugInfoOn;
         private MetroFramework.Controls.MetroPanel pOther;
         private MetroFramework.Controls.MetroLabel lblFirmwarePathApendixDisc;
         private MetroFramework.Controls.MetroLink clGitHubRepoFirmwareExamples;
         private MetroFramework.Controls.MetroLink clGitHubRepoApplicationExamples;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroCheckBox chbDebugInfoOn;
     }
 }
 
