@@ -56,6 +56,7 @@
             this.cbComPortsTerminal = new MetroFramework.Controls.MetroComboBox();
             this.tabSettings = new MetroFramework.Controls.MetroTabPage();
             this.pOther = new MetroFramework.Controls.MetroPanel();
+            this.clGitHubRepoApplicationExamples = new MetroFramework.Controls.MetroLink();
             this.clGitHubRepoFirmwareExamples = new MetroFramework.Controls.MetroLink();
             this.chbDebugInfoOn = new MetroFramework.Controls.MetroCheckBox();
             this.clHelp = new MetroFramework.Controls.MetroLink();
@@ -68,7 +69,6 @@
             this.lblDownloadStatus = new MetroFramework.Controls.MetroLabel();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.timerResetStatus = new System.Windows.Forms.Timer(this.components);
-            this.clGitHubRepoApplicationExamples = new MetroFramework.Controls.MetroLink();
             this.tpControllers.SuspendLayout();
             this.tabControllers.SuspendLayout();
             this.pBootloader.SuspendLayout();
@@ -523,6 +523,18 @@
             this.pOther.VerticalScrollbarHighlightOnWheel = false;
             this.pOther.VerticalScrollbarSize = 10;
             // 
+            // clGitHubRepoApplicationExamples
+            // 
+            this.clGitHubRepoApplicationExamples.AutoSize = true;
+            this.clGitHubRepoApplicationExamples.Location = new System.Drawing.Point(3, 86);
+            this.clGitHubRepoApplicationExamples.Name = "clGitHubRepoApplicationExamples";
+            this.clGitHubRepoApplicationExamples.Size = new System.Drawing.Size(253, 23);
+            this.clGitHubRepoApplicationExamples.TabIndex = 76;
+            this.clGitHubRepoApplicationExamples.Text = "GitHub с исходным кодом приложения";
+            this.clGitHubRepoApplicationExamples.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.clGitHubRepoApplicationExamples.UseSelectable = true;
+            this.clGitHubRepoApplicationExamples.Click += new System.EventHandler(this.clGitHubRepoApplicationExamples_Click);
+            // 
             // clGitHubRepoFirmwareExamples
             // 
             this.clGitHubRepoFirmwareExamples.AutoSize = true;
@@ -550,11 +562,12 @@
             // 
             // clHelp
             // 
+            this.clHelp.AutoSize = true;
             this.clHelp.Location = new System.Drawing.Point(3, 32);
             this.clHelp.Name = "clHelp";
-            this.clHelp.Size = new System.Drawing.Size(60, 19);
+            this.clHelp.Size = new System.Drawing.Size(147, 23);
             this.clHelp.TabIndex = 72;
-            this.clHelp.Text = "Справка";
+            this.clHelp.Text = "Открыть файл справки";
             this.clHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clHelp.UseSelectable = true;
             this.clHelp.Click += new System.EventHandler(this.clHelp_Click);
@@ -668,18 +681,6 @@
             // 
             this.timerResetStatus.Interval = 2000;
             this.timerResetStatus.Tick += new System.EventHandler(this.timerResetStatus_Tick);
-            // 
-            // clGitHubRepoApplicationExamples
-            // 
-            this.clGitHubRepoApplicationExamples.AutoSize = true;
-            this.clGitHubRepoApplicationExamples.Location = new System.Drawing.Point(3, 86);
-            this.clGitHubRepoApplicationExamples.Name = "clGitHubRepoApplicationExamples";
-            this.clGitHubRepoApplicationExamples.Size = new System.Drawing.Size(253, 23);
-            this.clGitHubRepoApplicationExamples.TabIndex = 76;
-            this.clGitHubRepoApplicationExamples.Text = "GitHub с исходным кодом приложения";
-            this.clGitHubRepoApplicationExamples.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.clGitHubRepoApplicationExamples.UseSelectable = true;
-            this.clGitHubRepoApplicationExamples.Click += new System.EventHandler(this.clGitHubRepoApplicationExamples_Click);
             // 
             // MainForm
             // 
