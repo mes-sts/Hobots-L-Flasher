@@ -755,6 +755,24 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на https://github.com/mes-sts/Hobots-L-Flasher.
+        /// </summary>
+        internal static string HOBOTS_L_APPLICATON_SOURCES_PATH {
+            get {
+                return ResourceManager.GetString("HOBOTS_L_APPLICATON_SOURCES_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на https://github.com/mes-sts/Hobots-L-Examples.
+        /// </summary>
+        internal static string HOBOTS_L_ARDUINO_EXAMPLES_PATH {
+            get {
+                return ResourceManager.GetString("HOBOTS_L_ARDUINO_EXAMPLES_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на help\hobots-l-flasher-help.pdf.
         /// </summary>
         internal static string HOBOTS_L_FLASHER_HELP_PATH {

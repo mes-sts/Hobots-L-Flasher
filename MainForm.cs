@@ -9,6 +9,7 @@ using System.IO.Ports;
 using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -1058,6 +1059,38 @@ namespace Hobots_L_Flasher
             }
         }
 
+        // Открытие репозитория с исходным кодом примеров
+        private void clGitHubRepoFirmwareExamples_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(Resources.HOBOTS_L_ARDUINO_EXAMPLES_PATH);
+            }
+            catch (Exception ex)
+            {
+                if (chbDebugInfoOn.Checked)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        // Открытие репозитория с исходным кодом этого приложения
+        private void clGitHubRepoApplicationExamples_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(Resources.HOBOTS_L_APPLICATON_SOURCES_PATH);
+            }
+            catch (Exception ex)
+            {
+                if (chbDebugInfoOn.Checked)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
         // Обработка сочетаний горячих клавиш
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
@@ -1090,5 +1123,7 @@ namespace Hobots_L_Flasher
                 btnCleanTerminal.PerformClick();
             }
         }
+
+        
     }
 }

@@ -56,6 +56,7 @@
             this.cbComPortsTerminal = new MetroFramework.Controls.MetroComboBox();
             this.tabSettings = new MetroFramework.Controls.MetroTabPage();
             this.pOther = new MetroFramework.Controls.MetroPanel();
+            this.clGitHubRepoFirmwareExamples = new MetroFramework.Controls.MetroLink();
             this.chbDebugInfoOn = new MetroFramework.Controls.MetroCheckBox();
             this.clHelp = new MetroFramework.Controls.MetroLink();
             this.pDriver = new MetroFramework.Controls.MetroPanel();
@@ -67,6 +68,7 @@
             this.lblDownloadStatus = new MetroFramework.Controls.MetroLabel();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.timerResetStatus = new System.Windows.Forms.Timer(this.components);
+            this.clGitHubRepoApplicationExamples = new MetroFramework.Controls.MetroLink();
             this.tpControllers.SuspendLayout();
             this.tabControllers.SuspendLayout();
             this.pBootloader.SuspendLayout();
@@ -85,7 +87,7 @@
             this.tpControllers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tpControllers.Location = new System.Drawing.Point(20, 60);
             this.tpControllers.Name = "tpControllers";
-            this.tpControllers.SelectedIndex = 0;
+            this.tpControllers.SelectedIndex = 2;
             this.tpControllers.Size = new System.Drawing.Size(346, 352);
             this.tpControllers.TabIndex = 0;
             this.tpControllers.UseSelectable = true;
@@ -504,6 +506,8 @@
             // 
             // pOther
             // 
+            this.pOther.Controls.Add(this.clGitHubRepoApplicationExamples);
+            this.pOther.Controls.Add(this.clGitHubRepoFirmwareExamples);
             this.pOther.Controls.Add(this.chbDebugInfoOn);
             this.pOther.Controls.Add(this.clHelp);
             this.pOther.Dock = System.Windows.Forms.DockStyle.Top;
@@ -513,11 +517,23 @@
             this.pOther.Location = new System.Drawing.Point(0, 75);
             this.pOther.Name = "pOther";
             this.pOther.Padding = new System.Windows.Forms.Padding(3);
-            this.pOther.Size = new System.Drawing.Size(338, 57);
+            this.pOther.Size = new System.Drawing.Size(338, 121);
             this.pOther.TabIndex = 75;
             this.pOther.VerticalScrollbarBarColor = true;
             this.pOther.VerticalScrollbarHighlightOnWheel = false;
             this.pOther.VerticalScrollbarSize = 10;
+            // 
+            // clGitHubRepoFirmwareExamples
+            // 
+            this.clGitHubRepoFirmwareExamples.AutoSize = true;
+            this.clGitHubRepoFirmwareExamples.Location = new System.Drawing.Point(3, 57);
+            this.clGitHubRepoFirmwareExamples.Name = "clGitHubRepoFirmwareExamples";
+            this.clGitHubRepoFirmwareExamples.Size = new System.Drawing.Size(230, 23);
+            this.clGitHubRepoFirmwareExamples.TabIndex = 75;
+            this.clGitHubRepoFirmwareExamples.Text = "GitHub с исходным кодом прошивок";
+            this.clGitHubRepoFirmwareExamples.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.clGitHubRepoFirmwareExamples.UseSelectable = true;
+            this.clGitHubRepoFirmwareExamples.Click += new System.EventHandler(this.clGitHubRepoFirmwareExamples_Click);
             // 
             // chbDebugInfoOn
             // 
@@ -653,6 +669,18 @@
             this.timerResetStatus.Interval = 2000;
             this.timerResetStatus.Tick += new System.EventHandler(this.timerResetStatus_Tick);
             // 
+            // clGitHubRepoApplicationExamples
+            // 
+            this.clGitHubRepoApplicationExamples.AutoSize = true;
+            this.clGitHubRepoApplicationExamples.Location = new System.Drawing.Point(3, 86);
+            this.clGitHubRepoApplicationExamples.Name = "clGitHubRepoApplicationExamples";
+            this.clGitHubRepoApplicationExamples.Size = new System.Drawing.Size(253, 23);
+            this.clGitHubRepoApplicationExamples.TabIndex = 76;
+            this.clGitHubRepoApplicationExamples.Text = "GitHub с исходным кодом приложения";
+            this.clGitHubRepoApplicationExamples.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.clGitHubRepoApplicationExamples.UseSelectable = true;
+            this.clGitHubRepoApplicationExamples.Click += new System.EventHandler(this.clGitHubRepoApplicationExamples_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -681,6 +709,7 @@
             this.tabTerminal.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.pOther.ResumeLayout(false);
+            this.pOther.PerformLayout();
             this.pDriver.ResumeLayout(false);
             this.pDriver.PerformLayout();
             this.ResumeLayout(false);
@@ -727,6 +756,8 @@
         private MetroFramework.Controls.MetroCheckBox chbDebugInfoOn;
         private MetroFramework.Controls.MetroPanel pOther;
         private MetroFramework.Controls.MetroLabel lblFirmwarePathApendixDisc;
+        private MetroFramework.Controls.MetroLink clGitHubRepoFirmwareExamples;
+        private MetroFramework.Controls.MetroLink clGitHubRepoApplicationExamples;
     }
 }
 
