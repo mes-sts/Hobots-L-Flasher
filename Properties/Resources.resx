@@ -354,6 +354,12 @@
   <data name="FIRMWARE_WIFI_MODULE_BEGINER_ESP32" xml:space="preserve">
     <value>firmwares\beginer-esp32\hl_beginer_esp32_wifi_module_check.bin</value>
   </data>
+  <data name="FIRMWARE_WIFI_UPLOAD_OTA_P1_BEGINER_ESP32" xml:space="preserve">
+    <value>firmwares\beginer-esp32\hl_beginer_esp32_wifi_upload_ota_p1_check.bin</value>
+  </data>
+  <data name="FIRMWARE_WIFI_UPLOAD_OTA_P2_BEGINER_ESP32" xml:space="preserve">
+    <value>firmwares\beginer-esp32\hl_beginer_esp32_wifi_upload_ota_p2_check.bin</value>
+  </data>
   <data name="HID_FLASH_EXE_PATH" xml:space="preserve">
     <value>utils\hid-flash\hid-flash.exe</value>
     <comment>путь к hid-flash.exe</comment>

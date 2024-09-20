@@ -736,6 +736,24 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\beginer-esp32\hl_beginer_esp32_wifi_upload_ota_p1_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_WIFI_UPLOAD_OTA_P1_BEGINER_ESP32 {
+            get {
+                return ResourceManager.GetString("FIRMWARE_WIFI_UPLOAD_OTA_P1_BEGINER_ESP32", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\beginer-esp32\hl_beginer_esp32_wifi_upload_ota_p2_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_WIFI_UPLOAD_OTA_P2_BEGINER_ESP32 {
+            get {
+                return ResourceManager.GetString("FIRMWARE_WIFI_UPLOAD_OTA_P2_BEGINER_ESP32", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на utils\hid-flash\hid-flash.exe.
         /// </summary>
         internal static string HID_FLASH_EXE_PATH {

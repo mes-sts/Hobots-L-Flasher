@@ -603,7 +603,18 @@ namespace Hobots_L_Flasher
                 {
                     if (cbContollers.SelectedIndex == 7) // Начальный [ESP32]
                     {
-                        cli_arguments = " --chip esp32 --port \"" + cbComPorts.Text + "\" --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 80m --flash_size 4MB 0x1000 \"" + Resources.BOOTLOADER_BEGINER_ESP32_PATH + "\" 0x8000 \"" + Resources.BOOTLOADER_PARTITIONS_ESP32_PATH + "\" 0xe000 \"" + Resources.BOOTLOADER_BOOT_APP0_ESP32_PATH + "\" 0x10000 \"" + Resources.FIRMWARE_WIFI_MODULE_BEGINER_ESP32 + "\"";
+                        if (cbFirmware.SelectedIndex == 0) // Модуль WiFi
+                        {
+                            cli_arguments = " --chip esp32 --port \"" + cbComPorts.Text + "\" --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 80m --flash_size 4MB 0x1000 \"" + Resources.BOOTLOADER_BEGINER_ESP32_PATH + "\" 0x8000 \"" + Resources.BOOTLOADER_PARTITIONS_ESP32_PATH + "\" 0xe000 \"" + Resources.BOOTLOADER_BOOT_APP0_ESP32_PATH + "\" 0x10000 \"" + Resources.FIRMWARE_WIFI_MODULE_BEGINER_ESP32 + "\"";
+                        }
+                        else if (cbFirmware.SelectedIndex == 1) // WiFi OTA ч1
+                        {
+                            cli_arguments = " --chip esp32 --port \"" + cbComPorts.Text + "\" --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 80m --flash_size 4MB 0x1000 \"" + Resources.BOOTLOADER_BEGINER_ESP32_PATH + "\" 0x8000 \"" + Resources.BOOTLOADER_PARTITIONS_ESP32_PATH + "\" 0xe000 \"" + Resources.BOOTLOADER_BOOT_APP0_ESP32_PATH + "\" 0x10000 \"" + Resources.FIRMWARE_WIFI_UPLOAD_OTA_P1_BEGINER_ESP32 + "\"";
+                        }
+                        else if (cbFirmware.SelectedIndex == 2) // WiFi OTA ч2
+                        {
+                            cli_arguments = " --chip esp32 --port \"" + cbComPorts.Text + "\" --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 80m --flash_size 4MB 0x1000 \"" + Resources.BOOTLOADER_BEGINER_ESP32_PATH + "\" 0x8000 \"" + Resources.BOOTLOADER_PARTITIONS_ESP32_PATH + "\" 0xe000 \"" + Resources.BOOTLOADER_BOOT_APP0_ESP32_PATH + "\" 0x10000 \"" + Resources.FIRMWARE_WIFI_UPLOAD_OTA_P2_BEGINER_ESP32 + "\"";
+                        }
                     }
                     /*else if () // todo
                     {
@@ -850,7 +861,7 @@ namespace Hobots_L_Flasher
             string[] firmware_ultra = { "Демо", "Звук", "Моторы", "Мигалка", "Кнопки", "Гироскоп", "Последовательная серва", "Массив ИК датчиков" };
             string[] firmware_dream = { "Демо" }; //  todo
             string[] firmware_beginer_m2560 = { "Демо", "Звук", "Моторы", "Сервопривод", "Мигалка", "Кнопки", "Сонар", "Карта памяти", "Гироскоп", "Последовательная серва", "Дисплей с кнопками", "Модуль WiFi" };
-            string[] firmware_beginer_esp32 = { "Модуль WiFi" }; //  todo
+            string[] firmware_beginer_esp32 = { "Модуль WiFi", "WiFi OTA ч1", "WiFi OTA ч2" };
 
             string[] programmer_type = { "-", "ESPTOOL", "USBASP", "Arduino as ISP", "STLINK", "Serial", "DFU" };
 
