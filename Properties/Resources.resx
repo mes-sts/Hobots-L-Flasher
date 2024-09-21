@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="APPLICATON_FIRMWARES_PATH" xml:space="preserve">
+    <value>firmwares\</value>
+  </data>
   <data name="AVRDUDE_CONF_PATH" xml:space="preserve">
     <value>utils\avrdude\avrdude.conf</value>
     <comment>путь к файлу конфигов avrdude.exe</comment>
@@ -368,10 +371,10 @@
   <data name="HL_Flash_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\HL_Flash_Logo.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HOBOTS_L_APPLICATON_SOURCES_PATH" xml:space="preserve">
+  <data name="HOBOTS_L_APPLICATON_SOURCES_LINK" xml:space="preserve">
     <value>https://github.com/mes-sts/Hobots-L-Flasher</value>
   </data>
-  <data name="HOBOTS_L_ARDUINO_EXAMPLES_PATH" xml:space="preserve">
+  <data name="HOBOTS_L_ARDUINO_EXAMPLES_LINK" xml:space="preserve">
     <value>https://github.com/mes-sts/Hobots-L-Examples</value>
   </data>
   <data name="HOBOTS_L_FLASHER_HELP_PATH" xml:space="preserve">

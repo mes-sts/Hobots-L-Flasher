@@ -61,6 +61,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\.
+        /// </summary>
+        internal static string APPLICATON_FIRMWARES_PATH {
+            get {
+                return ResourceManager.GetString("APPLICATON_FIRMWARES_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на utils\avrdude\avrdude.conf.
         /// </summary>
         internal static string AVRDUDE_CONF_PATH {
@@ -775,18 +784,18 @@ namespace Hobots_L_Flasher.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на https://github.com/mes-sts/Hobots-L-Flasher.
         /// </summary>
-        internal static string HOBOTS_L_APPLICATON_SOURCES_PATH {
+        internal static string HOBOTS_L_APPLICATON_SOURCES_LINK {
             get {
-                return ResourceManager.GetString("HOBOTS_L_APPLICATON_SOURCES_PATH", resourceCulture);
+                return ResourceManager.GetString("HOBOTS_L_APPLICATON_SOURCES_LINK", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на https://github.com/mes-sts/Hobots-L-Examples.
         /// </summary>
-        internal static string HOBOTS_L_ARDUINO_EXAMPLES_PATH {
+        internal static string HOBOTS_L_ARDUINO_EXAMPLES_LINK {
             get {
-                return ResourceManager.GetString("HOBOTS_L_ARDUINO_EXAMPLES_PATH", resourceCulture);
+                return ResourceManager.GetString("HOBOTS_L_ARDUINO_EXAMPLES_LINK", resourceCulture);
             }
         }
         

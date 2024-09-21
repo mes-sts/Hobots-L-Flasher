@@ -741,114 +741,121 @@ namespace Hobots_L_Flasher
         // Установка драйверов
         private void btnInstallDriver_Click(object sender, EventArgs e)
         {
-            if (cbDriverType.SelectedIndex == 0) // USBASP
+            if (MessageBox.Show("Вы уверены что хотите установить драйвер " + cbDriverType.SelectedItem + "?", "Установка драйвера",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                try
+                if (cbDriverType.SelectedIndex == 0) // USBASP
                 {
-                    using (Process installUSBASP = new Process())
+                    try
                     {
-                        installUSBASP.StartInfo.FileName = Resources.DRIVER_USBASP_PATH;
-                        installUSBASP.Start();
+                        using (Process installUSBASP = new Process())
+                        {
+                            installUSBASP.StartInfo.FileName = Resources.DRIVER_USBASP_PATH;
+                            installUSBASP.Start();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        if (chbDebugInfoOn.Checked)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
                 }
-                catch (Exception ex)
+                else if (cbDriverType.SelectedIndex == 1) // STLINK
                 {
-                    if (chbDebugInfoOn.Checked)
+                    try
                     {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            }
-            else if (cbDriverType.SelectedIndex == 1) // STLINK
-            {
-                try
-                {
-                    using (Process installSTLINK = new Process())
-                    {
-                        if (Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE", EnvironmentVariableTarget.Machine) == "AMD64" ||
-                            Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE6432", EnvironmentVariableTarget.Machine) == "AMD64")
+                        using (Process installSTLINK = new Process())
                         {
-                            installSTLINK.StartInfo.FileName = Resources.DRIVER_STLINK_x64_PATH;
-                        }
-                        else
-                        {
-                            installSTLINK.StartInfo.FileName = Resources.DRIVER_STLINK_x86_PATH;
-                        }
+                            if (Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE", EnvironmentVariableTarget.Machine) == "AMD64" ||
+                                Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE6432", EnvironmentVariableTarget.Machine) == "AMD64")
+                            {
+                                installSTLINK.StartInfo.FileName = Resources.DRIVER_STLINK_x64_PATH;
+                            }
+                            else
+                            {
+                                installSTLINK.StartInfo.FileName = Resources.DRIVER_STLINK_x86_PATH;
+                            }
 
-                        installSTLINK.Start();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    if (chbDebugInfoOn.Checked)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            }
-            else if (cbDriverType.SelectedIndex == 2) // CH340
-            {
-                try
-                {
-                    using (Process installCH340 = new Process())
-                    {
-                        installCH340.StartInfo.FileName = Resources.DRIVER_CH340_PATH;
-                        installCH340.Start();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    if (chbDebugInfoOn.Checked)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            }
-            else if (cbDriverType.SelectedIndex == 3) // FT232
-            {
-                try
-                {
-                    using (Process installFT23 = new Process())
-                    {
-                        installFT23.StartInfo.FileName = Resources.DRIVER_FT232_PATH;
-                        installFT23.Start();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    if (chbDebugInfoOn.Checked)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            }
-            else if (cbDriverType.SelectedIndex == 4) // CP2102
-            {
-                try
-                {
-                    using (Process installCP2102 = new Process())
-                    {
-                        if (Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE", EnvironmentVariableTarget.Machine) == "AMD64" ||
-                            Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE6432", EnvironmentVariableTarget.Machine) == "AMD64")
-                        {
-                            installCP2102.StartInfo.FileName = Resources.DRIVER_CP2102_x64_PATH;
+                            installSTLINK.Start();
                         }
-                        else
+                    }
+                    catch (Exception ex)
+                    {
+                        if (chbDebugInfoOn.Checked)
                         {
-                            installCP2102.StartInfo.FileName = Resources.DRIVER_CP2102_x86_PATH;
+                            MessageBox.Show(ex.Message);
                         }
+                    }
+                }
+                else if (cbDriverType.SelectedIndex == 2) // CH340
+                {
+                    try
+                    {
+                        using (Process installCH340 = new Process())
+                        {
+                            installCH340.StartInfo.FileName = Resources.DRIVER_CH340_PATH;
+                            installCH340.Start();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        if (chbDebugInfoOn.Checked)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+                else if (cbDriverType.SelectedIndex == 3) // FT232
+                {
+                    try
+                    {
+                        using (Process installFT23 = new Process())
+                        {
+                            installFT23.StartInfo.FileName = Resources.DRIVER_FT232_PATH;
+                            installFT23.Start();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        if (chbDebugInfoOn.Checked)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+                else if (cbDriverType.SelectedIndex == 4) // CP2102
+                {
+                    try
+                    {
+                        using (Process installCP2102 = new Process())
+                        {
+                            if (Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE", EnvironmentVariableTarget.Machine) == "AMD64" ||
+                                Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE6432", EnvironmentVariableTarget.Machine) == "AMD64")
+                            {
+                                installCP2102.StartInfo.FileName = Resources.DRIVER_CP2102_x64_PATH;
+                            }
+                            else
+                            {
+                                installCP2102.StartInfo.FileName = Resources.DRIVER_CP2102_x86_PATH;
+                            }
 
-                        installCP2102.Start();
+                            installCP2102.Start();
+                        }
                     }
-                }
-                catch (Exception ex)
-                {
-                    if (chbDebugInfoOn.Checked)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        if (chbDebugInfoOn.Checked)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
                 }
             }
+            
         }
 
         // Замена списка прошивок и программаторов при изменении типа контроллера
@@ -1075,7 +1082,7 @@ namespace Hobots_L_Flasher
         {
             try
             {
-                Process.Start(Resources.HOBOTS_L_ARDUINO_EXAMPLES_PATH);
+                Process.Start(Resources.HOBOTS_L_ARDUINO_EXAMPLES_LINK);
             }
             catch (Exception ex)
             {
@@ -1091,7 +1098,23 @@ namespace Hobots_L_Flasher
         {
             try
             {
-                Process.Start(Resources.HOBOTS_L_APPLICATON_SOURCES_PATH);
+                Process.Start(Resources.HOBOTS_L_APPLICATON_SOURCES_LINK);
+            }
+            catch (Exception ex)
+            {
+                if (chbDebugInfoOn.Checked)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        // Открытие каталога с файлами прошивок контроллеров, модулей
+        private void btnOpenFirmwaresLocation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start("explorer.exe", Resources.APPLICATON_FIRMWARES_PATH);
             }
             catch (Exception ex)
             {
@@ -1134,7 +1157,5 @@ namespace Hobots_L_Flasher
                 btnCleanTerminal.PerformClick();
             }
         }
-
-        
     }
 }
