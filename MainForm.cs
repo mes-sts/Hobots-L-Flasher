@@ -128,14 +128,13 @@ namespace Hobots_L_Flasher
                 cbContollers.SelectedIndex == 1 || // Классический
                 cbContollers.SelectedIndex == 2 || // Мини
                 cbContollers.SelectedIndex == 3 || // Гипер
-                cbContollers.SelectedIndex == 5 || // Мечта
-                cbContollers.SelectedIndex == 6) // Начальный [ATM2560]
+                cbContollers.SelectedIndex == 5) // Начальный [ATM2560]
             {
                 ofd.Filter = "Файлы Intel HEX|*.hex";
             }
             /* STM32, ESP32 .bin */
             else if (cbContollers.SelectedIndex == 4 || // Ультра
-                     cbContollers.SelectedIndex == 7) // Начальный [ESP32]
+                     cbContollers.SelectedIndex == 6) // Начальный [ESP32]
             {
                 ofd.Filter = "Файлы BIN|*.bin";
             }
@@ -288,19 +287,10 @@ namespace Hobots_L_Flasher
                         {
                             cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_DEMO_CLASSIC + ":i -D";
                         }
-                        else if (cbFirmware.SelectedIndex == 1) // Звук
+                        /*else if () // todo
                         {
-                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_BEEPER_CLASSIC + ":i -D";
-                        }
-                        else if (cbFirmware.SelectedIndex == 2) // Моторы
-                        {
-                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_MOTORS_CLASSIC + ":i -D";
-                        }
-                        else if (cbFirmware.SelectedIndex == 3) // Сервопривод
-                        {
-                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_SERVO_CLASSIC + ":i -D";
-                        }
-                        //todo
+
+                        }*/
                     }
                     else if (cbContollers.SelectedIndex == 2) // Мини
                     {
@@ -399,8 +389,7 @@ namespace Hobots_L_Flasher
             }
             /* AVR ATmega2560 .hex */
             else if (cbContollers.SelectedIndex == 3 || // Гипер
-                     cbContollers.SelectedIndex == 5 || // Мечта
-                     cbContollers.SelectedIndex == 6) // Начальный [ATM2560]
+                     cbContollers.SelectedIndex == 5) // Начальный [ATM2560]
             {
                 if (tbFirmwarePath.Text != string.Empty)
                 {
@@ -435,11 +424,7 @@ namespace Hobots_L_Flasher
                             cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m2560 -P " + cbComPorts.Text + " -c wiring  -b 115200 -U flash:w:" + Resources.FIRMWARE_BUTTONS_HYPER + ":i -D";
                         }
                     }
-                    else if (cbContollers.SelectedIndex == 5) // Мечта
-                    {
-                        // TODO
-                    }
-                    else if (cbContollers.SelectedIndex == 6) // Начальный [ATM2560]
+                    else if (cbContollers.SelectedIndex == 5) // Начальный [ATM2560]
                     {
                         if (cbFirmware.SelectedIndex == 0) // Демо
                         {
@@ -593,27 +578,27 @@ namespace Hobots_L_Flasher
                 };
             }
             /* ESP32 .bin */
-            else if (cbContollers.SelectedIndex == 7) // Начальный [ESP32]
+            else if (cbContollers.SelectedIndex == 6) // Начальный [ESP32]
             {
                 if (tbFirmwarePath.Text != string.Empty)
                 {
-                    cli_arguments = " --chip esp32 --port \"" + cbComPorts.Text + "\" --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 80m --flash_size 4MB 0x1000 \"" + Resources.BOOTLOADER_BEGINER_ESP32_PATH + "\" 0x8000 \"" + Resources.BOOTLOADER_PARTITIONS_ESP32_PATH + "\" 0xe000 \"" + Resources.BOOTLOADER_BOOT_APP0_ESP32_PATH + "\" 0x10000 \"" + tbFirmwarePath.Text + "\"";
+                    cli_arguments = " --chip esp32 --port \"" + cbComPorts.Text + "\" --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode keep --flash_freq keep --flash_size keep 0x1000 \"" + Resources.BOOTLOADER_BEGINER_ESP32_PATH + "\" 0x8000 \"" + Resources.BOOTLOADER_PARTITIONS_ESP32_PATH + "\" 0xe000 \"" + Resources.BOOTLOADER_BOOT_APP0_ESP32_PATH + "\" 0x10000 \"" + tbFirmwarePath.Text + "\"";
                 }
                 else
                 {
-                    if (cbContollers.SelectedIndex == 7) // Начальный [ESP32]
+                    if (cbContollers.SelectedIndex == 6) // Начальный [ESP32]
                     {
                         if (cbFirmware.SelectedIndex == 0) // Модуль WiFi
                         {
-                            cli_arguments = " --chip esp32 --port \"" + cbComPorts.Text + "\" --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 80m --flash_size 4MB 0x1000 \"" + Resources.BOOTLOADER_BEGINER_ESP32_PATH + "\" 0x8000 \"" + Resources.BOOTLOADER_PARTITIONS_ESP32_PATH + "\" 0xe000 \"" + Resources.BOOTLOADER_BOOT_APP0_ESP32_PATH + "\" 0x10000 \"" + Resources.FIRMWARE_WIFI_MODULE_BEGINER_ESP32 + "\"";
+                            cli_arguments = " --chip esp32 --port \"" + cbComPorts.Text + "\" --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode keep --flash_freq keep --flash_size keep 0x1000 \"" + Resources.BOOTLOADER_BEGINER_ESP32_PATH + "\" 0x8000 \"" + Resources.BOOTLOADER_PARTITIONS_ESP32_PATH + "\" 0xe000 \"" + Resources.BOOTLOADER_BOOT_APP0_ESP32_PATH + "\" 0x10000 \"" + Resources.FIRMWARE_WIFI_MODULE_BEGINER_ESP32 + "\"";
                         }
                         else if (cbFirmware.SelectedIndex == 1) // WiFi OTA ч1
                         {
-                            cli_arguments = " --chip esp32 --port \"" + cbComPorts.Text + "\" --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 80m --flash_size 4MB 0x1000 \"" + Resources.BOOTLOADER_BEGINER_ESP32_PATH + "\" 0x8000 \"" + Resources.BOOTLOADER_PARTITIONS_ESP32_PATH + "\" 0xe000 \"" + Resources.BOOTLOADER_BOOT_APP0_ESP32_PATH + "\" 0x10000 \"" + Resources.FIRMWARE_WIFI_UPLOAD_OTA_P1_BEGINER_ESP32 + "\"";
+                            cli_arguments = " --chip esp32 --port \"" + cbComPorts.Text + "\" --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode keep --flash_freq keep --flash_size keep 0x1000 \"" + Resources.BOOTLOADER_BEGINER_ESP32_PATH + "\" 0x8000 \"" + Resources.BOOTLOADER_PARTITIONS_ESP32_PATH + "\" 0xe000 \"" + Resources.BOOTLOADER_BOOT_APP0_ESP32_PATH + "\" 0x10000 \"" + Resources.FIRMWARE_WIFI_UPLOAD_OTA_P1_BEGINER_ESP32 + "\"";
                         }
                         else if (cbFirmware.SelectedIndex == 2) // WiFi OTA ч2
                         {
-                            cli_arguments = " --chip esp32 --port \"" + cbComPorts.Text + "\" --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 80m --flash_size 4MB 0x1000 \"" + Resources.BOOTLOADER_BEGINER_ESP32_PATH + "\" 0x8000 \"" + Resources.BOOTLOADER_PARTITIONS_ESP32_PATH + "\" 0xe000 \"" + Resources.BOOTLOADER_BOOT_APP0_ESP32_PATH + "\" 0x10000 \"" + Resources.FIRMWARE_WIFI_UPLOAD_OTA_P2_BEGINER_ESP32 + "\"";
+                            cli_arguments = " --chip esp32 --port \"" + cbComPorts.Text + "\" --baud 921600 --before default_reset --after hard_reset write_flash -z --flash_mode keep --flash_freq keep --flash_size keep 0x1000 \"" + Resources.BOOTLOADER_BEGINER_ESP32_PATH + "\" 0x8000 \"" + Resources.BOOTLOADER_PARTITIONS_ESP32_PATH + "\" 0xe000 \"" + Resources.BOOTLOADER_BOOT_APP0_ESP32_PATH + "\" 0x10000 \"" + Resources.FIRMWARE_WIFI_UPLOAD_OTA_P2_BEGINER_ESP32 + "\"";
                         }
                     }
                     /*else if () // todo
@@ -683,8 +668,7 @@ namespace Hobots_L_Flasher
             }
 
             else if (cbContollers.SelectedIndex == 3 ||
-                     cbContollers.SelectedIndex == 5 ||
-                     cbContollers.SelectedIndex == 6) // atmega2560
+                     cbContollers.SelectedIndex == 5) // atmega2560
             {
                 cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -c usbasp -p m2560 -b 14400 -U flash:w:" + Resources.BOOTLOADER_ATMEGA2560_PATH + ":a " + "-U hfuse:w:0xD8:m -U lfuse:w:0xFF:m -U lock:w:0x3F:m -U efuse:w:0xFD:m -q";
 
@@ -862,11 +846,10 @@ namespace Hobots_L_Flasher
         private void cbContollers_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] firmware_standart = { "Демо", "Звук", "Моторы", "Сервопривод", "Сонар", "Кнопка", "ИК приёмник", "Датчик линии", "Датчик цвета", "Bluetooth" };
-            string[] firmware_classic = { "Демо", "Звук", "Моторы", "Сервопривод" }; //  todo
+            string[] firmware_classic = { "Демо" }; //  todo
             string[] firmware_mini = { "Демо", "Звук", "Моторы", "Сервопривод", "RGB", "Кнопка", "Освещение", "ИК приёмник", "ИК передатчик", "Сонар", "Датчик линии", "Концевик", "RGB модуль", "Гироскоп", "Датчик света", "Микрофон", "Джойстик PS2" };
             string[] firmware_hyper = { "Демо", "Звук", "Моторы", "Сервопривод", "Мигалка", "Кнопки" };
             string[] firmware_ultra = { "Демо", "Звук", "Моторы", "Мигалка", "Кнопки", "Гироскоп", "Последовательная серва", "Массив ИК датчиков" };
-            string[] firmware_dream = { "Демо" }; //  todo
             string[] firmware_beginer_m2560 = { "Демо", "Звук", "Моторы", "Сервопривод", "Мигалка", "Кнопки", "Сонар", "Карта памяти", "Гироскоп", "Последовательная серва", "Дисплей с кнопками", "Модуль WiFi" };
             string[] firmware_beginer_esp32 = { "Модуль WiFi", "WiFi OTA ч1", "WiFi OTA ч2" };
 
@@ -946,22 +929,7 @@ namespace Hobots_L_Flasher
 
                 btnDownloadBootloaderProgrammer.Enabled = true;
             }
-            else if (cbContollers.SelectedIndex == 5) // Мечта
-            {
-                cbFirmware.Items.Clear();
-                cbFirmware.Items.AddRange(firmware_dream);
-                cbComPortBaudrate.SelectedIndex = 1; // 115200
-
-                chbUseATmega328pb.Enabled = false;
-                chbUseATmega328pb.Checked = false;
-
-                cbProgrammers.Items.Clear();
-                cbProgrammers.Items.Add(programmer_type[2]); // USBASP
-                cbProgrammers.Enabled = true;
-
-                btnDownloadBootloaderProgrammer.Enabled = true;
-            }
-            else if (cbContollers.SelectedIndex == 6) // Начальный [ATM2560]
+            else if (cbContollers.SelectedIndex == 5) // Начальный [ATM2560]
             {
                 cbFirmware.Items.Clear();
                 cbFirmware.Items.AddRange(firmware_beginer_m2560);
@@ -976,7 +944,7 @@ namespace Hobots_L_Flasher
 
                 btnDownloadBootloaderProgrammer.Enabled = true;
             }
-            else if (cbContollers.SelectedIndex == 7) // Начальный [ESP32]
+            else if (cbContollers.SelectedIndex == 6) // Начальный [ESP32]
             {
                 cbFirmware.Items.Clear();
                 cbFirmware.Items.AddRange(firmware_beginer_esp32);

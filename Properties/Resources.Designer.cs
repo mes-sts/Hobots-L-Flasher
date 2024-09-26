@@ -223,15 +223,6 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
-        /// </summary>
-        internal static string FIRMWARE_BEEPER_CLASSIC {
-            get {
-                return ResourceManager.GetString("FIRMWARE_BEEPER_CLASSIC", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\hyper\hl_hyper_beeper_check.hex.
         /// </summary>
         internal static string FIRMWARE_BEEPER_HYPER {
@@ -354,15 +345,6 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_DEMO_CLASSIC {
             get {
                 return ResourceManager.GetString("FIRMWARE_DEMO_CLASSIC", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на .
-        /// </summary>
-        internal static string FIRMWARE_DEMO_DREAM {
-            get {
-                return ResourceManager.GetString("FIRMWARE_DEMO_DREAM", resourceCulture);
             }
         }
         
@@ -574,15 +556,6 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
-        /// </summary>
-        internal static string FIRMWARE_MOTORS_CLASSIC {
-            get {
-                return ResourceManager.GetString("FIRMWARE_MOTORS_CLASSIC", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\hyper\hl_hyper_motors_check.hex.
         /// </summary>
         internal static string FIRMWARE_MOTORS_HYPER {
@@ -660,15 +633,6 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_SERVO_BEGINER_ATMEGA2560 {
             get {
                 return ResourceManager.GetString("FIRMWARE_SERVO_BEGINER_ATMEGA2560", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на .
-        /// </summary>
-        internal static string FIRMWARE_SERVO_CLASSIC {
-            get {
-                return ResourceManager.GetString("FIRMWARE_SERVO_CLASSIC", resourceCulture);
             }
         }
         

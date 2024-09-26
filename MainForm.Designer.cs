@@ -212,9 +212,9 @@
             this.lblFirmwarePathApendixDisc.Location = new System.Drawing.Point(5, 144);
             this.lblFirmwarePathApendixDisc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblFirmwarePathApendixDisc.Name = "lblFirmwarePathApendixDisc";
-            this.lblFirmwarePathApendixDisc.Size = new System.Drawing.Size(181, 15);
+            this.lblFirmwarePathApendixDisc.Size = new System.Drawing.Size(148, 15);
             this.lblFirmwarePathApendixDisc.TabIndex = 70;
-            this.lblFirmwarePathApendixDisc.Text = "(своя, когда нет в списке готовых)";
+            this.lblFirmwarePathApendixDisc.Text = "(если нет в списке готовых)";
             this.lblFirmwarePathApendixDisc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblContollerTypeDisc
@@ -239,7 +239,6 @@
             "Мини",
             "Гипер",
             "Ультра",
-            "Мечта",
             "Начальный [ATMEGA]",
             "Начальный [ESP]"});
             this.cbContollers.Location = new System.Drawing.Point(206, 5);
@@ -579,7 +578,7 @@
             this.clGitHubRepoApplicationExamples.Name = "clGitHubRepoApplicationExamples";
             this.clGitHubRepoApplicationExamples.Size = new System.Drawing.Size(332, 27);
             this.clGitHubRepoApplicationExamples.TabIndex = 76;
-            this.clGitHubRepoApplicationExamples.Text = "GitHub с исходным кодом приложения";
+            this.clGitHubRepoApplicationExamples.Text = "GitHub с исходным кодом этого приложения";
             this.clGitHubRepoApplicationExamples.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clGitHubRepoApplicationExamples.UseSelectable = true;
             this.clGitHubRepoApplicationExamples.Click += new System.EventHandler(this.clGitHubRepoApplicationExamples_Click);
@@ -591,7 +590,7 @@
             this.clGitHubRepoFirmwareExamples.Name = "clGitHubRepoFirmwareExamples";
             this.clGitHubRepoFirmwareExamples.Size = new System.Drawing.Size(332, 27);
             this.clGitHubRepoFirmwareExamples.TabIndex = 75;
-            this.clGitHubRepoFirmwareExamples.Text = "GitHub с исходным кодом прошивок";
+            this.clGitHubRepoFirmwareExamples.Text = "GitHub с исходным кодом готовых прошивок";
             this.clGitHubRepoFirmwareExamples.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clGitHubRepoFirmwareExamples.UseSelectable = true;
             this.clGitHubRepoFirmwareExamples.Click += new System.EventHandler(this.clGitHubRepoFirmwareExamples_Click);
@@ -603,7 +602,7 @@
             this.clHelp.Name = "clHelp";
             this.clHelp.Size = new System.Drawing.Size(332, 27);
             this.clHelp.TabIndex = 72;
-            this.clHelp.Text = "Открыть файл справки";
+            this.clHelp.Text = "Открыть PDF файл справки";
             this.clHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clHelp.UseSelectable = true;
             this.clHelp.Click += new System.EventHandler(this.clHelp_Click);
