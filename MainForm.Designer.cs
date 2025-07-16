@@ -90,7 +90,7 @@
             this.tpControllers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tpControllers.Location = new System.Drawing.Point(20, 60);
             this.tpControllers.Name = "tpControllers";
-            this.tpControllers.SelectedIndex = 2;
+            this.tpControllers.SelectedIndex = 0;
             this.tpControllers.Size = new System.Drawing.Size(346, 352);
             this.tpControllers.TabIndex = 0;
             this.tpControllers.UseSelectable = true;
@@ -209,6 +209,7 @@
             // 
             this.lblFirmwarePathApendixDisc.AutoSize = true;
             this.lblFirmwarePathApendixDisc.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.lblFirmwarePathApendixDisc.ForeColor = System.Drawing.SystemColors.MenuText;
             this.lblFirmwarePathApendixDisc.Location = new System.Drawing.Point(5, 144);
             this.lblFirmwarePathApendixDisc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblFirmwarePathApendixDisc.Name = "lblFirmwarePathApendixDisc";
@@ -240,7 +241,8 @@
             "Гипер",
             "Ультра",
             "Начальный [ATMEGA]",
-            "Начальный [ESP]"});
+            "Начальный [ESP]",
+            "Икс"});
             this.cbContollers.Location = new System.Drawing.Point(206, 5);
             this.cbContollers.Margin = new System.Windows.Forms.Padding(5);
             this.cbContollers.Name = "cbContollers";

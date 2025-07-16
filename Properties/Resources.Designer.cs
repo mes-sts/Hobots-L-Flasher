@@ -135,9 +135,18 @@ namespace Hobots_L_Flasher.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на bootloaders\stm32f103\hid_bootloader_hobots_l_main_board_ultra.bin.
         /// </summary>
-        internal static string BOOTLOADER_STM32F103_PATH {
+        internal static string BOOTLOADER_STM32F103_HL_ULTRA_PATH {
             get {
-                return ResourceManager.GetString("BOOTLOADER_STM32F103_PATH", resourceCulture);
+                return ResourceManager.GetString("BOOTLOADER_STM32F103_HL_ULTRA_PATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на bootloaders\stm32f103\hid_bootloader_hobots_l_x.bin.
+        /// </summary>
+        internal static string BOOTLOADER_STM32F103_HL_X_PATH {
+            get {
+                return ResourceManager.GetString("BOOTLOADER_STM32F103_HL_X_PATH", resourceCulture);
             }
         }
         
@@ -259,6 +268,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\x\hl_x_module_beeper_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_BEEPER_X {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BEEPER_X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\standart\hl_standart_bluetooth_check.hex.
         /// </summary>
         internal static string FIRMWARE_BLUETOOTH_STANDART {
@@ -322,11 +340,29 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\x\hl_x_controller_buttons_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_BUTTONS_X {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BUTTONS_X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\standart\hl_standart_color_check.hex.
         /// </summary>
         internal static string FIRMWARE_COLOR_STANDART {
             get {
                 return ResourceManager.GetString("FIRMWARE_COLOR_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\x\hl_x_module_color_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_COLOR_X {
+            get {
+                return ResourceManager.GetString("FIRMWARE_COLOR_X", resourceCulture);
             }
         }
         
@@ -385,6 +421,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\x\hl_x_demo.bin.
+        /// </summary>
+        internal static string FIRMWARE_DEMO_X {
+            get {
+                return ResourceManager.GetString("FIRMWARE_DEMO_X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_external_light_check.hex.
         /// </summary>
         internal static string FIRMWARE_EXTERNAL_LIGHT_MINI {
@@ -417,6 +462,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_GYRO_ULTRA {
             get {
                 return ResourceManager.GetString("FIRMWARE_GYRO_ULTRA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\x\hl_x_module_imu_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_IMU_X {
+            get {
+                return ResourceManager.GetString("FIRMWARE_IMU_X", resourceCulture);
             }
         }
         
@@ -493,6 +547,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\x\hl_x_controller_leds_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_LEDS_X {
+            get {
+                return ResourceManager.GetString("FIRMWARE_LEDS_X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_light_check.ino.hex.
         /// </summary>
         internal static string FIRMWARE_LIGHT_MINI {
@@ -507,6 +570,24 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_LIM_BUTTON_MINI {
             get {
                 return ResourceManager.GetString("FIRMWARE_LIM_BUTTON_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\x\hl_x_module_line_a_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_LINE_A_X {
+            get {
+                return ResourceManager.GetString("FIRMWARE_LINE_A_X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\x\hl_x_module_line_d_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_LINE_D_X {
+            get {
+                return ResourceManager.GetString("FIRMWARE_LINE_D_X", resourceCulture);
             }
         }
         
@@ -592,6 +673,24 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\x\hl_x_controller_motors_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_MOTORS_X {
+            get {
+                return ResourceManager.GetString("FIRMWARE_MOTORS_X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\x\hl_x_module_press_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_PRESS_X {
+            get {
+                return ResourceManager.GetString("FIRMWARE_PRESS_X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_rgb_led_check.hex.
         /// </summary>
         internal static string FIRMWARE_RGB_LED_MINI {
@@ -606,6 +705,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_RGB_MINI {
             get {
                 return ResourceManager.GetString("FIRMWARE_RGB_MINI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\x\hl_x_module_rgb_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_RGB_X {
+            get {
+                return ResourceManager.GetString("FIRMWARE_RGB_X", resourceCulture);
             }
         }
         
@@ -664,6 +772,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\x\hl_x_module_servo_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_SERVO_X {
+            get {
+                return ResourceManager.GetString("FIRMWARE_SERVO_X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\beginer-atmega2560\hl_beginer_sonar_check.hex.
         /// </summary>
         internal static string FIRMWARE_SONAR_BEGINER_ATMEGA2560 {
@@ -687,6 +804,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_SONAR_STANDART {
             get {
                 return ResourceManager.GetString("FIRMWARE_SONAR_STANDART", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\x\hl_x_module_sonar_check.bin.
+        /// </summary>
+        internal static string FIRMWARE_SONAR_X {
+            get {
+                return ResourceManager.GetString("FIRMWARE_SONAR_X", resourceCulture);
             }
         }
         

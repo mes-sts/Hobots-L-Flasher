@@ -145,8 +145,11 @@
   <data name="BOOTLOADER_PARTITIONS_ESP32_PATH" xml:space="preserve">
     <value>bootloaders\esp32\esp32_partitions.bin</value>
   </data>
-  <data name="BOOTLOADER_STM32F103_PATH" xml:space="preserve">
+  <data name="BOOTLOADER_STM32F103_HL_ULTRA_PATH" xml:space="preserve">
     <value>bootloaders\stm32f103\hid_bootloader_hobots_l_main_board_ultra.bin</value>
+  </data>
+  <data name="BOOTLOADER_STM32F103_HL_X_PATH" xml:space="preserve">
+    <value>bootloaders\stm32f103\hid_bootloader_hobots_l_x.bin</value>
   </data>
   <data name="DRIVER_CH340_PATH" xml:space="preserve">
     <value>drivers\ch340\CH340SER.EXE</value>
@@ -195,6 +198,9 @@
   <data name="FIRMWARE_BEEPER_ULTRA" xml:space="preserve">
     <value>firmwares\ultra\hl_ultra_beeper_check.bin</value>
   </data>
+  <data name="FIRMWARE_BEEPER_X" xml:space="preserve">
+    <value>firmwares\x\hl_x_module_beeper_check.bin</value>
+  </data>
   <data name="FIRMWARE_BLUETOOTH_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_bluetooth_check.hex</value>
   </data>
@@ -210,6 +216,9 @@
   <data name="FIRMWARE_BUTTONS_ULTRA" xml:space="preserve">
     <value>firmwares\ultra\hl_ultra_buttons_check.bin</value>
   </data>
+  <data name="FIRMWARE_BUTTONS_X" xml:space="preserve">
+    <value>firmwares\x\hl_x_controller_buttons_check.bin</value>
+  </data>
   <data name="FIRMWARE_BUTTON_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_button_check.hex</value>
   </data>
@@ -218,6 +227,9 @@
   </data>
   <data name="FIRMWARE_COLOR_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_color_check.hex</value>
+  </data>
+  <data name="FIRMWARE_COLOR_X" xml:space="preserve">
+    <value>firmwares\x\hl_x_module_color_check.bin</value>
   </data>
   <data name="FIRMWARE_DEMO_BEGINER_ATMEGA2560" xml:space="preserve">
     <value />
@@ -237,6 +249,9 @@
   <data name="FIRMWARE_DEMO_ULTRA" xml:space="preserve">
     <value />
   </data>
+  <data name="FIRMWARE_DEMO_X" xml:space="preserve">
+    <value>firmwares\x\hl_x_demo.bin</value>
+  </data>
   <data name="FIRMWARE_EXTERNAL_LIGHT_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_external_light_check.hex</value>
   </data>
@@ -248,6 +263,9 @@
   </data>
   <data name="FIRMWARE_GYRO_ULTRA" xml:space="preserve">
     <value>firmwares\ultra\hl_ultra_gyro_check.bin</value>
+  </data>
+  <data name="FIRMWARE_IMU_X" xml:space="preserve">
+    <value>firmwares\x\hl_x_module_imu_check.bin</value>
   </data>
   <data name="FIRMWARE_IR_MASSIVE_ULTRA" xml:space="preserve">
     <value>firmwares\ultra\hl_ultra_massive_sensor_check.bin</value>
@@ -273,11 +291,20 @@
   <data name="FIRMWARE_LEDS_ULTRA" xml:space="preserve">
     <value>firmwares\ultra\hl_ultra_leds_check.bin</value>
   </data>
+  <data name="FIRMWARE_LEDS_X" xml:space="preserve">
+    <value>firmwares\x\hl_x_controller_leds_check.bin</value>
+  </data>
   <data name="FIRMWARE_LIGHT_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_light_check.ino.hex</value>
   </data>
   <data name="FIRMWARE_LIM_BUTTON_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_lim_button_check.hex</value>
+  </data>
+  <data name="FIRMWARE_LINE_A_X" xml:space="preserve">
+    <value>firmwares\x\hl_x_module_line_a_check.bin</value>
+  </data>
+  <data name="FIRMWARE_LINE_D_X" xml:space="preserve">
+    <value>firmwares\x\hl_x_module_line_d_check.bin</value>
   </data>
   <data name="FIRMWARE_LINE_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_line_check.hex</value>
@@ -306,11 +333,20 @@
   <data name="FIRMWARE_MOTORS_ULTRA" xml:space="preserve">
     <value>firmwares\ultra\hl_ultra_motors_check.bin</value>
   </data>
+  <data name="FIRMWARE_MOTORS_X" xml:space="preserve">
+    <value>firmwares\x\hl_x_controller_motors_check.bin</value>
+  </data>
+  <data name="FIRMWARE_PRESS_X" xml:space="preserve">
+    <value>firmwares\x\hl_x_module_press_check.bin</value>
+  </data>
   <data name="FIRMWARE_RGB_LED_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_rgb_led_check.hex</value>
   </data>
   <data name="FIRMWARE_RGB_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_rgb_check.hex</value>
+  </data>
+  <data name="FIRMWARE_RGB_X" xml:space="preserve">
+    <value>firmwares\x\hl_x_module_rgb_check.bin</value>
   </data>
   <data name="FIRMWARE_SERIAL_BUS_SERVO_BEGINER_ATMEGA2560" xml:space="preserve">
     <value>firmwares\beginer-atmega2560\hl_beginer_serial_bus_servo_check.hex</value>
@@ -330,6 +366,9 @@
   <data name="FIRMWARE_SERVO_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_servo_check.hex</value>
   </data>
+  <data name="FIRMWARE_SERVO_X" xml:space="preserve">
+    <value>firmwares\x\hl_x_module_servo_check.bin</value>
+  </data>
   <data name="FIRMWARE_SONAR_BEGINER_ATMEGA2560" xml:space="preserve">
     <value>firmwares\beginer-atmega2560\hl_beginer_sonar_check.hex</value>
   </data>
@@ -338,6 +377,9 @@
   </data>
   <data name="FIRMWARE_SONAR_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_sonar_check.hex</value>
+  </data>
+  <data name="FIRMWARE_SONAR_X" xml:space="preserve">
+    <value>firmwares\x\hl_x_module_sonar_check.bin</value>
   </data>
   <data name="FIRMWARE_WIFI_MODULE_BEGINER_ATMEGA2560" xml:space="preserve">
     <value>firmwares\beginer-atmega2560\hl_beginer_atmega2560_wifi_module_check.hex</value>
