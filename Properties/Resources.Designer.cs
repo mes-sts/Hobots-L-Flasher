@@ -367,6 +367,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\k\hl_k_controller.bin.
+        /// </summary>
+        internal static string FIRMWARE_CONTROLLER_K {
+            get {
+                return ResourceManager.GetString("FIRMWARE_CONTROLLER_K", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на .
         /// </summary>
         internal static string FIRMWARE_DEMO_BEGINER_ATMEGA2560 {
@@ -687,6 +696,24 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_PRESS_X {
             get {
                 return ResourceManager.GetString("FIRMWARE_PRESS_X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\k\hl_k_programmer.bin.
+        /// </summary>
+        internal static string FIRMWARE_PROGRAMMER_K {
+            get {
+                return ResourceManager.GetString("FIRMWARE_PROGRAMMER_K", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\k\hl_k_remote_controll.bin.
+        /// </summary>
+        internal static string FIRMWARE_REMOTE_CONTROLL_K {
+            get {
+                return ResourceManager.GetString("FIRMWARE_REMOTE_CONTROLL_K", resourceCulture);
             }
         }
         

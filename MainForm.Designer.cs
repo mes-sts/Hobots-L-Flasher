@@ -153,7 +153,7 @@
             this.btnDownloadBootloaderProgrammer.Name = "btnDownloadBootloaderProgrammer";
             this.btnDownloadBootloaderProgrammer.Size = new System.Drawing.Size(338, 29);
             this.btnDownloadBootloaderProgrammer.TabIndex = 68;
-            this.btnDownloadBootloaderProgrammer.Text = "Записать загрузчик через программатор";
+            this.btnDownloadBootloaderProgrammer.Text = "Загрузить загрузчик";
             this.btnDownloadBootloaderProgrammer.UseSelectable = true;
             this.btnDownloadBootloaderProgrammer.Click += new System.EventHandler(this.btnDownloadBootloaderProgrammer_Click);
             // 
@@ -242,7 +242,8 @@
             "Ультра",
             "Начальный [ATMEGA]",
             "Начальный [ESP]",
-            "Икс"});
+            "Икс",
+            "Кей"});
             this.cbContollers.Location = new System.Drawing.Point(206, 5);
             this.cbContollers.Margin = new System.Windows.Forms.Padding(5);
             this.cbContollers.Name = "cbContollers";
@@ -275,7 +276,7 @@
             this.btnDownloadFirmwarePort.Size = new System.Drawing.Size(338, 29);
             this.btnDownloadFirmwarePort.Style = MetroFramework.MetroColorStyle.Blue;
             this.btnDownloadFirmwarePort.TabIndex = 60;
-            this.btnDownloadFirmwarePort.Text = "Записать прошивку через последовательный порт";
+            this.btnDownloadFirmwarePort.Text = "Загрузить прошивку";
             this.btnDownloadFirmwarePort.Theme = MetroFramework.MetroThemeStyle.Light;
             this.btnDownloadFirmwarePort.UseSelectable = true;
             this.btnDownloadFirmwarePort.Click += new System.EventHandler(this.btnDownloadFirmwarePort_Click);
