@@ -1222,7 +1222,7 @@ namespace Hobots_L_Flasher
 
                 cbProgrammers.Items.Clear();
                 cbProgrammers.Items.Add(programmer_type[4]); // STLINK
-                cbProgrammers.Enabled = true;
+                cbProgrammers.Enabled = false;
 
                 btnDownloadBootloaderProgrammer.Enabled = true;
 
