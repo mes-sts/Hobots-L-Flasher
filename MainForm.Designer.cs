@@ -444,7 +444,7 @@
             this.tbTerminal.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbTerminal.UseSelectable = true;
             this.tbTerminal.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tbTerminal.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tbTerminal.WaterMarkFont = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             // 
             // btnCleanTerminal
             // 

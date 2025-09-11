@@ -554,57 +554,59 @@ namespace Hobots_L_Flasher
                     }
                     else if (cbContollers.SelectedIndex == 7) // Икс
                     {
+                        string com_port = ((cbComPorts.Text != string.Empty) ? cbComPorts.Text : "COM0");
+
                         if (cbFirmware.SelectedIndex == 0) // Демо
                         {
-                            cli_arguments = Resources.FIRMWARE_DEMO_X + " " + cbComPorts.Text;
+                            cli_arguments = Resources.FIRMWARE_DEMO_X + " " + com_port;
                         }
                         else if (cbFirmware.SelectedIndex == 1) // Звук
                         {
-                            cli_arguments = Resources.FIRMWARE_BEEPER_X + " " + cbComPorts.Text;
+                            cli_arguments = Resources.FIRMWARE_BEEPER_X + " " + com_port;
                         }
                         else if (cbFirmware.SelectedIndex == 2) // Моторы
                         {
-                            cli_arguments = Resources.FIRMWARE_MOTORS_X + " " + cbComPorts.Text;
+                            cli_arguments = Resources.FIRMWARE_MOTORS_X + " " + com_port;
                         }
                         else if (cbFirmware.SelectedIndex == 3) // Сервопривод
                         {
-                            cli_arguments = Resources.FIRMWARE_SERVO_X + " " + cbComPorts.Text;
+                            cli_arguments = Resources.FIRMWARE_SERVO_X + " " + com_port;
                         }
                         else if (cbFirmware.SelectedIndex == 4) // Сонар
                         {
-                            cli_arguments = Resources.FIRMWARE_SONAR_X + " " + cbComPorts.Text;
+                            cli_arguments = Resources.FIRMWARE_SONAR_X + " " + com_port;
                         }
                         else if (cbFirmware.SelectedIndex == 5) // Кнопки
                         {
-                            cli_arguments = Resources.FIRMWARE_BUTTONS_X + " " + cbComPorts.Text;
+                            cli_arguments = Resources.FIRMWARE_BUTTONS_X + " " + com_port;
                         }
                         else if (cbFirmware.SelectedIndex == 6) // Светодиоды
                         {
-                            cli_arguments = Resources.FIRMWARE_LEDS_X + " " + cbComPorts.Text;
+                            cli_arguments = Resources.FIRMWARE_LEDS_X + " " + com_port;
                         }
                         else if (cbFirmware.SelectedIndex == 7) // Датчик линии A
                         {
-                            cli_arguments = Resources.FIRMWARE_LINE_A_X + " " + cbComPorts.Text;
+                            cli_arguments = Resources.FIRMWARE_LINE_A_X + " " + com_port;
                         }
                         else if (cbFirmware.SelectedIndex == 8) // Датчик линии D
                         {
-                            cli_arguments = Resources.FIRMWARE_LINE_D_X + " " + cbComPorts.Text;
+                            cli_arguments = Resources.FIRMWARE_LINE_D_X + " " + com_port;
                         }
                         else if (cbFirmware.SelectedIndex == 9) // Датчик цвета
                         {
-                            cli_arguments = Resources.FIRMWARE_COLOR_X + " " + cbComPorts.Text;
+                            cli_arguments = Resources.FIRMWARE_COLOR_X + " " + com_port;
                         }
                         else if (cbFirmware.SelectedIndex == 10) // Датчик нажатия
                         {
-                            cli_arguments = Resources.FIRMWARE_PRESS_X + " " + cbComPorts.Text;
+                            cli_arguments = Resources.FIRMWARE_PRESS_X + " " + com_port;
                         }
                         else if (cbFirmware.SelectedIndex == 11) // Гироскоп
                         {
-                            cli_arguments = Resources.FIRMWARE_IMU_X + " " + cbComPorts.Text;
+                            cli_arguments = Resources.FIRMWARE_IMU_X + " " + com_port;
                         }
                         else if (cbFirmware.SelectedIndex == 12) // Светодиод RGB
                         {
-                            cli_arguments = Resources.FIRMWARE_RGB_X + " " + cbComPorts.Text;
+                            cli_arguments = Resources.FIRMWARE_RGB_X + " " + com_port;
                         }
                     }
                     else if (cbContollers.SelectedIndex == 8) // Кей
@@ -970,7 +972,7 @@ namespace Hobots_L_Flasher
             string[] firmware_beginer_m2560 = { "Демо", "Звук", "Моторы", "Сервопривод", "Мигалка", "Кнопки", "Сонар", "Карта памяти", "Гироскоп", "Последовательная серва", "Дисплей с кнопками", "Модуль WiFi" };
             string[] firmware_beginer_esp32 = { "Модуль WiFi", "WiFi OTA ч1", "WiFi OTA ч2" };
             string[] firmware_x = { "Демо", "Звук", "Моторы", "Сервопривод", "Сонар", "Кнопки", "Светодиоды", "Датчик линии A", "Датчик линии D", "Датчик цвета", "Датчик нажатия", "Гироскоп", "Светодиод RGB" };
-            string[] firmware_k = { "Программатор", "Контроллер", "Пульт" };
+            string[] firmware_k = { "Контроллер", "Программатор", "Пульт" };
 
             string[] programmer_type = { "-", "ESPTOOL", "USBASP", "Arduino as ISP", "STLINK", "Serial", "DFU" };
 
@@ -1225,12 +1227,12 @@ namespace Hobots_L_Flasher
                 cbProgrammers.Enabled = false;
 
                 btnDownloadBootloaderProgrammer.Enabled = true;
+                btnDownloadFirmwarePort.Enabled = true;
 
                 // Активность кнопки в зависимости от наличия портов
                 if (cbComPorts.Text == string.Empty ||
                     cbComPortsTerminal.Text == string.Empty)
                 {
-                    btnDownloadFirmwarePort.Enabled = false;
                     cbComPorts.Enabled = false;
 
                     btnStartStopTerminal.Enabled = false;
@@ -1238,7 +1240,6 @@ namespace Hobots_L_Flasher
                 }
                 else
                 {
-                    btnDownloadFirmwarePort.Enabled = true;
                     cbComPorts.Enabled = true;
 
                     btnStartStopTerminal.Enabled = true;
