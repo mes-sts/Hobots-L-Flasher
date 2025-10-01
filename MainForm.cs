@@ -289,10 +289,46 @@ namespace Hobots_L_Flasher
                         {
                             cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_DEMO_CLASSIC + ":i -D";
                         }
-                        /*else if () // todo
+                        else if (cbFirmware.SelectedIndex == 1) // Звук
                         {
-
-                        }*/
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_BEEPER_CLASSIC + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 2) // Моторы
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_MOTORS_CLASSIC + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 3) // Сервопривод
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_SERVO_CLASSIC + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 4) // Сонар
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_SONAR_CLASSIC + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 5) // Кнопка
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_BUTTON_CLASSIC + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 6) // ИК приёмник
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_IR_RECEIVER_CLASSIC + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 7) // Датчик линии
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_LINE_CLASSIC + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 8) // Датчик цвета
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_COLOR_CLASSIC + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 9) // Bluetooth
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_BLUETOOTH_CLASSIC + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 10) // Многоцветный светодиод
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_MULTICOLOR_LED_CLASSIC + ":i -D";
+                        }
                     }
                     else if (cbContollers.SelectedIndex == 2) // Мини
                     {
@@ -965,8 +1001,8 @@ namespace Hobots_L_Flasher
         private void cbContollers_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] firmware_standart = { "Демо", "Звук", "Моторы", "Сервопривод", "Сонар", "Кнопка", "ИК приёмник", "Датчик линии", "Датчик цвета", "Bluetooth" };
-            string[] firmware_classic = { "Демо" }; //  todo
-            string[] firmware_mini = { "Демо", "Звук", "Моторы", "Сервопривод", "RGB", "Кнопка", "Освещение", "ИК приёмник", "ИК передатчик", "Сонар", "Датчик линии", "Концевик", "RGB модуль", "Гироскоп", "Датчик света", "Микрофон", "Джойстик PS2" };
+            string[] firmware_classic = { "Демо", "Звук", "Моторы", "Сервопривод", "Сонар", "Кнопка", "ИК приёмник", "Датчик линии", "Датчик цвета", "Bluetooth", "Светодиод RGB" };
+            string[] firmware_mini = { "Демо", "Звук", "Моторы", "Сервопривод", "Светодиод RGB", "Кнопка", "Освещение", "ИК приёмник", "ИК передатчик", "Сонар", "Датчик линии", "Концевик", "RGB модуль", "Гироскоп", "Датчик света", "Микрофон", "Джойстик PS2" };
             string[] firmware_hyper = { "Демо", "Звук", "Моторы", "Сервопривод", "Мигалка", "Кнопки" };
             string[] firmware_ultra = { "Демо", "Звук", "Моторы", "Мигалка", "Кнопки", "Гироскоп", "Последовательная серва", "Массив ИК датчиков" };
             string[] firmware_beginer_m2560 = { "Демо", "Звук", "Моторы", "Сервопривод", "Мигалка", "Кнопки", "Сонар", "Карта памяти", "Гироскоп", "Последовательная серва", "Дисплей с кнопками", "Модуль WiFi" };

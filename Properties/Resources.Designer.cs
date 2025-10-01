@@ -232,6 +232,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\classic\hl_classic_internal_beeper_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_BEEPER_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BEEPER_CLASSIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\hyper\hl_hyper_beeper_check.hex.
         /// </summary>
         internal static string FIRMWARE_BEEPER_HYPER {
@@ -277,6 +286,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\classic\hl_classic_module_bluetooth_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_BLUETOOTH_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BLUETOOTH_CLASSIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\standart\hl_standart_bluetooth_check.hex.
         /// </summary>
         internal static string FIRMWARE_BLUETOOTH_STANDART {
@@ -291,6 +309,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_BOARD_DISPLAY_BUTTONS_BEGINER_ATMEGA2560 {
             get {
                 return ResourceManager.GetString("FIRMWARE_BOARD_DISPLAY_BUTTONS_BEGINER_ATMEGA2560", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\classic\hl_classic_module_button_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_BUTTON_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_BUTTON_CLASSIC", resourceCulture);
             }
         }
         
@@ -345,6 +372,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_BUTTONS_X {
             get {
                 return ResourceManager.GetString("FIRMWARE_BUTTONS_X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\classic\hl_classic_module_color_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_COLOR_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_COLOR_CLASSIC", resourceCulture);
             }
         }
         
@@ -493,6 +529,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\classic\hl_classic_module_ir_receiver_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_IR_RECEIVER_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_IR_RECEIVER_CLASSIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\mini\hl_mini_ir_receiver_check.hex.
         /// </summary>
         internal static string FIRMWARE_IR_RECEIVER_MINI {
@@ -592,6 +637,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\classic\hl_classic_module_double_line_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_LINE_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_LINE_CLASSIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\x\hl_x_module_line_d_check.bin.
         /// </summary>
         internal static string FIRMWARE_LINE_D_X {
@@ -646,6 +700,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\classic\hl_classic_module_motors_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_MOTORS_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_MOTORS_CLASSIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\hyper\hl_hyper_motors_check.hex.
         /// </summary>
         internal static string FIRMWARE_MOTORS_HYPER {
@@ -687,6 +750,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_MOTORS_X {
             get {
                 return ResourceManager.GetString("FIRMWARE_MOTORS_X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\classic\hl_classic_module_rgb_leds_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_MULTICOLOR_LED_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_MULTICOLOR_LED_CLASSIC", resourceCulture);
             }
         }
         
@@ -772,6 +844,15 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\classic\hl_classic_module_servo_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_SERVO_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_SERVO_CLASSIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\hyper\hl_hyper_servo_check.hex.
         /// </summary>
         internal static string FIRMWARE_SERVO_HYPER {
@@ -813,6 +894,15 @@ namespace Hobots_L_Flasher.Properties {
         internal static string FIRMWARE_SONAR_BEGINER_ATMEGA2560 {
             get {
                 return ResourceManager.GetString("FIRMWARE_SONAR_BEGINER_ATMEGA2560", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\classic\hl_classic_module_sonar_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_SONAR_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_SONAR_CLASSIC", resourceCulture);
             }
         }
         

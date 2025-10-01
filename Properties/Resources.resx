@@ -186,6 +186,9 @@
   <data name="FIRMWARE_BEEPER_BEGINER_ATMEGA2560" xml:space="preserve">
     <value>firmwares\beginer-atmega2560\hl_beginer_beeper_check.hex</value>
   </data>
+  <data name="FIRMWARE_BEEPER_CLASSIC" xml:space="preserve">
+    <value>firmwares\classic\hl_classic_internal_beeper_check.hex</value>
+  </data>
   <data name="FIRMWARE_BEEPER_HYPER" xml:space="preserve">
     <value>firmwares\hyper\hl_hyper_beeper_check.hex</value>
   </data>
@@ -200,6 +203,9 @@
   </data>
   <data name="FIRMWARE_BEEPER_X" xml:space="preserve">
     <value>firmwares\x\hl_x_module_beeper_check.bin</value>
+  </data>
+  <data name="FIRMWARE_BLUETOOTH_CLASSIC" xml:space="preserve">
+    <value>firmwares\classic\hl_classic_module_bluetooth_check.hex</value>
   </data>
   <data name="FIRMWARE_BLUETOOTH_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_bluetooth_check.hex</value>
@@ -219,11 +225,17 @@
   <data name="FIRMWARE_BUTTONS_X" xml:space="preserve">
     <value>firmwares\x\hl_x_controller_buttons_check.bin</value>
   </data>
+  <data name="FIRMWARE_BUTTON_CLASSIC" xml:space="preserve">
+    <value>firmwares\classic\hl_classic_module_button_check.hex</value>
+  </data>
   <data name="FIRMWARE_BUTTON_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_button_check.hex</value>
   </data>
   <data name="FIRMWARE_BUTTON_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_button_check.hex</value>
+  </data>
+  <data name="FIRMWARE_COLOR_CLASSIC" xml:space="preserve">
+    <value>firmwares\classic\hl_classic_module_color_check.hex</value>
   </data>
   <data name="FIRMWARE_COLOR_STANDART" xml:space="preserve">
     <value>firmwares\standart\hl_standart_color_check.hex</value>
@@ -273,6 +285,9 @@
   <data name="FIRMWARE_IR_MASSIVE_ULTRA" xml:space="preserve">
     <value>firmwares\ultra\hl_ultra_massive_sensor_check.bin</value>
   </data>
+  <data name="FIRMWARE_IR_RECEIVER_CLASSIC" xml:space="preserve">
+    <value>firmwares\classic\hl_classic_module_ir_receiver_check.hex</value>
+  </data>
   <data name="FIRMWARE_IR_RECEIVER_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_ir_receiver_check.hex</value>
   </data>
@@ -306,6 +321,9 @@
   <data name="FIRMWARE_LINE_A_X" xml:space="preserve">
     <value>firmwares\x\hl_x_module_line_a_check.bin</value>
   </data>
+  <data name="FIRMWARE_LINE_CLASSIC" xml:space="preserve">
+    <value>firmwares\classic\hl_classic_module_double_line_check.hex</value>
+  </data>
   <data name="FIRMWARE_LINE_D_X" xml:space="preserve">
     <value>firmwares\x\hl_x_module_line_d_check.bin</value>
   </data>
@@ -324,6 +342,9 @@
   <data name="FIRMWARE_MOTORS_BEGINER_ATMEGA2560" xml:space="preserve">
     <value>firmwares\beginer-atmega2560\hl_beginer_motors_check.hex</value>
   </data>
+  <data name="FIRMWARE_MOTORS_CLASSIC" xml:space="preserve">
+    <value>firmwares\classic\hl_classic_module_motors_check.hex</value>
+  </data>
   <data name="FIRMWARE_MOTORS_HYPER" xml:space="preserve">
     <value>firmwares\hyper\hl_hyper_motors_check.hex</value>
   </data>
@@ -338,6 +359,9 @@
   </data>
   <data name="FIRMWARE_MOTORS_X" xml:space="preserve">
     <value>firmwares\x\hl_x_controller_motors_check.bin</value>
+  </data>
+  <data name="FIRMWARE_MULTICOLOR_LED_CLASSIC" xml:space="preserve">
+    <value>firmwares\classic\hl_classic_module_rgb_leds_check.hex</value>
   </data>
   <data name="FIRMWARE_PRESS_X" xml:space="preserve">
     <value>firmwares\x\hl_x_module_press_check.bin</value>
@@ -366,6 +390,9 @@
   <data name="FIRMWARE_SERVO_BEGINER_ATMEGA2560" xml:space="preserve">
     <value>firmwares\beginer-atmega2560\hl_beginer_servo_check.hex</value>
   </data>
+  <data name="FIRMWARE_SERVO_CLASSIC" xml:space="preserve">
+    <value>firmwares\classic\hl_classic_module_servo_check.hex</value>
+  </data>
   <data name="FIRMWARE_SERVO_HYPER" xml:space="preserve">
     <value>firmwares\hyper\hl_hyper_servo_check.hex</value>
   </data>
@@ -380,6 +407,9 @@
   </data>
   <data name="FIRMWARE_SONAR_BEGINER_ATMEGA2560" xml:space="preserve">
     <value>firmwares\beginer-atmega2560\hl_beginer_sonar_check.hex</value>
+  </data>
+  <data name="FIRMWARE_SONAR_CLASSIC" xml:space="preserve">
+    <value>firmwares\classic\hl_classic_module_sonar_check.hex</value>
   </data>
   <data name="FIRMWARE_SONAR_MINI" xml:space="preserve">
     <value>firmwares\mini\hl_mini_sonar_check.hex</value>
