@@ -282,6 +282,12 @@
   <data name="FIRMWARE_IMU_X" xml:space="preserve">
     <value>firmwares\x\hl_x_module_imu_check.bin</value>
   </data>
+  <data name="FIRMWARE_INTERNAL_IMU_CLASSIC" xml:space="preserve">
+    <value>firmwares\classic\hl_classic_internal_imu_check.hex</value>
+  </data>
+  <data name="FIRMWARE_INTERNAL_OLED_128X64_CLASSIC" xml:space="preserve">
+    <value>firmwares\classic\hl_classic_internal_oled_display_128x64_check.hex</value>
+  </data>
   <data name="FIRMWARE_IR_MASSIVE_ULTRA" xml:space="preserve">
     <value>firmwares\ultra\hl_ultra_massive_sensor_check.bin</value>
   </data>

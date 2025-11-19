@@ -329,6 +329,14 @@ namespace Hobots_L_Flasher
                         {
                             cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_MULTICOLOR_LED_CLASSIC + ":i -D";
                         }
+                        else if (cbFirmware.SelectedIndex == 11) // Гироскоп
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_INTERNAL_IMU_CLASSIC + ":i -D";
+                        }
+                        else if (cbFirmware.SelectedIndex == 12) // Дисплей OLED
+                        {
+                            cli_arguments = "-C " + Resources.AVRDUDE_CONF_PATH + " -p m328p -P " + cbComPorts.Text + " -c arduino  -b 115200 -U flash:w:" + Resources.FIRMWARE_INTERNAL_OLED_128X64_CLASSIC + ":i -D";
+                        }
                     }
                     else if (cbContollers.SelectedIndex == 2) // Мини
                     {
@@ -1001,7 +1009,7 @@ namespace Hobots_L_Flasher
         private void cbContollers_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] firmware_standart = { "Демо", "Звук", "Моторы", "Сервопривод", "Сонар", "Кнопка", "ИК приёмник", "Датчик линии", "Датчик цвета", "Bluetooth" };
-            string[] firmware_classic = { "Демо", "Звук", "Моторы", "Сервопривод", "Сонар", "Кнопка", "ИК приёмник", "Датчик линии", "Датчик цвета", "Bluetooth", "Светодиод RGB" };
+            string[] firmware_classic = { "Демо", "Звук", "Моторы", "Сервопривод", "Сонар", "Кнопка", "ИК приёмник", "Датчик линии", "Датчик цвета", "Bluetooth", "Светодиод RGB", "Гироскоп", "Дисплей OLED" };
             string[] firmware_mini = { "Демо", "Звук", "Моторы", "Сервопривод", "Светодиод RGB", "Кнопка", "Освещение", "ИК приёмник", "ИК передатчик", "Сонар", "Датчик линии", "Концевик", "RGB модуль", "Гироскоп", "Датчик света", "Микрофон", "Джойстик PS2" };
             string[] firmware_hyper = { "Демо", "Звук", "Моторы", "Сервопривод", "Мигалка", "Кнопки" };
             string[] firmware_ultra = { "Демо", "Звук", "Моторы", "Мигалка", "Кнопки", "Гироскоп", "Последовательная серва", "Массив ИК датчиков" };

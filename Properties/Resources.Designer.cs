@@ -520,6 +520,24 @@ namespace Hobots_L_Flasher.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\classic\hl_classic_internal_imu_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_INTERNAL_IMU_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_INTERNAL_IMU_CLASSIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на firmwares\classic\hl_classic_internal_oled_display_128x64_check.hex.
+        /// </summary>
+        internal static string FIRMWARE_INTERNAL_OLED_128X64_CLASSIC {
+            get {
+                return ResourceManager.GetString("FIRMWARE_INTERNAL_OLED_128X64_CLASSIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на firmwares\ultra\hl_ultra_massive_sensor_check.bin.
         /// </summary>
         internal static string FIRMWARE_IR_MASSIVE_ULTRA {
